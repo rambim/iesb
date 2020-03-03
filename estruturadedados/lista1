@@ -1,0 +1,23 @@
+Lista 1
+
+1)Crie a opcao 6 do programa listaligada.C que remove o maior
+elemento da lista;
+
+2)Crie um programa que permita o usuario preencher 2 listas A e B.
+Seu programa deve disponibilizar uma opcao onde a lista B deve ser
+anexada na lista A e a lista B passar a estar zerada.
+Ex:
+Lista a: 1,2,3,4,5;
+Lista b: 6,7,8,9,10;
+
+Apos utilizar opção de juntar listas:
+Lista a: 1,2,3,4,5,6,7,8,9,10;
+Lista b: NULL;
+
+3) Altere o programa listaligada.c para que possua uma opcao que
+ao inves de solicitar ao usuario qual numero deseja remover,
+sempre remova o primeiro elemento da lista. O nome da sua funcao
+deve ser remover_primeiro_registro();
+
+4) Altere o programa listaligada.c para que possua uma opcao que 
+ao inves de solicitar ao us
