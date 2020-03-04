@@ -27,7 +27,8 @@ int main(int argc, char * argv[])
 
     for(i=0;i<tam;i++)
     {
-        vet3[i] = vet1[i] + vet2[i];
+        //vet3[i] = vet1[i] + vet2[i];
+        continue;
     }
 
     t2 = omp_get_wtime();
@@ -49,7 +50,7 @@ int main(int argc, char * argv[])
         
         for(i=id;i<tam;i = i + nthreads)
         {
-            
+            continue;
             vet3[i] = vet1[i] + vet2[i];
         }
 
