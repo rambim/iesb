@@ -4,16 +4,21 @@
 
 int main()
 {
-    omp_set_num_threads(10);
-#pragma omp parallel
+    double t1, t2;
+    int i,j;
+    int x;
+
+    t1 = omp_get_wtime();
+    for(i=0;i<100000;i++)
     {
-        int i;
-
-        #pragma omp master
-        printf("\n eu sou a feroz! %d",omp_get_thread_num());
-
-        #pragma omp barrier
-        printf("\n Hello world! id = %d", omp_get_thread_num());
+        for(j=0;j<10000;j++)
+        {
+            x = 1;
+        }
     }
+    t2 = omp_get_wtime();
+
+    printf("\n tempo levado = %lf",t2-t1);
+
     return 0;
 }
