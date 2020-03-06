@@ -1,0 +1,102 @@
+f(n) = f(n-1) + 3n + 2;
+
+para n ={2,3,4,5,6...}
+
+caso base f(1) = ?
+
+se f(1) = 1
+(
+f(1) = 1
+
+f(2) = f(1) + 3*2 + 2
+f(2) = 1 + 6 + 2 = 9
+
+f(3) = f(2) + 3*3 + 2;
+f(3) = 9 + 9 + 2 = 20;
+
+f(4) = f(3) + 3*4 + 2
+f(4) = 20 + 12 + 2 = 34
+
+f(1) = 5
+
+f(2) = f(1) + 3*2 + 2
+f(2) = 5 + 3*2 + 2 = 13;
+
+f(3) = f(2) + 3*3 + 2;
+f(3) = 13 + 9 + 2 = 24;
+
+f(4) = f(3) + 3*4 + 2;
+f(4) = 24 + 12 + 2 38;
+
+
+Como enontrar uma complexidade fechada independente o do valor
+do caso base?
+
+Solução de uma recorrência:
+
+f(n)   = f(n-1) + 3;
+f(n-1) = f(n-2) + 3;
+f(n-2) = f(n-3) + 3;
+
+expandindo:
+
+f(n) = f(n-1) + 3;
+f(n) = (f(n-2) + 3) + 3;
+f(n) = ((f(n-3)+3) +3 ) + 3
+
+f(n) = f(n-k) + 3k
+
+caso base = f(1)
+n - k = 1
+k = n-1;
+
+f(n) = f(n-k) + 3k;
+f(n) = f(1) + 3k
+f(n) = f(1) +3(n-1)
+f(n) = f(1) + 3n - 3
+f(n) = O(1) + 3n + 3;
+f(n) = O(n);
+
+
+exemplo 2:
+
+busca binaria:
+
+realiza x operações e divide na metade:
+
+send x = 5
+
+f(n) = f(n/2) + 5 para n={2,4,6,8,10,12} ps: para facilitar as contas
+f(n) = f(n/2) + 5 para n={2¹, 2², 2³, ...}
+
+n = 2^k
+
+f(2^k) = f((2^k)/2) + 5;
+f(2^k) = f(2^k-1) + 5;
+
+f(2^k)   = f(2^k-1) + 5;
+f(2^k-1) = f(2^k-2) + 5;
+f(2^k-2) = f(2^k-3) + 5;
+
+expandindo:
+
+f(2^k) = f(2^k-1) + 5;
+f(2^k) = (f(2^k-2) + 5) +5;
+f(2^k) = (f(2^k-3)+ 5) +5) +5;
+f(2^k) = f(2^k-k) + 5k;
+
+substituindo caso base:
+f(2^k) = f (2^0) + 5k;
+f(2^k) = f(1) + 5k;
+
+se n = 2 ^ k;
+logo k = log2 n;
+
+f(n) = f(1) + 5* log2 n);
+f(n) = O(1) + 5* *log2 n
+f(n) = O(log 2 n)
+
+
+
+
+

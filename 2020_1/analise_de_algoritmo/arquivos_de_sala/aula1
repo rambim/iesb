@@ -1,0 +1,58 @@
+comparação entre busca binária em busca linear
+
+instruções simples:
+tempo de execução
+
+    analise pode variar conforme:
+        computador
+        arquitetura
+        compilador
+        linguagem
+
+        possiveis problemas?
+            um algoritmo ruim executado em um pc bom
+
+pensar diferente?
+
+    tempo de execução = funcao em relação ao tamanho da entrada;
+    qua rapido essa função cresce dado o tamanho da entrada ( taxa de crescimento)
+
+    2n² + 150n + 500;
+
+
+
+
+
+conhecer o numero de instruções de analisar o crescimento
+
+contando instruções
+    atribuições
+        i = 2;
+        i = 2+3;
+        i = x * x *x;
+    incrementos
+        i++;
+        ++i;
+
+    operações aritméticas ex: pow();
+    expressao logicas;
+
+    a && b || c;
+    leitura e escrita
+
+instruções complexas
+    instruções simples somadas
+
+custo zero
+    declaração de variável.
+    if()
+    for()
+    while()
+
+
+treinar exemplos
+funcao de complexidade;
+
+notação assintotica das funções de complexidade calculadas.
+
+
