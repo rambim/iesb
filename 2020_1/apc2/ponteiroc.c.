@@ -1,0 +1,10 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int x = 2;
+
+    dobrar1(x);
+    printf("\n %d",x);
+}
