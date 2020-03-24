@@ -227,3 +227,27 @@ ALGORITMOS COMMPREENSAO DE DADOS LTZ...
 ESTUTURAS COMBINADAS DE PILHA E FILA.
 
 TRABALHO ESCRITO + APRESENTAÇÃO PRA BANCA + PPT
+
+
+grupo d pode atarde
+grupo a pode atarde
+grupo h qualquer horario
+grupo f qualquer dia e qualquer horario
+grupo i pode atarde
+grupo g pode atarde
+grupo b
+grupo k pode atarde
+grupo j pode tarde.
+grupo e
+grupo c
+grupo r pode atarde
+
+Estados:
+1) Grupo que já tem um esqueleto de trabalho escrito pronto. Já sabe o algoritmo e a aplicação que irá fazer e está a caminho de terminar o trabalho escrito.
+2) Não fez nada escrito, mas já tem o algoritmo e a aplicação definda.
+3) Nem 1 nem 2
+
+
+Prazo para envio do email até amanhã dia 24/03/2020 as 23:59
+
+

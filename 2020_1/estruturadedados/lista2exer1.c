@@ -22,8 +22,9 @@ int remover_registro(lista *l, int x);
 registro *buscar(lista *l, int x);
 void menu(lista *l);
 int contar(lista *l);
-int primo (int x);
-int remove_primos(lista * l);
+int primo(int x);
+int remove_primos(lista *l);
+int remover_primos2(lista *l);
 
 int main()
 {
@@ -32,7 +33,7 @@ int main()
     lista *l2;
     l1 = aloca_lista();
     l2 = aloca_lista();
-    
+
     menu(l1);
 
     return 0;
@@ -175,7 +176,7 @@ void menu(lista *l)
     {
         printf("\n 1 - Incluir");
         printf("\n 2 - Buscar");
-        printf("\n 3 - Remover");   
+        printf("\n 3 - Remover");
         printf("\n 4 - Mostrar");
         printf("\n 6 - contar");
         printf("\n 7 - remove primos");
@@ -226,11 +227,11 @@ void menu(lista *l)
             break;
         case 6:
             printf("\n Quantidade de elementos na lista ");
-            printf("%d",contar(l));
+            printf("%d", contar(l));
             break;
-            case 7:
+        case 7:
             printf("removendo primos");
-            retorno = remove_primos(l);
+            retorno = remover_primos2(l);
             if (retorno)
             {
                 printf("\n Os primos foram apagados");
@@ -240,8 +241,6 @@ void menu(lista *l)
                 printf("\n Nao haviam primos ");
             }
             break;
-            
-
 
         default:
             printf("\n opcao invalida");
@@ -251,11 +250,10 @@ void menu(lista *l)
     } while (opcao != 5);
 }
 
-
 int contar(lista *l)
 {
     registro *aux;
-    int count=0;
+    int count = 0;
 
     if (l->inicio == NULL)
     {
@@ -273,74 +271,109 @@ int contar(lista *l)
     }
 }
 
-int primo (int x)
+int primo(int x)
 {
     int div;
-    if (x==1)
+    if (x == 1)
     {
         return 0;
     }
     else
     {
-        for(div=2;div<x;div++)
+        if (x < 0)
         {
-            if (x%div==0)
+            x = x * (-1);
+        }
+        for (div = 2; div < x; div++)
+        {
+            if (x % div == 0)
             {
                 return 0;
             }
         }
         return 1;
     }
-    
 }
 
-int remove_primos(lista * l)
+int remove_primos(lista *l)
 {
-    registro * aux, *ant, *removido;
-    int apagou=0;
-    
-    if (l->inicio==NULL)
+    registro *aux, *ant, *removido;
+    int apaga = 0;
+    int apagou = 0;
+
+    if (l->inicio == NULL)
     {
         return 0;
     }
     else
     {
         aux = l->inicio;
-        ant=NULL;
-        apagou=0;
-        while(aux!=NULL)
+        ant = NULL;
+
+        while (aux != NULL)
         {
+
+            apaga = 0;
             if (primo(aux->valor))
             {
-                printf("\n %d eh primo ",aux->valor);
-                if (ant==NULL)
+                printf("\n %d eh primo ", aux->valor);
+                if (ant == NULL)
                 {
-                    l->inicio=aux->prox;
+                    l->inicio = aux->prox;
                 }
                 else
                 {
                     ant->prox = aux->prox;
                 }
                 removido = aux;
-                                
-                
-                apagou=1;
-                free(removido);
-                l->qtd--;
 
+                apaga = 1;
+
+                l->qtd--;
             }
             else
             {
                 ant = aux;
-                
-                
             }
             aux = aux->prox;
-            
-            
+            if (apaga)
+            {
+                free(removido);
+                apagou = 1;
+            }
         }
     }
 
     return apagou;
-    
+}
+
+int remover_primos2(lista *l)
+{
+    registro *aux;
+    int removido;
+    int apaga = 0;
+
+    if (l->inicio == NULL)
+    {
+        return 0;
+    }
+    else
+    {
+        aux = l->inicio;
+        while (aux != NULL)
+        {
+            apaga = 0;
+            if (primo(aux->valor))
+            {
+                removido = aux->valor;
+                apaga = 1;
+            }
+            aux = aux->prox;
+            if (apaga)
+            {
+                remover_registro(l, removido);
+            }
+        }
+    }
+    return 1;
 }
