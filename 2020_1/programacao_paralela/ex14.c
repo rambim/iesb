@@ -11,14 +11,13 @@ int main(int argc, char * argv[])
 {
     int i,qtd_threads_global,threads_desejadas;
     double pi;
-    double sum_total;
+    
     double t1,t2;
     
     step = 1.0 / (double)num_steps;
 
     threads_desejadas = atoi(argv[1]);
 
-    double sum=0.0;
 
     t1 = omp_get_wtime();
 
@@ -28,10 +27,10 @@ int main(int argc, char * argv[])
 
     #pragma omp parallel
     {
+        double sum=0.0;
         double x;
         int i;
         int qtd_threads = omp_get_num_threads();
-        double temp;
         
         int id = omp_get_thread_num();
 
@@ -44,15 +43,16 @@ int main(int argc, char * argv[])
         for (i = 0; i < num_steps; i = i + 1)
         {
             x = (i + 0.5) * step;
-            temp = 4.0 / (1.0 + x * x);
-            #pragma omp atomic
-            sum = sum + temp;
+
+            
+            sum = sum + 4.0 / (1.0 + x * x);
         }
+        #pragma omp atomic
+         pi += (step * sum);
     }
 
     
 
-    pi = pi + step * sum;
 
     t2 = omp_get_wtime();
     
