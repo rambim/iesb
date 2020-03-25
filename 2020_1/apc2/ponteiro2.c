@@ -9,10 +9,10 @@ int main()
     int x = 2;
 
     printf("\n %d" ,x); // 2
-    dobrar1(x);
-    printf("\n %d",x);
+    dobrar1(x); // peguinha!
+    printf("\n %d",x); //2
     dobrar2(&x);
-    printf("\n %d",x);
+    printf("\n %d",x); //4
     printf("\n");
     return 0;
 }
