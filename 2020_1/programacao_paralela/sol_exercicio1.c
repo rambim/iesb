@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "omp.h"
-#define tam 150
+#define tam 50
 
 int funcao_pesada(int x);
 void mostrar_vetor(int * vet, int x);

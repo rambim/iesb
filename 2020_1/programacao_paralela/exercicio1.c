@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "omp.h"
-#define tam 150
+#define tam 50
 
 int funcao_pesada(int x);
 void mostrar_vetor(int * vet, int x);
@@ -23,7 +23,7 @@ int main()
 
     t2 = omp_get_wtime();
 
-   // mostrar_vetor(vet,tam);
+    mostrar_vetor(vet,tam);
 
     printf("\n Tempo total: %lf",t2-t1);
     return 0;

@@ -43,12 +43,15 @@ int main(int argc, char * argv[])
         for (i = 0; i < num_steps; i = i + 1)
         {
             x = (i + 0.5) * step;
-
+            
             
             sum = sum + 4.0 / (1.0 + x * x);
         }
-        #pragma omp critical
-         pi = pi + (step * sum);
+        #pragma omp critical 
+        {
+            pi = pi + (step * sum);
+        }       
+
     }
 
     
