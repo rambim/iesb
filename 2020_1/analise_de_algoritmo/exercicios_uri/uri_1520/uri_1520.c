@@ -20,10 +20,7 @@ int main()
         fim = 0;
         ind1 = -1;
         ind2 = -1;
-        flag = 0;
-        /* flag = 1 ( nao achou nenhum)
-       flag = 2 ( achou o primeiro)
-       flag = 3 ( achou do segundo pra frente)
+
     */
 
         cont = 0;

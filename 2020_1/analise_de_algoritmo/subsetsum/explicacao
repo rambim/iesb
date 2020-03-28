@@ -1,0 +1,22 @@
+
+
+A = {5, 4, 10, 8, 9,6}
+
+
+
+Ex de subconjunto Suba={5,4,10} = Sum(suba) = 19
+
+C ( CAPACIDADE) = 19.
+
+Números Naturais!   
+
+
+1 ) Existe algum somatório de subconjunto que é igual a capacidade? 
+    TRUE OU FALSE!
+2 ) Existe algum somatório de subconjunto que é igual a capacidade?
+     Mostre o primeiro encontrado!
+3 ) Existe algum somatório de subconjunto que é igual a capacidade?
+    Mostre todos os subconjuntos!
+
+
+Problema do mochileiro viajante! Só que não!

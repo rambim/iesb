@@ -89,7 +89,7 @@ int main()
 // solução 2 accept
 
 // solução 1 5% WA
-
+/*
 
    //         retorno = PesquisaBinaria(vet, procurado, N);
             retorno = binary_search(vet,0,N-1,procurado);
@@ -110,10 +110,10 @@ int main()
                 }
             }
 
-
+*/
 // solução 1 5% WA
 // solução 3 ok
-/*
+
             retorno = procura(vet,N,procurado);
             if (retorno == -1)
             {
@@ -123,7 +123,7 @@ int main()
             {
                 printf("%d found at %d\n", procurado, retorno+1);
             }
-*/
+
 // solução 3 ok
         }
         free(vet);

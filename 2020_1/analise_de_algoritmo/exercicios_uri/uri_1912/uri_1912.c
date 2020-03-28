@@ -86,9 +86,9 @@ int main()
                 while (sup - inf >= 0.000001)
                 {
                     meio = (inf + sup) / 2.0;
-                    //            printf("\n Calcula area com corte em %lf", meio);
+                    printf("\n Calcula area com corte em %lf", meio);
                     retorno = calcula_area(vet, qtd_tiras, meio);
-                    //          printf("\n Area calculada: %lf", retorno);
+                    printf("\n Area calculada: %lf", retorno);
                     if (retorno == area_esperada)
                     {
                         break;
