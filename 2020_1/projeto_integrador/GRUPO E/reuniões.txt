@@ -1,5 +1,52 @@
 30/03/2020
+    18:30
+        CRUD DE MEDICAMENTO QUE IRÁ SE ATUALIZAR
+        DE FORMA AUTOMÁTICA COM AS INFORMAÇÕES DISPONIBILIZADAS
+        EM PORTAL DO GOVERNO UTILIZANDO UMA ARVORE RUBRO NEGRA
+
+        altera introdução 
+            para que ela explique um problema, uma possivel ideia para se resolver esse problema
+
+        objetivo especifico: Implementaação de um sistema consulta e registro de medcimentos
+            usando rubro para para evitar/aparfeiçoar. 
+
+        objetivo especifico: VErbos! Consultar base do gonverno para ter acesso medicamentos
+            entender e analisar e periodicidade que essa tabela e atualizada.
+
+        Referencial:
+            C
+            C awiduhawiudhaiwudhaiuwhdiauwhd
+            que nao sei nao e escolkher ela por causa disso.
+
+            Estrutura de Dados
+            e uma discplinaln soiejfos ije fouhiuh
+                isuhefisuhriuahiuh iuhSIEUHF isuhf iluahsueifuh
+                aisuehfaiushefi uhasieuhf uiaheuh aiseuf iuhSIEUHF
+
+
+            Arvore binária
+            siuehfisuehfiusheifuhseiufhseiufhsieuhf
+            Arvore rubro.
+            Crawler.
+            Html pasers
+
+        desenvolvimento
+            explicar o desenvolvimento citando o referencial teórico
+            a fim de querer o objetivo geral atraves dos objetivos especicos.
+
+        Testes ( comparação)
+
+
+        Conclusão
+            Awoijdaoiwj aowijd aoiwjd aoiwj aowijd aoiwjd oaijw
+            awidoj aowidj aoiwjdi aowij aowijd aoiwjd oaiwj oiajwd 
+            awodija oaiwj aowijd aoiwj
+
+        Proposta futura.
+
+
 06/04/2020
+
 13/04/2020
 20/04/2020
 27/04/2020

@@ -1,4 +1,16 @@
 30/03/2020
+    18:10
+        busca de local para aluguel.
+        seleção dos locais para visita
+        traça melhor caminho
+        floyd warshall
+        esquema de funcionalidades ok
+        adicionar no esqueleto:
+            Completar referencial teórico
+            ajustar introdução
+            incluir objetivo geral e especifico
+            revisar esses referências.
+            descobrir como será a interface com quem utiliza.
 06/04/2020
 13/04/2020
 20/04/2020
