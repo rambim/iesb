@@ -1,4 +1,27 @@
-30/03/2020
+01/04/2020
+    18:55
+        compareção das árvores B e rubro negra
+            tempo de inclusão
+            tempo de busca
+            tempo de balanceamento
+            tempo de remoção
+            tempo de consulta
+
+            definir o data set
+
+            usem o overleaf ( formato SBC)
+
+            referencial teórico em livros
+
+            introdução ( problema , comparação)
+            objetivo geral
+                como vai resolver o problema ( comparação entre as árvores).
+            objetivo especifico
+                como será feito o objetivo geral.
+                script com verbos 
+
+
+
 06/04/2020
 13/04/2020
 20/04/2020
