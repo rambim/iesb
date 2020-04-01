@@ -1,4 +1,20 @@
-30/03/2020
+01/04/2020
+    18:10
+        Algoritmo de huffman + compressão de dados.
+
+        Ajuste na introdução: ( Problema!)
+        objetivo geral : como vai resolver o problema
+        objetivo especifico: Como vc vai fazer o que o objetivo geral diz.
+        referencial teórico: O que eu preciso estudar pra fazer os objetivos propostos.
+        desenvolvimento: Implemntei escolhi a utilização disso, deu certo deu errado, tentei aquilo
+        mudai pra isso, análises dos objetivo.
+        testes
+            imagens , comparativos e gráficos.
+
+        conclusão 
+            voce conseguiu resolver o problema proposto na introdução: Sim ou não? pq?
+        
+        Pra proximo encontro
 06/04/2020
 13/04/2020
 20/04/2020
