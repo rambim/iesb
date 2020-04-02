@@ -13,6 +13,7 @@ typedef struct aluno
 
 int main()
 {
+    int i;
     aluno Turma[5];
 
     for(i=0; i< 5; i++)
