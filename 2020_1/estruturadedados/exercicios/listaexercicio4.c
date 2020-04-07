@@ -1,7 +1,7 @@
 /*
 
-1) onstruir o código de uma fila em vetor
+1) Construir o código de uma fila em vetor
 
-2) construir o código de uma fila utilizando lista ligada + ponteiro fim
+2) Construir o código de uma fila utilizando lista ligada + ponteiro fim
 
 */
