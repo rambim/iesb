@@ -15,7 +15,7 @@ int main(int argc, char * argv[])
     omp_set_num_threads(threads_desejadas);
     
     t1 = omp_get_wtime();
-    #pragma omp parallel for
+    #pragma omp parallel for schedule(static)
     for(i=0;i<tam;i++)
     {
         int j;
