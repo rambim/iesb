@@ -16,10 +16,11 @@ int main(int argc, char * argv[])
     
     t1 = omp_get_wtime();
     #pragma omp parallel for schedule(static)
+    #pragma omp parallel for schedule(dynamic)
     for(i=0;i<tam;i++)
     {
         int j;
-
+        int id = omp_get_thread_num();
         j = 5 + 2*(i+1);
         vet[i] = funcao_pesada(j);
     }

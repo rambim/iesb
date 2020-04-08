@@ -70,6 +70,30 @@ execução para escolher
 Quando o tempo de execução pode "aprender" de execuções
  anteriores do mesmo loop
 
+exercicio2.c
+sol_exercicio2.c
+
+
+
+reduction:
+
+ex21.c
+
+#pragma omp for reduction("operação","variável")
+Operator Initial value 
++          0 
+*          1 
+-          0 
+min        Largest pos. number 
+max        Most neg. number 
+
+
+
+
+
+
+
+
 
 
 

@@ -15,10 +15,11 @@ int main(int argc, char *argv[])
     omp_set_num_threads(threads_desejadas);
 
     t1 = omp_get_wtime();
-#pragma omp parallel for 
-// #pragma omp parallel for reduction (+:sum)
+    // #pragma omp parallel for 
+      #pragma omp parallel for reduction (+:sum)
     for (i = 0; i < tam; i++)
     {
+    
         vet[i] = funcao_pesada(1);
         sum = sum + vet[i];
     }
