@@ -17,8 +17,8 @@ typedef struct registro
 void mostrar(lista *l);
 lista *aloca_lista();
 registro *aloca_registro();
-void incluir_inicio(lista *l, int x);
-int remover_inicio(lista *l);
+void push(lista *l, int x);
+int pop(lista *l);
 void menu(lista *l);
 int empty(lista *l);
 int stack_pop(lista *l);
@@ -56,7 +56,7 @@ registro *aloca_registro()
     return novo;
 }
 
-void incluir_inicio(lista *l, int x)
+void push(lista *l, int x)
 {
     registro *novo, *aux;
     novo = aloca_registro();
@@ -94,7 +94,7 @@ void mostrar(lista *l)
     }
 }
 
-int remover_inicio(lista *l)
+int pop(lista *l)
 {
     registro *aux = NULL;
     int retorno;
@@ -164,13 +164,13 @@ void menu(lista *l)
         case 1:
             printf("\n Qual numero deseja inserir: ");
             scanf("%d", &numero);
-            incluir_inicio(l, numero);
+            push(l, numero);
             break;
         case 2:
 
             if (!empty(l))
             {
-                printf("\n Pop de  %d", remover_inicio(l));
+                printf("\n Pop de  %d", pop(l));
             }
             else
             {

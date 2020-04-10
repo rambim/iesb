@@ -48,7 +48,7 @@ int main()
             LeDataDeTeclado(&dia);
             ImprimeMaisVelhos(povo, qtdPessoas, dia);
         }
-        if (opcao ==4)
+        if (opcao == 4)
         {
             printf("\n Saindo do programa");
         }
@@ -89,7 +89,14 @@ void CriaData(Data *D)
 
 void AdicionaPessoa(Pessoa *povo, Pessoa p, int qtdPessoas)
 {
-    povo[qtdPessoas] = p;
+    if (qtdPessoas >= 10)
+    {
+        printf("\n Capacidade maxima atingida");
+    }
+    else
+    {
+        povo[qtdPessoas] = p;
+    }
 
     /*
     povo[qtdPessoas].matricula  = p.matricula;

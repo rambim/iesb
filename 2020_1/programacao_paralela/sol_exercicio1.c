@@ -20,7 +20,7 @@ int main(int argc, char * argv[])
     for(i=0;i<tam;i++)
     {
         int j;
-        int id = omp_get_thread_num();
+        
         j = 5 + 2*(i+1);
         vet[i] = funcao_pesada(j);
     }
