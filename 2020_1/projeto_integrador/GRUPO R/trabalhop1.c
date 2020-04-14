@@ -14,7 +14,7 @@ A avaliação será feita em arquivos de diferentes tamanhos:
 100mb   
 1gb     
 10gb    
-50gb    
+  
 
 Gerar relatório com a média do tempo de 5 execuções para cada arquivo com a solução serial ( não paralela).
 
