@@ -45,9 +45,15 @@
         Proposta futura.
 
 
-06/04/2020
+
 
 13/04/2020
+    segundo encontro
+        incluir tradução do abstract
+        ajustar objetivos especificos
+        ajustar referencial teórico ( incluir referências.)
+        melhorar data set pois 29k é muito pouco.
+
 20/04/2020
 27/04/2020
 04/05/2020

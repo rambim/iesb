@@ -3,8 +3,16 @@
         djiskra + estrela ( melhor rota + saida).
         
         
-06/04/2020
+
 13/04/2020
+        ESCREVER
+            ABSTRACT
+            INTRODUÇÃO
+            OBJETIVO GERAL
+            OBJETIVO ESPECIFICO
+            REFERENCIAL TEÓRICO
+                USAR OVERLEAF PRA EDITAR O TEXTO
+                USAR PADRAO SBC.
 20/04/2020
 27/04/2020
 04/05/2020

@@ -11,8 +11,15 @@
             incluir objetivo geral e especifico
             revisar esses referências.
             descobrir como será a interface com quem utiliza.
-06/04/2020
+
 13/04/2020
+    18:10
+            ajuste na introdução conforme recomendações.
+            ajuste nos objetivos especificos
+            ajuste nas referencias e número dos capitulos
+            padronização sbc.
+            revisadr referencias.
+
 20/04/2020
 27/04/2020
 04/05/2020

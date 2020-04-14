@@ -21,9 +21,14 @@
                 script com verbos 
 
 
-
-06/04/2020
 13/04/2020
+    18:50
+
+            realizar ajustes
+            incluir referencial teórico e referências bibliográficas
+            terminar dataset.
+
+
 20/04/2020
 27/04/2020
 04/05/2020
