@@ -10,6 +10,7 @@
 void mostrar_vetor(long int * vet , long int qtd);
 void bubblesort(long int * vet, long int qtd);
 long int * aloca_vetor_randomico(long int qtd);
+long int * aloca_vetor_ordenado(long int qtd);
 
 
 int main(int argc, char *argv[])
@@ -22,21 +23,23 @@ int main(int argc, char *argv[])
     scanf("%ld",&tam);
 
     t1 = omp_get_wtime();
-    vetor = aloca_vetor_randomico(tam);
+    // vetor = aloca_vetor_randomico(tam);
+    vetor = aloca_vetor_ordenado(tam);
     t2 = omp_get_wtime();
 
     printf("\n Tempo para gerar vetor: %lf",t2-t1);
 
-    // printf("\n Mostrando vetor desordenado:");
-    // mostrar_vetor(vetor,tam);
+    printf("\n Mostrando vetor desordenado:");
+    mostrar_vetor(vetor,tam);
 
     t1 = omp_get_wtime();
     bubblesort(vetor,tam);
     t2 = omp_get_wtime();
-    printf("\n Tempo para ordenar vetor: %lf",t2-t1);
+    printf("\n Tempo bubblesort vetor: %lf",t2-t1);
 
     // printf("\n Mostrando o vetor ordenado: ");  
     // mostrar_vetor(vetor,tam);
+    printf("\n");
     
     return 0;
 }
@@ -93,6 +96,23 @@ long int * aloca_vetor_randomico(long int qtd)
         vetor[i_aux] = aux;
 
     }
+
+    return vetor;
+}
+
+
+long int * aloca_vetor_ordenado(long int qtd)
+{
+    long int * vetor;
+    long int i;
+    long int i_aux, aux;
+    vetor = (long int*)malloc(sizeof(long int)*qtd);
+
+    for(i=0;i<qtd;i++)
+    {
+        vetor[i] = i+1;
+    }
+   
 
     return vetor;
 }
