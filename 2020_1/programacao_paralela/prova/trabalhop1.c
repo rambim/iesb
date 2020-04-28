@@ -41,6 +41,8 @@ ser realizados os testes e a geração do relatório.
 
 String a ser procurada: "tem que achar".
 
+Prazo de entrega: 29/04/2020 as 23:59.
+
 
 
 
