@@ -32,6 +32,17 @@ Execução Serial + paralela arquivo de 10gb  (3 pontos)
 
 
 
+Orientações para teste da prova:
+
+1) crie uma pasta em um HD com pelo menos 25gb de espaço:
+2) cole o arquigo gera_arquivo.c nessa pasta.
+3) compile e execute o gera_arquivo.c. Ele irá gerar os 6 arquivos em que devem
+ser realizados os testes e a geração do relatório.
+
+String a ser procurada: "tem que achar".
+
+
+
 
 */
 
