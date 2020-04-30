@@ -11,7 +11,7 @@ int main()
     grava_arquivo("arquivo3.txt", 100, 1);
     grava_arquivo("arquivo4.txt", 1, 2);
     grava_arquivo("arquivo5.txt", 10, 2);
-    grava_arquivo("arquivo6.txt", 100, 2);
+ //   grava_arquivo("arquivo6.txt", 100, 2);
 
     return 0;
 }
