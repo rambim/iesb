@@ -90,8 +90,28 @@ max        Most neg. number
 
 
 
+omp master
+ex22.c
+
+omp single
+ex23.c
+
+omp single nowait
+ex24.c
+
+omp sections
+ex25.c
+
+omp sections nowait
+ex26.c
+
+configurar quantidade de threads = quantidade de processadores.
+ex27.c
 
 
+#pragma omp parallel private(aux)
+cria uma variável local para cada thread ( essas variáveis criadas não são inicializadas.)
+ex28.c
 
 
 
