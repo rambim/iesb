@@ -114,6 +114,10 @@ cria uma variável local para cada thread ( essas variáveis criadas não são i
 ex28.c
 
 
+#pragma omp parallel firstpriva(aux)
+inicializa cada thread com o valor vindo da variável original .
+
+
 
 
 
