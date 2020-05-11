@@ -1,0 +1,14 @@
+b)
+Na função mostrarSubSet =  n
+na função subset = 2n + 2 + n + 1 + 2n + 2 + n + 2nt + 2n + nt + 2nt + nt
+na main = 3t +3
+
+Juntando tudo:
+
+n + 2n + 2 + n + 1 + 2n + 2 + n + 2nt + 2n + nt + 2nt + nt + 3t +3
+6nt + 9n + 3t + 8 
+nt + n + t
+O(nt)
+==
+
+obs: O código está comentado com as instruções que fui encontrando linha por linha
