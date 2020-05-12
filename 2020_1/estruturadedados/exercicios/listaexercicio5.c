@@ -29,8 +29,9 @@ Considere uma pilha P vazia e uma ﬁla F não vazia. Utilizando apenas as funç
  
 
 
-nota  7
- x     8
+
+
+
 
 
 */
