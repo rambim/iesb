@@ -6,8 +6,9 @@
 #include <iomanip>
 #include <algorithm>
 #include "omp.h"
+#define threads_desejadas 3
 
-using namespace std;
+using namespace std; 
 
 int findAll2(string texto, string search)
 {
@@ -31,14 +32,15 @@ int main(int argc, char * argv[]) {
 	char * name = argv[1] , * search = argv[2];
 	ifstream file;
 	int indexSearch, contador = 0,fileSize,i;
-	int thQtd = 6, indexTh = 0;
+	int thQtd = threads_desejadas, indexTh = 0;
 	string textos[thQtd];
+	int contadores[thQtd] = {0};
 	for(auto st : textos)
 	{
 		st = "";
 	}
+	omp_set_num_threads(threads_desejadas);
 	file.open(name);
-	
 	if(file.is_open())
 	{
 		while(!file.eof())
@@ -52,9 +54,17 @@ int main(int argc, char * argv[]) {
 			}
 		}
 	}
+	
+	#pragma omp parallel for
 	for(int j = 0; j < thQtd; j++)
 	{
-		contador += findAll2(textos[j],search);
+		int id = omp_get_thread_num();
+		contadores[id] += findAll2(textos[j],search);
+	}
+	
+	for(int cc = 0; cc < thQtd; cc++)
+	{
+		contador += contadores[cc];
 	}
 	
 	t2 = omp_get_wtime();
