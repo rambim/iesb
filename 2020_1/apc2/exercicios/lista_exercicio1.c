@@ -7,7 +7,7 @@ Ao final da leitura o programa deverá imprimir o número da linha que contém o
 
 2) (0,2) Escreva um programa que leia 3 notas de um aluno e a média das notas dos exercícios realizados por ele. 
 Calcular a média de aproveitamento, usando a fórmula: MA = (N1 + N2*2 + N3*3 + ME)/7. 
-A partir da média, informar o conceito de acordo com a tabela:
+A partir da média de aproveitamento, informar o conceito de acordo com a tabela:
 
     maior ou igual a 9 	A
     maior ou igual a 7.5 e menor que 9 	B
@@ -19,10 +19,10 @@ A partir da média, informar o conceito de acordo com a tabela:
 Este número deve ser sempre ímpar.
 
 1 2 3 4 5 6 7 8 9
-   2 3 4 5 6 7 8
-      3 4 5 6 7
-         4 5 6
-            5   
+  2 3 4 5 6 7 8
+    3 4 5 6 7
+      4 5 6
+        5   
 
 4)  (0,2) Crie um progama capaz de ler dois nomes de pessoas e imprimi-los em ordem alfabética.
 
@@ -30,7 +30,7 @@ Este número deve ser sempre ímpar.
 
 6) (0,2) Faça um programa que receba dois números X e Y, sendo X < Y. 
     Calcule e mostre:
-    •a soma dos números pares desse intervalo de números, incluindo os númerosdigitados;
+    •a soma dos números pares desse intervalo de números, incluindo os números digitados;
     •a multiplicação dos números ímpares desse intervalo, incluindo os digitados
 
 
