@@ -1,6 +1,7 @@
 /*
 
 Questões 1 a 6. Data limite de entrega: 20/05/2020 as 22:00.
+Atividade entrega no mesmo dia, ponto extra. prorrogada data entrega normal até dia 21/05.
 
 1) (0,2) Crie um programa capaz de ler os dados de uma matriz quadrada de inteiros. 
 Ao final da leitura o programa deverá imprimir o número da linha que contém o menor dentre todos os números lidos.
@@ -37,11 +38,13 @@ Este número deve ser sempre ímpar.
 Questões do URI: (treinar!) data da entrega (27/05/2020)
 https://www.urionlinejudge.com.br/judge/pt/problems/view/1011
 https://www.urionlinejudge.com.br/judge/pt/problems/view/1015
-https://www.urionlinejudge.com.br/judge/pt/problems/view/1015
 https://www.urionlinejudge.com.br/judge/pt/problems/view/1038
 https://www.urionlinejudge.com.br/judge/pt/problems/view/1046
 
-
+Faça uma função MAX que recebe como entrada um inteiro n, uma matriz inteira A nxn
+e devolve três inteiros: k, l e c. k é o maior elemento de A e é igual a A[l][c]. Se o
+elemento máximo ocorrer mais de uma vez, indique em l e c qualquer uma das
+possíveis posições. Use ponteiros para os argumentos.
 
 
 
