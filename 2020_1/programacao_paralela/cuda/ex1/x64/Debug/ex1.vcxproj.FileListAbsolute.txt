@@ -1,0 +1,2 @@
+C:\Users\Rambim\Documents\Pessoal\iesb\2020_1\programacao_paralela\cuda\ex1\x64\Debug\ex1.exe
+C:\Users\Rambim\Documents\Pessoal\iesb\2020_1\programacao_paralela\cuda\ex1\x64\Debug\ex1.pdb

@@ -1,5 +1,0 @@
-/*
-
-implementar o problema da integral paralela utilizando reduction
-
-*/

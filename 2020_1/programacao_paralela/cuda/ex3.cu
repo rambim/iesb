@@ -1,7 +1,8 @@
+#include "cuda_runtime.h"
+#include "device_launch_parameters.h"
+
 #include <stdio.h>
-#include <stdlib.h>
-#include <cuda.h>
-#include <cuda_runtime.h>
+#include "omp.h"
 
 
 __global__ void funcao1(int *var_gpu)
