@@ -37,3 +37,15 @@ cada processo e identificado pelo RANK
 
 Várias funções e primtivas que facilitam 
 
+MPI_init
+
+MPI_Comm_size
+MPI_send
+MPI_Recv
+MPI_Finalize
+
+voce pode enviar uma msg sem que o outro estro esteja esperando.
+Essa msg fica em um buffer.
+Se o tamanho da msg for grande ele espera o repector sincronizar
+
+
