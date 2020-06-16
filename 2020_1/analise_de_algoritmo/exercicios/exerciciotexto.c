@@ -22,21 +22,9 @@ Busca de uma palavra em um texto
 
 3)  Implemente a Solução de BoyerMore (Hospool)
 
-    Cenas dos próximos capitulos ( Sunday)
-    
-    
 
-4)  Resolver os exercícios:
-    a)...
-    b)...
-    c)...
+4)  Implemente a solução KMP
 
-5)  Implemente a solução KMP
-
-6)  Resolver os exercícios:
-    a)...
-    b)...
-    c)...
 
 Questões BONUS
 
@@ -46,8 +34,6 @@ Questões BONUS
     Exercício 2.1
     Exercício 2.2
     Exercício 3.1
-
-
 
 */
 
