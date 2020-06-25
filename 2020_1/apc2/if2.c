@@ -7,7 +7,8 @@ int main()
 
     // 1 - Cliente
     // 2 - Administrador
-    // 3 - Cliente de baixa renda
+     // 3 - Cliente de baixa renda
+   
 
     printf("\n Digite o tipo do usuario");    
     scanf("%d", &tipo_de_usuario);
