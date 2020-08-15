@@ -4,7 +4,7 @@ GRUPO H   ok
         email PROJETO INTEGRADOR - GRUPO X - ENTREGA
         emanuel e raul  ok
 
-GRUPO I   Joao rodrigues e Isa ok
+GRUPO I   Joao rodrigues e Isa ok ( JÁ APRESENTOU )
     SAFEHUB OK
     email PROJETO INTEGRADOR - GRUPO X - ENTREGA
 
@@ -13,7 +13,7 @@ GRUPO J           Felipe Jesus e Andre Cruz    ok
         validar trabalho escrito
 
 GRUPO N         Gabriel santos e Matheus silva
-    LIEBRADO PRA APRESENTAÇÃO 22/
+    LIEBRADO PRA APRESENTAÇÃO (APRESENTOU)
      
 GRUPO B
     LIBERADO PRA BANCA      Lucas  e Luiz ok
@@ -31,6 +31,16 @@ GRUPO G         Ricardo e Isa.
     LIBERADO PRA BANCA
 
 
+GRUPO H     ok
+GRUPO I     OK
+GRUPO J   
+GRUPO N     OK 
+GRUPO B     OK
+GRUPO F     OK
+GRUPO K     ok
+GRUPO G     OK
+
+
 0,3 extra estrutura
 GABRIEL SILVA
 GABRIEL SOUSA
@@ -45,4 +55,8 @@ VINICIUS JOVITO
 VINICIUS JOVITO
 
 
+SAFEHUB
+HOTEIS
 
+
+GRUPO H 

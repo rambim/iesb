@@ -1,0 +1,23 @@
+
+
+Input QUADRADO OUTPUT
+Como o computador processa informação?
+representação binária
+diferença entre decimal e binário;
+bit;
+byte;
+representação de informação em binário
+ASCII
+Algorítmos
+Representações
+Variável
+Memória.
+Estrutura condicionais;
+Estruturas de Repetição;
+Arrays
+Matrizes
+
+
+
+
+
