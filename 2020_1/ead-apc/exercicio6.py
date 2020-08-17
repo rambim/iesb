@@ -1,7 +1,13 @@
-#4 ( 0.025)
+#3 e 4 ( 0.025)
 # Escreva um programa para calcular o tempo que será reduzido da vida de um ser humano. Leia do usuário a quantidade
 # cigarros fumados por dia e a quantidade de anos que usuário é fumante. Considere para o cálculo que o fumante
 # perde 10 minutos de vida por cada por cigarro. Calcule quantos dias de vida ele perderá. Mostre o resultado em dias.
+
+#ALEXANDRE CUNHA
+#ISRAEL MORAES
+#JOSÉ GIANNELLI
+#JEFFERSON SANTOS
+#Bruno
 
 
 qtd_cigarros_dia = float(input("Digite a quantidade de cigarros por dia: "))

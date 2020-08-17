@@ -1,12 +1,20 @@
-tipos_musicas = ['rock','pop','mpb','aaa','bbb','ccc','ddd','testefinal']
-print(tipos_musicas)
+def mostrar_desenho():
+    print(" ------------ ")
+    print("|            |")
+    print("|  Teste     |")
+    print("|    de      |")
+    print("|   Funcao   |")
+    print("|            |")
+    print("|            |")
+    print("|____________|")
 
 
-# print(tipos_musicas[0])
-# print(tipos_musicas[1])
-# print(tipos_musicas[2])
-
-for i in range(len(tipos_musicas)):
-    print(tipos_musicas[i])
+print("Momento 1")
+mostrar_desenho()
+print("Momento 2")
+mostrar_desenho()
+print("Momento 3")
+mostrar_desenho()
+print("Momento 4")
 
 
