@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+int funcao1( int x);
+void funcao2(int * x);
 int main()
 {
     int x=2,resposta;
@@ -7,6 +9,8 @@ int main()
     resposta = funcao1(x);
 
     printf("\n %d",resposta);    
+    printf("\n");
+    return 0;
 
 }
 int funcao1( int x)
