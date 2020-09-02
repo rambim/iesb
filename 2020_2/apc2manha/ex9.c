@@ -22,7 +22,7 @@ int main()
     return 0;
 }
 
-void preenche_celula(int  x[])
+void preenche_celula(int  * x)
 {
     *x = 2;
 }

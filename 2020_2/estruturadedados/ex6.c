@@ -9,5 +9,5 @@ typedef struct registro
 
 int main()
 {
-    numeros[10];
+    int numeros[10];
 }
