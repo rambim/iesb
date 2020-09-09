@@ -62,3 +62,13 @@ float calcula_media_2(aluno x)
 {
     return (x.n1 + x.n2) / 2.0;
 }
+
+
+
+// totalizadores de portarias
+
+// por tipo
+// por estado
+// habilitação positivo
+// desabilitação negativo
+// por mês.
