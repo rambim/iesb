@@ -19,6 +19,7 @@ Tercilio dos Santos Aires Fonseca - Matriculado	1922130012
 Welisson Hudson Fernandes Lima - Matriculado	1922130002
 
     31/08/2020 - O meio de ambiente. Poluição ambiente. 4 artigos sobre computação gráfica envolvento avaliação de imagem. Lógica Fuzzy. 
+    14/09/2020 - Avaliação de imagem de desmatamento utilizando Lógica Fuzzy;
 
 GRUPO D
 Ygor Borges Arêda - Matriculado	1912130041
@@ -36,21 +37,23 @@ Vinícius de Jesus Mendes Rodrigues - Matriculado	1912130068
 
     31/08/2020 - Jean não compareceu pelo segundo encontro consecutivo. Foi discutido a idéia da aplicação de algoritmos de busca. Booyer morem KMP, Algoritmo sequencial de busca de texto.
                  LCS Smithwatterman - Pra próxima aula, 2 artigos de boyer more, 1 artigo de KMP, 2 de LCS e Smithwatterman.
+    14/09/2020 - Procurar uma base grande; Pra proxima Overleaf, introdução, objetivo geral;
 
 
 GRUPO F
 Raul Corrêa Carneiro - Matriculado	1912130054
 
-    31/08/2020 - cubo mágico resolvido com algoritmo genético. Pesquisa sobre a parte gráfica para próxima aula.    
+    31/08/2020 - cubo mágico resolvido com algoritmo genético. Pesquisa sobre a parte gráfica para próxima aula.   
+    14/09/2020 - mudança para hash table; pra proxima aula base de dados que será utilziada para ser armazenada na hash table; introdução e objetivos gerais no Overleaf
 
 
 GRUPO G
 Luiz Felipe Carvalho Gomes - Matriculado	1922130018
 Willian Marreiros Santos - Matriculado	1822130044
 Gabriel Salmai Camargo Farias - Matriculado	1922130017
-Mateus Carneiro Lins - Matriculado	1922130027
 
     31/08/2020 - estão presentes gabriel farias e luiz gomes. 
+    14/09/2020 - aplicativo de van. Listas todas as funcionalidades desse aplicativo.
 
 
 GRUPO H

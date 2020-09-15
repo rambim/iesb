@@ -7,7 +7,7 @@ typedef struct Data
 } Data;
 
 /*
-Crie um programa que permita armazenar o nome, a altura e da data de nascimento de até 10 pessoas. 
+Crie um programa que permita armazenar o matricula, a altura e da data de nascimento de até 10 pessoas. 
 
 Cada pessoa deve ser representada por uma struct dentro de um vetor. 
 
