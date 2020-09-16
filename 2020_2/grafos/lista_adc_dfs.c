@@ -28,19 +28,21 @@ int constroi_dominio(char *c, registro_vertice *lista_adj, int *qtd);
 void mostrar_lista_gera(registro_vertice *lista_adj, int tam);
 lista_ligada *aloca_lista();
 registro *aloca_registro();
-void incluir_lista(lista_ligada *l, char *texto, char * vertice );
+void incluir_lista(lista_ligada *l, char *texto, char *vertice);
 void mostrar_lista(lista_ligada *l);
+int busca_indice(char *texto);
+void dfs(registro_vertice *r);
+
+registro_vertice lista_adj[100001];
+int qtd_registros = 0;
 
 int main()
 {
     arq = fopen("grafo1.txt", "r");
-    int qtd_registros = 0;
     int tamanho_dominio;
     char a[50], b[50];
     char linha[100];
     int i, ind_a, ind_b;
-
-    registro_vertice lista_adj[100001];
 
     for (i = 0; i < 100001; i++)
     {
@@ -78,15 +80,16 @@ int main()
 
             ind_a = constroi_dominio(a, lista_adj, &qtd_registros);
             // printf("\nIndice de %s = %d",a,ind_a);
-            incluir_lista(lista_adj[ind_a].lista, b,lista_adj[ind_a].vertice);
+            incluir_lista(lista_adj[ind_a].lista, b, lista_adj[ind_a].vertice);
 
             ind_b = constroi_dominio(b, lista_adj, &qtd_registros);
             // printf("\nIndice de %s = %d",b,ind_b);
-            incluir_lista(lista_adj[ind_b].lista, a,lista_adj[ind_b].vertice);
+            incluir_lista(lista_adj[ind_b].lista, a, lista_adj[ind_b].vertice);
         }
     }
 
-    mostrar_lista_gera(lista_adj, qtd_registros);
+    // mostrar_lista_gera(lista_adj, qtd_registros);
+    dfs(&lista_adj[0]);
     printf("\n");
 
     return 0;
@@ -142,16 +145,16 @@ registro *aloca_registro()
     return novo;
 }
 
-void incluir_lista(lista_ligada *l, char *texto, char * vertice )
+void incluir_lista(lista_ligada *l, char *texto, char *vertice)
 {
     registro *novo;
     novo = aloca_registro();
     strcpy(novo->valor, texto);
-    registro *aux=NULL, *ant=NULL;
+    registro *aux = NULL, *ant = NULL;
 
-    if (strcmp(texto,vertice)==0)
+    if (strcmp(texto, vertice) == 0)
     {
-        return ;
+        return;
     }
 
     if (l->inicio == NULL)
@@ -161,16 +164,16 @@ void incluir_lista(lista_ligada *l, char *texto, char * vertice )
     else
     {
         aux = l->inicio;
-        
-        while (aux != NULL && (strcmp(aux->valor,texto ) < 0))
+
+        while (aux != NULL && (strcmp(aux->valor, texto) < 0))
         {
             ant = aux;
             aux = aux->prox;
         }
 
-        if (aux!=NULL)
+        if (aux != NULL)
         {
-            if (strcmp(aux->valor,texto)==0)
+            if (strcmp(aux->valor, texto) == 0)
             {
                 return;
             }
@@ -183,9 +186,8 @@ void incluir_lista(lista_ligada *l, char *texto, char * vertice )
         {
             ant->prox = novo;
         }
-        
-        novo->prox = aux;
 
+        novo->prox = aux;
     }
 
     l->qtd++;
@@ -203,6 +205,47 @@ void mostrar_lista(lista_ligada *l)
     while (aux != NULL)
     {
         printf("\n %s", aux->valor);
+        aux = aux->prox;
+    }
+}
+
+int busca_indice(char *texto)
+{
+
+    int i;
+    for (i = 0; i < qtd_registros; i++)
+    {
+        if (strcmp(lista_adj[i].vertice, texto) == 0)
+        {
+            return i;
+        }
+    }
+    return -1;
+}
+
+void dfs(registro_vertice *r)
+{
+    registro *aux;
+    int indice, indice_prox;
+    indice = busca_indice(r->vertice);
+    lista_adj[indice].visitou = 1;
+    printf(" -> %s\n", lista_adj[indice].vertice);
+
+    if (lista_adj[indice].lista == NULL)
+    {
+        return;
+    }
+
+    aux = lista_adj[indice].lista->inicio;
+
+    while (aux != NULL)
+    {
+        indice_prox = busca_indice(aux->valor);
+
+        if (lista_adj[indice_prox].visitou == 0)
+        {
+            dfs(&lista_adj[indice_prox]);
+        }
         aux = aux->prox;
     }
 }
