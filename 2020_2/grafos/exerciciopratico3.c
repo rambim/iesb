@@ -1,33 +1,29 @@
 /*
-Given n, i.e. total number of nodes in an undirected graph numbered from 1 to n and an integer e, i.e. total number of edges in the graph. Calculate the total number of connected components in the graph. A connected component is a set of vertices in a graph that are linked to each other by paths.
-
-Input Format:
-
-First line of input line contains two integers n and e. Next e line will contain two integers u and v meaning that node u and node v are connected to each other in undirected fashion. 
-
-Output Format:
-
-For each input graph print an integer x denoting total number of connected components.
-
-Constraints:
-
-All the input values are well with in the integer range.
-
-SAMPLE INPUT 
-8 5
-1 2
-2 3
-2 4
-3 5
-6 7
-SAMPLE OUTPUT 
-3
 
 
-Time Limit:	5,0 sec(s) for each input file.
-Memory Limit:	256 MB
-Source Limit:	1024 KB
-https://www.hackerearth.com/pt-br/problem/algorithm/connected-components-in-a-graph/
+16;8
+16;50
+8;4
+8;12
+4;2
+4;6
+2;1
+2;3
+6;5
+6;7
+12;10
+12;14
+10;9
+10;11
+14;13
+14;15
+50;18
+50;60
+18;17
+18;25
+25;35
+60;70
 
+A partir dos dados lidos, construa a lista de adjacencia e diga qual a distancia entre todos os pontos dessa árvore e o nó raiz 16.
 
 */
