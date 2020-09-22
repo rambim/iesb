@@ -12,3 +12,58 @@ qual erro ocorreu.
 Os produtos devem ser amarmazenados em um vetor de structs
 */
 
+
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct produto
+{
+    int codigo;
+    float preco;
+    int qtd;
+}produto;
+
+void le_produto(produto * p);
+void preenche_lista_produtos(produto * produtos);
+void mostra_produto( produto p);
+
+
+
+int main()
+{
+    int i;
+    produto  produtos[5];
+
+    preenche_lista_produtos(produtos);
+
+    mostra_produto(produtos[0]);
+
+
+    printf("\n");
+    return 0;
+}
+
+void preenche_lista_produtos(produto * produtos)
+{
+    int i;
+    for(i=0;i<5;i++)
+    {
+        le_produto(&produtos[i]);
+    }
+}
+
+void le_produto(produto * p)
+{
+    printf("\n Digite o codigo do produto: ");
+    scanf("%d",p->codigo);
+    printf("\n Digite o preco do produto: ");
+    scanf("%d",&p->preco);
+    printf("\n Digite a quantide do produto: ");
+    scanf("%d",&p->qtd);
+}
+
+void mostra_produto( produto p)
+{
+    printf("\n\tCod.: %d\tPreco.: %f\tQtd.: %d");
+}
+
