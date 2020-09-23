@@ -7,31 +7,24 @@ typedef struct Data
 } Data;
 
 /*
-Crie um programa que permita armazenar o nome, a altura e da data de nascimento de até 10 pessoas. 
+Crie um programa que permita armazenar o matricula, a altura e da data de nascimento de até 10 pessoas. 
 
 Cada pessoa deve ser representada por uma struct dentro de um vetor. 
 
 A data de nascimento também deve ser uma struct.
 
-O nome e a altura de cada pessoa devem ser informados pelo teclado.
+A matricula e a altura de cada pessoa devem ser informados pelo teclado.
 
 A geração da data de nascimento deve ser feita aleatoriamente através da função abaixo
 
 */
 
-void CriaData(Data *D)
-{
-    D->mes = 1 + (rand() % 12);
-    D->ano = 1950 + (rand() % 49);
-    D->dia = 1 + (rand() % 30);
-}
-
 /*
     O programa deve, na tela de abertura, apresentar opções para:
 
-    inserir um nome;
-    listar todos os nomes e respectivas alturas;
-    listar os nomes das pessoas que nasceram antes de uma certa data fornecida.
+    inserir uma matricula;
+    listar todos as matriculas e respectivas alturas;
+    listar as matriculas das pessoas que nasceram antes de uma certa data fornecida.
 
 
 Cada uma destas opções deve ser implementada em uma função separada.
@@ -45,6 +38,9 @@ typedef struct
     float altura;
     Data nascimento;
 } Pessoa;
+
+
+void CriaData(Data *D);
 
 int main()
 {
@@ -72,4 +68,11 @@ int main()
             ImprimeMaisVelhos(povo, qtdPessoas, dia);
         }
     } while (opcao != 4);
+}
+
+void CriaData(Data *D)
+{
+    D->mes = 1 + (rand() % 12);
+    D->ano = 1950 + (rand() % 49);
+    D->dia = 1 + (rand() % 30);
 }
