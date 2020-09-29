@@ -34,6 +34,7 @@ int main()
         mostrar(lista_do_felippe);
         printf("\n Digite um numero para ser includo na lista: ");
         scanf("%d", &numero);
+        
         incluir_ordenado(lista_do_felippe, numero);
     } while (numero !=-1);
 }

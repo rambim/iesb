@@ -15,7 +15,7 @@ typedef struct registro
 
 registro *aloca_registro();
 lista *aloca_lista();
-void incluir_no_inicio(lista *l, int x);
+void incluir_ordenado(lista *l, int x);
 void incluir_no_final(lista *l, int x);
 void mostrar(lista *l);
 void remove_na_lista(lista *l, int x);
@@ -43,7 +43,7 @@ int main()
         case 1:
             printf("\n Digite um numero para ser includo no inicio lista: ");
             scanf("%d", &numero);
-            incluir_no_inicio(lista_do_felippe, numero);
+            incluir_ordenado(lista_do_felippe, numero);
             break;
         case 2:
             printf("\n Digite um numero para ser includo no final da lista: ");
@@ -82,7 +82,7 @@ registro *aloca_registro()
     return novo_registro;
 }
 
-void incluir_no_inicio(lista *l, int x)
+void incluir_ordenado(lista *l, int x)
 {
     registro *novo, *aux;
     novo = aloca_registro();
