@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    
+
+
+    GRUPO B OK
+    GRUPO D OK
+    GRUPO F NÃO OK. (SAIDA DE LABIRINTO). 
+    GRUPO G APRESENTAÇÃO DO GRUPO 
+    GRUPO H APRESENTAÇÃOS SEMANA QUE VEM 
+    GRUPO I TRABALHO ESTÁ QUASE PRONTO 
+    GRUPO J APRESENTAÇÃO, 
+    GRUPO K 
+    GRUPO N PRA 2 SEMANAS.
+    GRUPO R COMBINADO 80 % PRA SEMANA QUE VEM E DIA 25 TERMINADO!
+    
+
+
+
+    
+
+
+
+
+
+
+

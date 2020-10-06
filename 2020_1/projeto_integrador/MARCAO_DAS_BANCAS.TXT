@@ -1,0 +1,62 @@
+GRUPO H   ok
+    LABIRINTO - AGENDADO 22/06
+        validar trabalho escrito
+        email PROJETO INTEGRADOR - GRUPO X - ENTREGA
+        emanuel e raul  ok
+
+GRUPO I   Joao rodrigues e Isa ok ( JÁ APRESENTOU )
+    SAFEHUB OK
+    email PROJETO INTEGRADOR - GRUPO X - ENTREGA
+
+GRUPO J           Felipe Jesus e Andre Cruz    ok  
+    HASH PLACA DA CARROS
+        validar trabalho escrito
+
+GRUPO N         Gabriel santos e Matheus silva
+    LIEBRADO PRA APRESENTAÇÃO (APRESENTOU)
+     
+GRUPO B
+    LIBERADO PRA BANCA      Lucas  e Luiz ok
+    avisou que irá entregar amanhã dia 16/06.
+
+GRUPO F             Vinicius e gabriel ok
+    LIEBRADO PRA BANCA
+    EMAIL PROJETO INTEGRADOR - GRUPO X - ENTREGA
+
+GRUPO K             Leonardo Oliveira ok
+    LIBERADO PRA BANCA
+    PROJETO INTEGRADOR - GRUPO X - ENTREGA
+
+GRUPO G         Ricardo e Isa.
+    LIBERADO PRA BANCA
+
+
+GRUPO H     ok
+GRUPO I     OK
+GRUPO J   
+GRUPO N     OK 
+GRUPO B     OK
+GRUPO F     OK
+GRUPO K     ok
+GRUPO G     OK
+
+
+0,3 extra estrutura
+GABRIEL SILVA
+GABRIEL SOUSA
+GABRIEL SOUSA
+MATHEUS RODRIGUES
+MATHEUS RODRIGUES
+RAYMUNDO GUIMARÃES
+RAYMUNDO GUIMARÃES
+RICARDO LEWKOWICZ
+RICARDO LEWKOWICZ
+VINICIUS JOVITO
+VINICIUS JOVITO
+
+
+SAFEHUB
+HOTEIS
+
+
+GRUPO H 

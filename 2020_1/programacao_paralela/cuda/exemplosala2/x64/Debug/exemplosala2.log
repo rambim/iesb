@@ -1,0 +1,15 @@
+﻿  Compiling CUDA source file kernel.cu...
+  
+  C:\Users\Rambim\Documents\Pessoal\iesb\2020_1\programacao_paralela\cuda\exemplosala2>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.2\bin\nvcc.exe" -gencode=arch=compute_30,code=\"sm_30,compute_30\" --use-local-env -ccbin "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\bin\HostX86\x64" -x cu  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.2\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.2\include"  -G   --keep-dir x64\Debug -maxrregcount=0  --machine 64 --compile -cudart static  -g   -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /Fdx64\Debug\vc142.pdb /FS /Zi /RTC1 /MDd " -o x64\Debug\kernel.cu.obj "C:\Users\Rambim\Documents\Pessoal\iesb\2020_1\programacao_paralela\cuda\exemplosala2\kernel.cu" 
+C:/Users/Rambim/Documents/Pessoal/iesb/2020_1/programacao_paralela/cuda/exemplosala2/kernel.cu(27): warning : variable "qtd_threads" was declared but never referenced
+  
+C:/Users/Rambim/Documents/Pessoal/iesb/2020_1/programacao_paralela/cuda/exemplosala2/kernel.cu(28): warning : variable "qtd_blocos" was declared but never referenced
+  
+C:/Users/Rambim/Documents/Pessoal/iesb/2020_1/programacao_paralela/cuda/exemplosala2/kernel.cu(29): warning : variable "thread_id" was declared but never referenced
+  
+  kernel.cu
+C:/Users/Rambim/Documents/Pessoal/iesb/2020_1/programacao_paralela/cuda/exemplosala2/kernel.cu(80): warning C4477: 'printf': a cadeia de formato '%llu' requer um argumento do tipo 'unsigned __int64', mas um argumento variadic 1 tem o tipo 'int'
+  C:/Users/Rambim/Documents/Pessoal/iesb/2020_1/programacao_paralela/cuda/exemplosala2/kernel.cu(80): note: considere usar '%u' na cadeia de formato
+  C:/Users/Rambim/Documents/Pessoal/iesb/2020_1/programacao_paralela/cuda/exemplosala2/kernel.cu(80): note: considere usar '%I32u' na cadeia de formato
+C:/Users/Rambim/Documents/Pessoal/iesb/2020_1/programacao_paralela/cuda/exemplosala2/kernel.cu(120): warning C4244: 'argumento': conversão de 'unsigned __int64' para 'unsigned int', possível perda de dados
+  exemplosala2.vcxproj -> C:\Users\Rambim\Documents\Pessoal\iesb\2020_1\programacao_paralela\cuda\exemplosala2\x64\Debug\exemplosala2.exe
