@@ -1,0 +1,51 @@
+update
+upgrade
+apt-get install net-tools
+ifconfig
+apt-get install openssh-server
+apt-get install openssh-client
+mkdir ~/.ssh
+chmod 700 ~/.ssh
+ssh-keygen -t rsa
+
+id_rsa_master e slave
+
+cp id_rsa_slave.pub /home/rambim/.ssh
+cat /home/rambim/.ssh/id_rsa_slave.pub >> /home/rambim/.ssh/authorized_keys
+
+
+
+Cluster
+Aglomerado de máquinas
+Implementação de Sistema distribuídos
+
+Computação de Gráfica
+Análise de elementos finitos
+
+
+um servidor de arquivos
+as outras máquinas não necessariamente precisam de HD.
+
+Interface que implementa primitivas de comunicação ponto a ponto 
+arquitetura distirbuida
+memória não é distribuida
+
+pra todas máquinas entenderem o valor precisa passar o valor dessa variável na rede.
+
+MPI os grupos são chamados de comunicor
+cada processo e identificado pelo RANK
+
+Várias funções e primtivas que facilitam 
+
+MPI_init
+
+MPI_Comm_size
+MPI_send
+MPI_Recv
+MPI_Finalize
+
+voce pode enviar uma msg sem que o outro estro esteja esperando.
+Essa msg fica em um buffer.
+Se o tamanho da msg for grande ele espera o repector sincronizar
+
+

@@ -1,0 +1,43 @@
+22/04
+    algoritmo de ordenação e listagem com filtros
+
+            exmplo de explicação de trabalho escrito
+            esqueleto do trabalho escrito no formato SBC ( utilizem overleaf):
+            introdução: ( problema!) - labirinto
+            objetivo geral 
+                    como vcs vão resolver o problema? utilização do algoritmo genético
+                    comparação o alg genético com outro
+            objetivo especifico
+                    como vc vai fazer o objetivo geral:
+                        vamos gerar os labirintos assim assim assado
+                        vamos criar uma soluçãoi para sair do labirintod asim assim asssado
+                        vamos implentar utilizando as tecnologias assim assim assadas
+                        vamos comprar com os lgoritmos assim asasim assado.
+
+            referencial teórico
+                        o que vc precisa/entender pra fazer os objetivos espcificos
+                        3.1 algoritmo genetico
+                        3.2 algoritmo estrela
+                        3.3 java
+                        3.4 
+
+
+            nada produzido até agora. trabalho de texto está totalmente incompleto e nem 5% desenvolvido.
+            para próxima semana trabalho escrito pronto e para daqui 2 semanas no mínimo os algoritmos
+            já implementados e com medição de tempo.
+
+06/04/2020
+13/04/2020
+20/04/2020
+27/04/2020
+04/05/2020
+11/05/2020
+18/05/2020
+25/05/2020
+01/06/2020
+08/06/2020
+15/06/2020
+22/06/2020
+29/06/2020
+
+

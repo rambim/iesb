@@ -1,0 +1,17 @@
+Programa serial
+
+10k   | programa serial = 0.000261 
+100k  | programa serial = 0.002207
+1mb   | programa serial = 0.010699
+100mb | Falha de segmentação (imagem do núcleo gravada)
+1gb   | Falha de segmentação (imagem do núcleo gravada)
+10gb  | Falha de segmentação (imagem do núcleo gravada)
+
+programa paralelo
+
+10k   | 1 threads = 0.000388 | 2 threads = 0.000800 | 3 threads = 0.00862 | 4 threads = 0.001600| 5 threads = 0.000812| 6 threads = 0.000987
+100k  | 1 threads = 0.001599 | 2 threads = 0.005121 | 3 threads = 0.004604| 4 threads = 0.006171| 5 threads = 0.005466| 6 threads = 0.004853
+1mb   | 1 threads = 0.019218 | 2 threads = 0.072527 | 3 threads = 0.074336| 4 threads = 0.073995| 5 threads = 0.072723| 6 threads = 0.073316
+100mb | Falha de segmentação (imagem do núcleo gravada)
+1gb   | Falha de segmentação (imagem do núcleo gravada)
+10gb  | Falha de segmentação (imagem do núcleo gravada)

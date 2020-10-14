@@ -1,0 +1,78 @@
+GRUPO A
+Bruno de Jesus Viana - Matriculado	1922130001
+Pedro Leon Paranayba Clerot - Matriculado	1712130119
+João Victor Resende - Matriculado	1712130023
+
+    31/08/2020 - tema discutido em paralelismo em GPU. Os 3 estão presentes. Readequação de Tema. 6 Aplicações que utilizam Floyd Warshall com solução. Validar a escabalidade disso. Para próxima aula.
+
+
+GRUPO B
+Matheus Yago de Souza Coelho Rocha - Matriculado	1912130017
+Lucas Souza Nascimento - Matriculado	1722130008
+Síllas Adjalbas Barbosa dos Reis - Matriculado	1822130004
+
+    31/08/2020 - Fila de prioridade da vacina do corona. 2 artigos de busca, 1 artigo skip list, utilização de api REST
+
+GRUPO C
+Letícia Alves de Azevedo - Matriculado	2022130008
+Tercilio dos Santos Aires Fonseca - Matriculado	1922130012
+Welisson Hudson Fernandes Lima - Matriculado	1922130002
+
+    31/08/2020 - O meio de ambiente. Poluição ambiente. 4 artigos sobre computação gráfica envolvento avaliação de imagem. Lógica Fuzzy. 
+    14/09/2020 - Avaliação de imagem de desmatamento utilizando Lógica Fuzzy;
+    28/09/2020 - iniciando processo de desenvolvimento;
+    
+
+GRUPO D
+Ygor Borges Arêda - Matriculado	1912130041
+Igor Pereira Nascimento - Matriculado	1812130048
+Karoline Batista Silva - Matriculado	1722130059
+
+    31/08/2020  -   Comparação entre algoritmos de ordenação e Busca em um grande volume de dados. Covid.19.                    
+                    busca binária, hash table, árvore de busca. Pesquisa para próxima aula. 2 artigos de cada: Busca binária, hash table, árvore de busca, algoritmos de ordenação; Igor faltou.
+                 
+
+GRUOPO E
+Gabriel Oliveira Moura Lima - Matriculado	1912130050
+Jean Carlos Gomes Aguiar - Matriculado	1922130009
+Vinícius de Jesus Mendes Rodrigues - Matriculado	1912130068
+
+    31/08/2020 - Jean não compareceu pelo segundo encontro consecutivo. Foi discutido a idéia da aplicação de algoritmos de busca. Booyer morem KMP, Algoritmo sequencial de busca de texto.
+                 LCS Smithwatterman - Pra próxima aula, 2 artigos de boyer more, 1 artigo de KMP, 2 de LCS e Smithwatterman.
+    14/09/2020 - Procurar uma base grande; Pra proxima Overleaf, introdução, objetivo geral;
+    28/09/2020 - referencial teórico ainda primário. irão complemenjtar pra próxima aula
+
+
+GRUPO F
+Raul Corrêa Carneiro - Matriculado	1912130054
+
+    31/08/2020 - cubo mágico resolvido com algoritmo genético. Pesquisa sobre a parte gráfica para próxima aula.   
+    14/09/2020 - mudança para hash table; pra proxima aula base de dados que será utilziada para ser armazenada na hash table; introdução e objetivos gerais no Overleaf
+    28/09/2020 - apresentou referencial teórico iniciado. foi dispensado para estudo de provas e se possivel complementar referencial teórico.
+
+
+
+GRUPO G
+Luiz Felipe Carvalho Gomes - Matriculado	1922130018
+Willian Marreiros Santos - Matriculado	1822130044
+Gabriel Salmai Camargo Farias - Matriculado	1922130017
+
+    31/08/2020 - estão presentes gabriel farias e luiz gomes. 
+    14/09/2020 - aplicativo de van. Listas todas as funcionalidades desse aplicativo.
+    28/09/2020 - referencial teórico incorreto, solicitado ajuste e levantamento de funcionalidades ainda pendente.
+
+
+
+
+GRUPO H
+Nícolas Santos Teixeira Ribeiro - Matriculado	1922130028
+Gabriel Henrique Alberto de Jesus - Matriculado	1812130083
+Luis Eduardo dos Anjos de Almeida - Matriculado	1912130019
+
+    31/08/2020 - Avaliação de fotos de perfil de rede social para enquadramento nos padrões de uma vaga de emprego. 6 artigos sobre: Classificação de Imagem utilizando inteligencia artificial,
+    Tensor Flow, Keras. 
+    28/09/2020 - Não apresentaram nada.
+
+
+Rhiandre Alcantara Vieira Marques - Matriculado	1922130031
+

@@ -1,0 +1,45 @@
+30/03/2020
+    18:10
+        busca de local para aluguel.
+        seleção dos locais para visita
+        traça melhor caminho
+        floyd warshall
+        esquema de funcionalidades ok
+        adicionar no esqueleto:
+            Completar referencial teórico
+            ajustar introdução
+            incluir objetivo geral e especifico
+            revisar esses referências.
+            descobrir como será a interface com quem utiliza.
+
+13/04/2020
+    18:10
+            ajuste na introdução conforme recomendações.
+            ajuste nos objetivos especificos
+            ajuste nas referencias e número dos capitulos
+            padronização sbc.
+            revisadr referencias.
+
+20/04/2020
+27/04/2020
+04/05/2020
+11/05/2020
+
+
+    CONSULTA DE DESENVOLVIMENTO
+
+    APRESENTAÇAÕ SEMANA QUE VEM DO PROJETO FUNCIONANDO.
+    CRIAÇÃO DO PPT PRA APRESENTAÇÃO.
+
+
+
+
+18/05/2020
+25/05/2020
+01/06/2020
+08/06/2020
+15/06/2020
+22/06/2020
+29/06/2020
+
+

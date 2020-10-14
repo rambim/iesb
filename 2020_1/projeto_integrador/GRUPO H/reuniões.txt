@@ -1,0 +1,42 @@
+01/04/2020
+    18:30
+        Próximo encontro:
+            esqueleto do trabalho escrito no formato SBC ( utilizem overleaf):
+            introdução: ( problema!) - labirinto
+            objetivo geral 
+                    como vcs vão resolver o problema? utilização do algoritmo genético
+                    comparação o alg genético com outro
+            objetivo especifico
+                    como vc vai fazer o objetivo geral:
+                        vamos gerar os labirintos assim assim assado
+                        vamos criar uma soluçãoi para sair do labirintod asim assim asssado
+                        vamos implentar utilizando as tecnologias assim assim assadas
+                        vamos comprar com os lgoritmos assim asasim assado.
+
+            referencial teórico
+                        o que vc precisa/entender pra fazer os objetivos espcificos
+                        3.1 algoritmo genetico
+                        3.2 algoritmo estrela
+                        3.3 java
+                        3.4 
+            pro proximo encontro
+
+        
+
+22/04/2020
+        para 2 semanas eu quero os códigos pronto em 90%. Se possível realizar o ajuste no 
+        objetivo especifico, e incluir no referencial teórico mais imagens para facilitar
+        o entendimento. referencias bibliográficas com problema 
+
+
+04/05/2020
+11/05/2020
+18/05/2020
+25/05/2020
+01/06/2020
+08/06/2020
+15/06/2020
+22/06/2020
+29/06/2020
+
+

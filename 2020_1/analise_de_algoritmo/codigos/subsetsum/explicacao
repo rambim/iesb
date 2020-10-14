@@ -1,0 +1,76 @@
+
+
+A = {5, 4, 10, 8, 9,6}
+
+
+
+Ex de subconjunto Suba={5,4,10} = Sum(suba) = 19
+
+C ( CAPACIDADE) = 19.
+
+Números Naturais!   
+
+
+1 ) Existe algum somatório de subconjunto que é igual a capacidade? 
+    TRUE OU FALSE!
+2 ) Existe algum somatório de subconjunto que é igual a capacidade?
+     Mostre o primeiro encontrado!
+3 ) Existe algum somatório de subconjunto que é igual a capacidade?
+    Mostre todos os subconjuntos!
+
+
+Problema do mochileiro viajante! Só que não!
+
+
+
+Resolvendo problema com programação dinamica:
+
+Matriz com os valores do conjunto em cada linha
+e cada coluna numerado de 0 até N onde N seja o maior valor do somatório do conjunto
+A coluna 0 será totalmente preenchida com TRUE.
+No caso do 1 eu vejo se o meu valor da linha pode chegar no valor da coluna
+se o primeiro valor do conjunto for 2, ele só sera true no 2
+Quando for preencher da segunda linha pra frente, se o valor da coluna for inferior, copia o valor da celula de cima
+Quando o valor da linha for igual ou superior ao da coluna , voce sobe 1 celular e retorna X celularas para esquerda (onde X = Valor da linha)
+se a celular de cima for TRUE pode atribur como TRUE a sua
+
+
+if (j < input[i])
+    t[i][j] = t[i-1][j]
+else
+    t[i][j] = t[i-1][j] se for true ou
+              t[i-1][j-input[i]]
+
+
+
+ Solicitacao       : 17/03/2020 Hora 17:02       Captura: 17/03/2020 Hora 17:02
+
+ 426452783
+ 1559
+ 27002
+
+
+ 4984423477171165   ESTER MIRANDA SOUZA  T    BLOQ.PROVISORIO-PEDIDO  NAO   
+
+
+T(n) = 2 + T(n-1) + T(n-1)
+
+Ai eu fiz o T(n-1) que é 2 + 2T(n-2)
+e o T(n-2) que é 2 + 2T(n-3)
+
+Daí expandi T(n) = 2 + 2T(n-1):
+
+T(n) = 2 + 2(2 + 2T(n-2)) = 2 + 2² + 2²T(n-2)
+T(n) = 2 + 2² + 2²(2 + 2T(n-3)) = 2 + 2² + 2³ + 2³T(n-3)
+
+Generalizando, esse padrão é:
+T(n) = 2 + 2² + ... + 2^(k-2) + 2^(k-1) + 2^k + (2^n) * T(n-k)
+Reorganizando e reescrevendo a sequência numérica iniciada em 2:
+T(n) = (2^n) * T(n-k) + 2 + 2² + ... + 2^(k-2) + 2^(k-1) + 2^k
+T(n) = (2^n) * T(n-k) + 2^k - 2
+assumindo n - k = 0, já que o consumo de tempo do algoritmo é proporcional ao número de invocações e em seu caso especial T(0)=0 para n = 0 e para n >= 1 o próprio T(n):
+T(n) = (2^n) * constante + 2^k - 2
+T(n) = 2^n + 2^n - 2
+T(n) = 2^(n+1) - 2
+Portanto:
+Consumo de tempo em até O(2^n)

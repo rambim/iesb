@@ -1,0 +1,20 @@
+d
+i
+h
+f
+j
+r
+
+
+
+rede neural para identificar se era uma foto
+2.7	Transformada Discreta do Cosseno para extrair as informações essenciais.
+
+A Relação Sinal-Ruído de Pico (PSNR) psnr faz a comparação pra ver se é igual
+
+a compresão de dados que é feita no momento de retirada das caracteristicas "essenciais" para análise do reconhecimento
+é uma consequência ou foi um objetivo específico e desejado na escolha do método?
+
+
+
+
