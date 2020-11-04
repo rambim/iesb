@@ -4,6 +4,9 @@ Pedro Leon Paranayba Clerot - Matriculado	1712130119
 João Victor Resende - Matriculado	1712130023
 
     31/08/2020 - tema discutido em paralelismo em GPU. Os 3 estão presentes. Readequação de Tema. 6 Aplicações que utilizam Floyd Warshall com solução. Validar a escabalidade disso. Para próxima aula.
+    19/10/2020 - 
+    26/10/2020 - até oróximo encontro finalizado a aplicação
+
 
 
 GRUPO B
@@ -12,6 +15,7 @@ Lucas Souza Nascimento - Matriculado	1722130008
 Síllas Adjalbas Barbosa dos Reis - Matriculado	1822130004
 
     31/08/2020 - Fila de prioridade da vacina do corona. 2 artigos de busca, 1 artigo skip list, utilização de api REST
+    26/10/2020 - Até o próximo encontro, aplicação terminada. ajustes do trabalho escrito e inciio da apresentação.
 
 GRUPO C
 Letícia Alves de Azevedo - Matriculado	2022130008
@@ -21,6 +25,7 @@ Welisson Hudson Fernandes Lima - Matriculado	1922130002
     31/08/2020 - O meio de ambiente. Poluição ambiente. 4 artigos sobre computação gráfica envolvento avaliação de imagem. Lógica Fuzzy. 
     14/09/2020 - Avaliação de imagem de desmatamento utilizando Lógica Fuzzy;
     28/09/2020 - iniciando processo de desenvolvimento;
+    26/10/2020 - proposta de paralelismo.
     
 
 GRUPO D
@@ -41,6 +46,7 @@ Vinícius de Jesus Mendes Rodrigues - Matriculado	1912130068
                  LCS Smithwatterman - Pra próxima aula, 2 artigos de boyer more, 1 artigo de KMP, 2 de LCS e Smithwatterman.
     14/09/2020 - Procurar uma base grande; Pra proxima Overleaf, introdução, objetivo geral;
     28/09/2020 - referencial teórico ainda primário. irão complemenjtar pra próxima aula
+    26/10/2020 - 
 
 
 GRUPO F
@@ -49,6 +55,7 @@ Raul Corrêa Carneiro - Matriculado	1912130054
     31/08/2020 - cubo mágico resolvido com algoritmo genético. Pesquisa sobre a parte gráfica para próxima aula.   
     14/09/2020 - mudança para hash table; pra proxima aula base de dados que será utilziada para ser armazenada na hash table; introdução e objetivos gerais no Overleaf
     28/09/2020 - apresentou referencial teórico iniciado. foi dispensado para estudo de provas e se possivel complementar referencial teórico.
+    26/10/2020 - tabela hash implementada. busca binária, e outras buscas pendentes.
 
 
 

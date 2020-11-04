@@ -28,7 +28,7 @@ int constroi_dominio(char *c, registro_vertice *lista_adj, int *qtd);
 void mostrar_lista_gera(registro_vertice *lista_adj, int tam);
 lista_ligada *aloca_lista();
 registro *aloca_registro();
-void incluir_lista(lista_ligada *l, char *texto, char * vertice );
+void incluir_ordenado_lista(lista_ligada *l, char *texto, char * vertice );
 void mostrar_lista(lista_ligada *l);
 
 int main()
@@ -78,11 +78,11 @@ int main()
 
             ind_a = constroi_dominio(a, lista_adj, &qtd_registros);
             // printf("\nIndice de %s = %d",a,ind_a);
-            incluir_lista(lista_adj[ind_a].lista, b,lista_adj[ind_a].vertice);
+            incluir_ordenado_lista(lista_adj[ind_a].lista, b,lista_adj[ind_a].vertice);
 
             ind_b = constroi_dominio(b, lista_adj, &qtd_registros);
             // printf("\nIndice de %s = %d",b,ind_b);
-            incluir_lista(lista_adj[ind_b].lista, a,lista_adj[ind_b].vertice);
+            incluir_ordenado_lista(lista_adj[ind_b].lista, a,lista_adj[ind_b].vertice);
         }
     }
 
@@ -142,7 +142,7 @@ registro *aloca_registro()
     return novo;
 }
 
-void incluir_lista(lista_ligada *l, char *texto, char * vertice )
+void incluir_ordenado_lista(lista_ligada *l, char *texto, char * vertice )
 {
     registro *novo;
     novo = aloca_registro();
