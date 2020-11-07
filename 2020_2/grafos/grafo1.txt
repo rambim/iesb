@@ -1,7 +1,8 @@
-a;c
-a;d
-b;f
-c;e
-d;e
-e;g
-f;g
+felippe;victoria
+robertson;matheus
+henrard;matheus
+henrard;mariana
+matheus;mariana
+victoria;fernando
+mariana;sabrina
+sabrina;fernando
