@@ -220,7 +220,7 @@ void quicksort2(long int *vet, long int inicio, long int fim)
     {
         quicksort2(vet,i,fim);
     }
-    return ;
+    // return ;
 }
 
 
