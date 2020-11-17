@@ -25,6 +25,8 @@ void intercala(long int *vet, long int inicio, long int meio, long int fim);
 void mergesort(long int *vet, long int inicio, long int fim);
 void quicksort(long int *vet, long int inicio, long int fim);
 void quicksort2(long int *vet, long int inicio, long int fim);
+void insertionsort(long int *vet,long int tam);
+void teste(long int * vet , long int tam);
 
 
 int main()
@@ -35,18 +37,18 @@ int main()
     srand(time(NULL));
     FILE *arq;
 
-    // tam= 10;
-    // vet=gera_vetor(tam);
-    // embaralha_vetor(vet,tam);
+    tam= 10;
+    vet=gera_vetor(tam);
+    embaralha_vetor(vet,tam);
 
-    // printf("\n Mostrando antes de ordenar: ");
-    // mostrar_vetor(vet,tam);
-    // printf("\n Mostrando depois de ordenar:");
-    // quicksort2(vet,0,tam-1);
-    // mostrar_vetor(vet,tam);
-    // return 0;
+    printf("\n Mostrando antes de ordenar: ");
+    mostrar_vetor(vet,tam);
+    printf("\n Mostrando depois de ordenar:");
+    teste(vet,tam);
+    mostrar_vetor(vet,tam);
+    return 0;
 
-    arq = fopen("temposquicksort2.txt", "w");
+    arq = fopen("temposinsertionsort.txt", "w");
 
     if (arq == NULL)
     {
@@ -54,7 +56,7 @@ int main()
         return 0;
     }
 
-    for (tam = 10000; tam <= 1000000; tam = tam + 10000)
+    for (tam = 10000; tam <= 150000; tam = tam + 10000)
     {
         fprintf(arq, "%ld;", tam);
         t1 = omp_get_wtime();
@@ -65,7 +67,7 @@ int main()
         printf("\nTempo total para criacao do vetor: %lf", t2 - t1);
 
         t1 = omp_get_wtime();
-        quicksort2(vet, 0, tam - 1);
+        insertionsort(vet,tam );
         t2 = omp_get_wtime();
 
         // printf("\n Mostrando conteudo do vetor depois de ordenar: \n");
@@ -273,6 +275,31 @@ void intercala(long int *vet, long int inicio, long int meio, long int fim)
     return;
 }
 
+
+void insertionsort(long int *vet, long int tam)
+{
+    int i, j, ind_menor, aux;
+    
+    for(i=0;i<tam-1;i++)
+    {
+        ind_menor = i;
+        for(j=i+1;j<tam;j++)
+        {
+            if (vet[j] < vet[ind_menor])
+            {
+                ind_menor = j;
+            }
+        }
+
+        aux = vet[i];
+        vet[i] = vet[ind_menor];
+        vet[ind_menor] = aux;
+    }
+
+    return;
+}
+
+
 long int *gera_vetor(long int tam)
 {
     long int *vet;
@@ -299,3 +326,32 @@ void embaralha_vetor(long int *vet, long int tam)
         vet[ind_aux] = aux;
     }
 }
+
+void teste(long int * vet ,long  int tam)
+{
+    int i,j,aux;
+
+    for(i=1;i<tam;i++)
+    {
+        aux = vet[i];
+        for(j=i-1;j>=0 && vet[j] > aux;j--)
+        {
+            vet[j+1] = vet[j];
+        }
+        vet[j+1] = aux;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
