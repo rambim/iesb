@@ -1,0 +1,3 @@
+Nome: felippe1 Matricula: 1 Media 2.000000
+Nome: felippe2 Matricula: 2 Media 3.500000
+Nome: felippe3 Matricula: 3 Media 10.000000
