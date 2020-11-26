@@ -1,0 +1,4 @@
+brasilia 40
+sao_paulo 100
+minas_gerais 50
+

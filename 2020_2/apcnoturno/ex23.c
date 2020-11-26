@@ -27,3 +27,6 @@ int main()
 
     return 0;
 }
+
+// fgets,  fgetc , fscanf, fread
+// fputs, fputc, fprintf, fwrite
