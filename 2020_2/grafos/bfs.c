@@ -259,10 +259,10 @@ void incluir_ordenado_lista(lista_ligada *l, char *texto, char *vertice)
     strcpy(novo->valor, texto);
     registro *aux = NULL, *ant = NULL;
 
-    if (strcmp(texto, vertice) == 0)
-    {
-        return;
-    }
+    // if (strcmp(texto, vertice) == 0)
+    // {
+    //     return;
+    // }
 
     if (l->inicio == NULL)
     {

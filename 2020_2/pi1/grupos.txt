@@ -18,9 +18,9 @@ Síllas Adjalbas Barbosa dos Reis - Matriculado	1822130004
     26/10/2020 - Até o próximo encontro, aplicação terminada. ajustes do trabalho escrito e inciio da apresentação.
 
 GRUPO C
-Letícia Alves de Azevedo - Matriculado	2022130008
-Tercilio dos Santos Aires Fonseca - Matriculado	1922130012
-Welisson Hudson Fernandes Lima - Matriculado	1922130002
+Letícia Alves de Azevedo - Matriculado	2022130008  5,0
+Tercilio dos Santos Aires Fonseca - Matriculado	1922130012 5,0
+Welisson Hudson Fernandes Lima - Matriculado	1922130002 5,3
 
     31/08/2020 - O meio de ambiente. Poluição ambiente. 4 artigos sobre computação gráfica envolvento avaliação de imagem. Lógica Fuzzy. 
     14/09/2020 - Avaliação de imagem de desmatamento utilizando Lógica Fuzzy;
@@ -50,7 +50,7 @@ Vinícius de Jesus Mendes Rodrigues - Matriculado	1912130068
 
 
 GRUPO F
-Raul Corrêa Carneiro - Matriculado	1912130054
+Raul Corrêa Carneiro - Matriculado	1912130054 8,0
 
     31/08/2020 - cubo mágico resolvido com algoritmo genético. Pesquisa sobre a parte gráfica para próxima aula.   
     14/09/2020 - mudança para hash table; pra proxima aula base de dados que será utilziada para ser armazenada na hash table; introdução e objetivos gerais no Overleaf
@@ -82,4 +82,63 @@ Luis Eduardo dos Anjos de Almeida - Matriculado	1912130019
 
 
 Rhiandre Alcantara Vieira Marques - Matriculado	1922130031
+
+
+
+ENTREGA FINAL
+
+GRUPO A ok ok
+GRUPO B ok ok
+GRUPO C OK ok
+GRUPO D OK 
+GRUPO E ok ok
+GRUPO F ok ok
+GRUPO G
+GRUPO H
+GRUPO I
+GRUPO J
+GRUPO K
+
+
+cliente 1
+funcionario 2 
+login 3
+produto(estoque) 4
+geração de qr-code 5 
+
+    modelo 6 (4)
+    estoque 8 (4)
+
+    perfil 7 (1,2,3)
+
+        orçamento 11 (6,8,7)
+
+            pedido 12 (11)
+
+                desconto 9 (12)
+                esteira 15 (12)
+                    produção_produto_fisico (15)
+
+                pagamento 13 (12)
+                    caixa 14 (9,13)
+                    campanha (9,13)
+
+
+configurações ok
+rotinas ok
+relatorios
+
+
+
+
+
+exercicio string
+exercicio string 2
+exercicio alocacao dinamica e ponteiros
+exercicio arquivos 
+
+exercicio teórico e pratico 4,5,6
+
+
+
 
