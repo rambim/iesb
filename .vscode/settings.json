@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "random": "c",
-        "string": "c"
+        "string": "c",
+        "stdlib.h": "c"
     }
 }
