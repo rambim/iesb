@@ -1,8 +1,0 @@
-felippe;victoria
-robertson;matheus
-henrard;matheus
-henrard;mariana
-matheus;mariana
-victoria;fernando
-mariana;sabrina
-sabrina;fernando
