@@ -1,6 +1,7 @@
 /*
 
-Faça um programa que receba do usuario um número N inteiro positivo, e aloque dinamicamente um vetor de N sanduíches.
+Faça um programa que receba do usuario um número N inteiro 
+positivo, e aloque dinamicamente um vetor de N sanduíches.
 
 Cada sanduíche deve armazenara as segunites informações:
     nome
