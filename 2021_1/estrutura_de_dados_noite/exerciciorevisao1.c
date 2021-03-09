@@ -14,7 +14,7 @@ D) Qual o cachorro mais velho.
 E) Quantos cachorros são maiores do que 30 cm.
 
 
-2) Faça um programa que receba do usuário dois números N e M positivos inteiros do usuário. Aloque um vetor de N números inteiros, 
+2) Faça um programa que receba do usuário dois números N e M positivos inteiros. Aloque um vetor de N números inteiros, 
 preencha os N números. Para cada um dos N números mostre a diferença em relação a M:
 
 Ex:
