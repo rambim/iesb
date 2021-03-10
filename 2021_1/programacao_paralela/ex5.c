@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "omp.h"
 
-static long num_steps = 1000;
+static long num_steps = 100000;
 
 double step;
 
@@ -19,16 +19,24 @@ int main(int argc, char *argv[])
     step = 1.0 / (double)num_steps;
 
     printf("\n Quantidade de threads: %d", qtd_threads);
-
-        for (i = 0; i < num_steps; i++)
+#pragma omp parallel
+    {
+        int i;
+        double x;
+        int id;
+        id = omp_get_thread_num();
+        // printf("\n Eu sou a thread %d", id);
+        for (i = id; i < num_steps; i = i + qtd_threads)
         {
-            printf("\nI = %d",i);
+            // printf("\nI = %d", i);
             x = (i + 0.5) * step;
 
             sum = sum + 4.0 / (1.0 + x * x);
-            printf("\n Sum: %lf",sum);
+            // printf("\n Sum: %lf", sum);
         }
-        printf("\n Step: %lf Sum: %lf",step,sum);
+        // printf("\n Step: %lf Sum: %lf", step, sum);
+    }
+
     pi = step * sum;
 
     printf("\n Pi = %lf", pi);
