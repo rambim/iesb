@@ -10,7 +10,7 @@
 int main()
 {
     int i,j,x;
-    int vet[10]=x; 
+    int vet[]=x; 
     for(i=0;i<10;i++)
     {
         if (vet[i]%3==0)
