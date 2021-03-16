@@ -163,3 +163,37 @@ void elementos_em_comum(lista * l1, lista * l2)
     }
 
 }
+
+int remover(lista *l, int x)
+{
+    if (l->inicio==NULL)
+    {
+        return 0;
+    }
+
+    registro * aux=NULL, *ant=NULL;
+
+    aux=l->inicio;
+    while(aux!=NULL)
+    {   
+        if (aux->valor == x)
+        {
+            if (ant==NULL)
+            {
+                l->inicio = aux->prox;
+            }
+            else
+            {
+                ant->prox = aux->prox;
+            }
+            l->qtd--;
+            free(aux);
+            return 1;
+        }
+        ant = aux;
+        aux = aux->prox;
+    }
+
+    return 0;
+
+}
