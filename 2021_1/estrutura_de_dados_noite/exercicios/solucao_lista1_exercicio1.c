@@ -151,3 +151,37 @@ void menu(lista *l)
         }
     } while (opcao != 5);
 }
+
+int remover(lista *l, int x)
+{
+    if (l->inicio==NULL)
+    {
+        return 0;
+    }
+
+    registro * aux=NULL, *ant=NULL;
+
+    aux=l->inicio;
+    while(aux!=NULL)
+    {   
+        if (aux->valor == x)
+        {
+            if (ant==NULL)
+            {
+                l->inicio = aux->prox;
+            }
+            else
+            {
+                ant->prox = aux->prox;
+            }
+            l->qtd--;
+            free(aux);
+            return 1;
+        }
+        ant = aux;
+        aux = aux->prox;
+    }
+
+    return 0;
+
+}
