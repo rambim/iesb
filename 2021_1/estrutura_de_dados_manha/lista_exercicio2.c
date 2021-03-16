@@ -17,7 +17,9 @@ e os números ímpares em uma segunda lista ligada. Mostre o conteúdo das 2 lis
 
     
 4) Ajuste a solução do exercício 3 para que a pesquisa de números em comuns seja feita utilizando o algoritmo Balance-Line.
-    Dicas: A inserção na lista precisa ser ordenada!
+    Dicas: A inserção na lista precisa ser ordenada! 
+
+    PRA AGORA
 
 */
 
