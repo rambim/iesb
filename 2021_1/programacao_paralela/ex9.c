@@ -1,9 +1,7 @@
 /* 
 
 TECNICAS DE SINCRONIZAÇÃO 
-
-
-B ) EXCLUSÃO MÚTUA ( CRITICAL )
+    B ) EXCLUSÃO MÚTUA ( CRITICAL )
 
 resultado 15;
 

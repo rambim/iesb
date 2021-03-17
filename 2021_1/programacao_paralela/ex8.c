@@ -1,20 +1,15 @@
 /*
 
 TECNICAS DE SINCRONIZAÇÃO
-
     A) BARREIRA
 
-
 resultado: 
-0 150
+ 0 150
  1 210
  2 270
  3 330
  4 390
  5 450
-
-
-
 */
 
 #include <stdio.h>
