@@ -1,8 +1,4 @@
-// 1) Utilizando como base o programa lista_ligada.c, construa um programa que disponibilize ao usuario as seguintes opcoes
 
-//     a) Incluir na lista: O usuário irá informar um número que será incluído na lista
-//     b) Mostrar lista: deverá ser mostrado na tela a lista completa.
-//     c) Mostrar pares da lista: deverá ser mostrado na tela apenas os números pares
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -29,20 +25,10 @@ int remover(lista *l, int x);
 
 int main()
 {
-    lista **listas;
+    lista *l1;
 
-    int n = 30;
-    int i;
-
-    listas =  (lista**)malloc(sizeof(lista*) * n);
-
-    for(i=0;i<n;i++)
-    {
-        listas[i] = aloca_lista();
-    }
-
-
-    menu(listas[0]);
+    l1 = aloca_lista();
+    menu(l1);
     printf("\n");
     return 0;
 }
