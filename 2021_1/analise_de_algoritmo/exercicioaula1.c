@@ -6,16 +6,18 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#define TAM1 10
+#define TAM2 10
 
 int main()
 {
     int i,j,x;
     int vet[]=x; 
-    for(i=0;i<sizeof(vet);i++)
+    for(i=0;i<TAM1;i++)
     {
         if (vet[i]%3==0)
         {
-            for(j=0;j<sizeof(vet);j++)
+            for(j=0;j<TAM2;j++)
             {
                 printf("\n Senhor");
             }
