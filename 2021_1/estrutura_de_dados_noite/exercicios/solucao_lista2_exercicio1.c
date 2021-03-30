@@ -22,7 +22,7 @@ registro *aloca_registro();
 
 void mostrar_lista(lista *l);
 void incluir_ordenado(lista *l, int x);
-int remover_todos(lista *l, int x);
+int remover_todos_primos(lista *l, int x);
 lista *numeros_comuns(lista *l1, lista *l2);
 
 int main()
@@ -66,8 +66,8 @@ int main()
         aux = lista_comum->inicio;
         while(aux!=NULL)
         {
-            remover_todos(l1,aux->valor);
-            remover_todos(l2,aux->valor);
+            remover_todos_primos(l1,aux->valor);
+            remover_todos_primos(l2,aux->valor);
             aux=aux->prox;
         }
     }
@@ -159,7 +159,7 @@ void mostrar_lista(lista *l)
 }
 
 
-int remover_todos(lista *l, int x)
+int remover_todos_primos(lista *l, int x)
 {
     if (l->inicio == NULL)
     {

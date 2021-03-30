@@ -21,6 +21,7 @@ void mostrar(lista *l, int inverso);
 void incluir_no_inicio(lista *l, int x);
 void incluir_no_final(lista *l, int x);
 void menu(lista *l);
+int remover(lista *l, int x);
 
 int main()
 {
@@ -126,6 +127,65 @@ void mostrar(lista *l, int inverso)
     }
 }
 
+int remover(lista *l, int x)
+{
+    if (l->inicio == NULL && l->fim == NULL)
+    {
+        printf("\n Lista vazia");
+        return 0;
+    }
+
+    registro *aux = NULL, *anterior = NULL, *proximo = NULL;
+    int apagado = 0;
+
+    aux = l->inicio;
+    while (aux != NULL)
+    {
+        if (aux->valor == x)
+        {
+            anterior = aux->ant;
+            proximo = aux->prox;
+
+            if (anterior == NULL)
+            {
+                l->inicio = proximo;
+            }
+            else
+            {
+                anterior->prox = proximo;
+            }
+
+            if (proximo == NULL)
+            {
+                l->fim = anterior;
+            }
+            else
+            {
+                proximo->ant = anterior;
+            }
+
+            free(aux);
+            apagado = 1;
+            l->qtd--;
+            if (anterior == NULL)
+            {
+                aux = l->inicio;
+            }
+            else
+            {
+                aux = anterior->prox;
+            }
+        }
+        else
+        {
+            aux = aux->prox;
+        }
+    }
+    if (apagado)
+        return 1;
+    else
+        return 0;
+}
 void menu(lista *l)
 {
     int opcao, numero;
@@ -135,6 +195,7 @@ void menu(lista *l)
         printf("\n2 - Incluir no final da lista");
         printf("\n3 - Mostrar lista");
         printf("\n4 - Mostrar lista inversa");
+        printf("\n5 - Remover");
         scanf("%d", &opcao);
 
         switch (opcao)
@@ -156,11 +217,23 @@ void menu(lista *l)
             mostrar(l, 1);
             break;
         case 5:
+            printf("\n Digite um numero para remover: ");
+            scanf("%d", &numero);
+            if (remover(l, numero))
+            {
+                printf("\nnumero removido com sucesso");
+            }
+            else
+            {
+                printf("\n Numero nao existe o lista vazia");
+            }
+            break;
+        case 6:
             printf("\n saindo do programa");
             break;
         default:
             printf("\n opcao invalida");
             break;
         }
-    } while (opcao != 5);
+    } while (opcao != 6);
 }
