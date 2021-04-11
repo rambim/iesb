@@ -29,8 +29,8 @@ int main(int argc, char *argv[])
 
     #pragma omp parallel
     {
-        int i, id, n_threads;
         double x;
+        int i, id, n_threads;
         id = omp_get_thread_num();
         n_threads = omp_get_num_threads();
         if (id==0)
