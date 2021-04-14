@@ -60,6 +60,7 @@ int main()
     }
 
     t2 = omp_get_wtime();
+    omp_get_max_threads
     printf("\nCount total: %d Som final = %d Tempo gasto %lf",count_total,som_final,t2-t1);
 
     return 0;

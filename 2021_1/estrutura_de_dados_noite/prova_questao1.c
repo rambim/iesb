@@ -24,7 +24,7 @@ registro * aloca_registro();
 void incluir_no_inicio ( lista * l, int x);
 void mostrar(lista * l);
 int primo(int x);
-void primos_no_inicio (lista * l);
+void remover_perfeitos (lista * l);
 
 int main()
 {
@@ -43,7 +43,7 @@ int main()
 
 
     mostrar(l1);
-    primos_no_inicio(l1);
+    remover_perfeitos(l1);
     printf("\n Mostrando com primos no inicio: ");
     mostrar(l1);
     printf("\n");
@@ -94,7 +94,7 @@ void mostrar(lista * l)
     }
 }
 
-void primos_no_inicio (lista * l)
+void remover_perfeitos (lista * l)
 {
     registro * aux,*ant=NULL,*removido=NULL;
 

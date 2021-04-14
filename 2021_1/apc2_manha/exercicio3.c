@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+int funcao(int * x, int * y, int z);
 int main()
 {
     int a,b,*c,x;
