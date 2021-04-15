@@ -3,6 +3,7 @@
         "random": "c",
         "string": "c",
         "stdlib.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "stdio_ext.h": "c"
     }
 }
