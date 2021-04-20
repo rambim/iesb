@@ -1,12 +1,11 @@
 /*
 Utilizando as seguintes estruturas, construa um programa que implemente as seguintes funções:
-insert ou enqueue - insere itens numa ila (ao inal).
-remove ou dequeue - retira itens de uma ila (primeiro item).
-empty - veriica se a ila está vazia.
-size - retorna o tamanho da ila.
-front - retorna o próximo item da ila sem retirar o mesmo da ila
+insert ou enqueue - insere itens numa fila (ao final).
+remove ou dequeue - retira itens de uma fila (primeiro item).
+empty - veriica se a fila está vazia.
+size - retorna o tamanho da fila.
+front - retorna o próximo item da fila sem retirar o mesmo da fila
 */
-
 typedef struct fila
 {
     int tamanho;
