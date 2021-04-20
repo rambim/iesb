@@ -7,6 +7,8 @@ Disponibilize as seguintes operações ao usuário:
 2 - Pop
 3 - Empty
 4 - Stackpop
-5 - Sair.
+5 - Inverter Pilha
+6 - Sair.
 
 */
+
