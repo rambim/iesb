@@ -1,0 +1,31 @@
+ip master
+192.168.15.11
+
+Ip Slave
+192.168.15.10
+
+
+3 etapas:
+
+	1) Instalação do SSH ( server como client)
+	2) Install NFS ( nfs server master, nfs client nos slaves ).
+	3) Open OpenMPI.
+	4) Rodar um teste.
+
+
+Em todas as máquinas executar:
+	sudo apt-get update
+	sudo apt-get upgrade
+	sudo apt-get install openssh-server
+	sudo apt-get install openssh-client
+
+
+Criar um diretório em todas as máquinas
+	mkdir ~/.ssh 
+	chmod 700 ~/.ssh
+
+
+	
+id_rsa_slave.pub
+
+
