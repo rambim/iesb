@@ -26,7 +26,7 @@ typedef struct elemento
 fila *aloca_fila();
 elemento *aloca_elemento();
 void insert(fila *f, int x);
-int remove(fila *f);
+int dequeue(fila *f);
 int empty(fila *f);
 int size(fila *f);
 int front(fila *f);
@@ -73,7 +73,7 @@ void insert(fila *f, int x)
     f->tamanho++;
 }
 
-int remove(fila *f)
+int dequeue(fila *f)
 {
     if (f->inicio == NULL && f->fim == NULL)
         return 0;
@@ -132,7 +132,7 @@ void menu(fila *f)
             if (empty(f))
                 printf("\n Fila vazia");
             else
-                numero = remove(f);
+                numero = dequeue(f);
                 printf("\n Numero chamado: %d",numero);
             break;
         case 3:
