@@ -18,9 +18,6 @@ Em todas as máquinas executar:
 	sudo apt-get upgrade
 	sudo apt-get install openssh-server
 	sudo apt-get install openssh-client
-
-
-Criar um diretório em todas as máquinas
 	mkdir ~/.ssh 
 	chmod 700 ~/.ssh
 

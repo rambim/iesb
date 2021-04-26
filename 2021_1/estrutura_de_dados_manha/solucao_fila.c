@@ -26,7 +26,7 @@ typedef struct elemento
 fila *aloca_fila();
 elemento *aloca_elemento();
 void insert(fila *f, int x);
-int remove(fila *f);
+int dequeue(fila *f);
 int empty(fila *f);
 int size(fila *f);
 int front(fila *f);
@@ -34,7 +34,7 @@ void menu(fila *f);
 
 int main()
 {
-    fila * f1;
+    fila *f1;
     f1 = aloca_fila();
     menu(f1);
     printf("\n");
@@ -73,7 +73,7 @@ void insert(fila *f, int x)
     f->tamanho++;
 }
 
-int remove(fila *f)
+int dequeue(fila *f)
 {
     if (f->inicio == NULL && f->fim == NULL)
         return 0;
@@ -83,6 +83,10 @@ int remove(fila *f)
 
     aux = f->inicio;
     f->inicio = aux->prox;
+
+    if (f->inicio == NULL)
+        f->fim = NULL;
+
     retorno = aux->valor;
     free(aux);
     f->tamanho--;
@@ -125,15 +129,17 @@ void menu(fila *f)
         {
         case 1:
             printf("\n Digite um numero para ser inserido: ");
-            scanf("%d",&numero);
-            insert(f,numero);
+            scanf("%d", &numero);
+            insert(f, numero);
             break;
         case 2:
             if (empty(f))
                 printf("\n Fila vazia");
             else
-                numero = remove(f);
-                printf("\n Numero chamado: %d",numero);
+            {
+                numero = dequeue(f);
+                printf("\n Numero chamado: %d", numero);
+            }
             break;
         case 3:
             if (empty(f))
@@ -142,13 +148,13 @@ void menu(fila *f)
                 printf("\n Fila nao esta vazia");
             break;
         case 4:
-                printf("\n Tamanho da fila: %d",size(f));
+            printf("\n Tamanho da fila: %d", size(f));
             break;
         case 5:
             if (empty(f))
                 printf("\n Fila vazia");
             else
-                printf("\n Proximo a ser chamado: %d",front(f));
+                printf("\n Proximo a ser chamado: %d", front(f));
             break;
         case 9:
             printf("\n Saindo do programa");
