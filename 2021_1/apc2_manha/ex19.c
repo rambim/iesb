@@ -20,6 +20,8 @@ int main()
     __fpurge(stdin);
     fgets(nome2,28,stdin);
     nome2[strlen(nome2)-1] = '\0';
+
+    
     // NÃO PODE SER ASSIM 
     // if (nome1 == nome2)
     // if (&nome1[0] == &nome2[0])
