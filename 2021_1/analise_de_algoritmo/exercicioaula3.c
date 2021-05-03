@@ -5,7 +5,9 @@
     e) Calcule o tempo para dizer se existe um subset sum para um vetor de vários tamanhos N( 1, 5, 10 , 15, 20, 25, 30 ,35 ,40 ,45 ,50) e diversos
        custos C (5,20,40,70,90,110).
     f) Qual a complexidade do algoritmo utilizando programacao dinâmica.
+    tamaanho_do_vetor * valor desejado
 */
+
 
 
 
