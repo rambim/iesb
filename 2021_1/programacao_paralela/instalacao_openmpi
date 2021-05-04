@@ -1,8 +1,8 @@
 ip master
-192.168.15.11
+192.168.0.27
 
 Ip Slave
-192.168.15.10
+192.168.0.26
 
 
 3 etapas:
@@ -12,14 +12,156 @@ Ip Slave
 	3) Open OpenMPI.
 	4) Rodar um teste.
 
+Etapa 1) Instalar SSH e dar permissões. Em todas as máquinas executar:
 
-Em todas as máquinas executar:
+
 	sudo apt-get update
 	sudo apt-get upgrade
 	sudo apt-get install openssh-server
 	sudo apt-get install openssh-client
 	mkdir ~/.ssh 
 	chmod 700 ~/.ssh
+***********************************************
+Etapa 2) Criar chave RSA em todas as máquinas
+	
+	ssh-keygen -t rsa (path: /home/<user>/.ssh/id_rsa_XXXX)
+
+Etapa 3) Copiar o arquivo id_rsa_master.pub para todos slaves.
+	scp id_rsa_master.pub slave@192.168.0.26:/home/slave/.ssh/
+
+Etapa 4) Copiar o arquivo id_rsa_slave.pub de todos os slaves para o master.
+	scp id_rsa_slave.pub master@192.168.0.27:/home/master/.ssh/
+
+Etapa 5) Copiar o conteúdo da chave RSA dos slaves para o arquivo authorized_keys na master:
+	cat /home/master/.ssh/id_rsa_slave.pub >> /home/master/.ssh/authorized_keys
+
+Etapa 6) Copiar o conteúdo da chave RSA da master para o arquivo authorized_keys nos slaves:
+	cat /home/slave/.ssh/id_rsa_master.pub >> /home/slave/.ssh/authorized_keys
+******************************************************************
+
+ssh-copy-id -i ~/.ssh/id_rsa_master.pub slave@192.168.0.26
+ssh-copy-id -i ~/.ssh/id_rsa_slave.pub master@192.168.0.27
+
+
+Etapa 7) Em todas as máquinas editar o arquivo /etc/ssh/sshd_config e adicionar 2 linhas e descomentar 1:
+	sudo nano /etc/ssh/sshd_config
+		PubkeyAuthentication yes
+		RSAAuthentication yes
+		AuthorizedKeysFile      .ssh/authorized_keys .ssh/authorized_keys2
+
+
+Etapa 8) Reiniciar o serviço de SSH em todas as máquinas:
+	sudo service ssh restart
+
+Etapa 9) Logar via SSH da master nas slaves 
+
+	ssh slave@XXXXXX
+
+Etapa 10) Logar via SSH das slaves na master
+	ssh master@XXXXXX
+
+Etapa 11) Instalar NFS Server na master:
+	sudo apt-get update
+	sudo apt-get install nfs-kernel-server
+
+Etapa 12) Crie um diretório para ser um diretório compartilhado na master:
+	sudo mkdir -p /home/master/openmpi/pasta_compartilhada
+	sudo chown nobody:nogroup /home/master/openmpi/pasta_compartilhada
+	sudo chmod 777 /home/master/openmpi/pasta_compartilhada
+
+Etapa 13) Adicione ao arquivo /etc/exports na master:
+	sudo nano /etc/exports
+		 /home/master/openmpi/pasta_compartilhada 192.168.0.26(rw,sync,no_subtree_check)
+
+Etapa 14) Exportar o diretório compartilhado:
+	sudo exportfs -a
+
+Etapa 15) Reiniciara o servidor NFS:
+	sudo systemctl restart nfs-kernel-server
+
+Etapa 16) Verifique se o firewall está desativado:
+	sudo ufw status
+
+Etapa 17) Instale o client de NFS nos slaves:
+	sudo apt-get update
+	sudo apt-get install nfs-common
+
+Etapa 18) Crie um diretorio na slaves que irá sincronizar com o compartilhado da master:
+	sudo mkdir -p /home/slave/openmpi/pasta_compartilhada
+
+Etapa 19) Monte o volume compartilhado utilizando o diretorio criado:
+	sudo mount 192.168.0.27:/home/master/openmpi/pasta_compartilhada /home/slave/openmpi/pasta_compartilhada
+
+Etapa 20) Valide o NFS
+	master
+		nano /home/master/openmpi/pasta_compartilhada/teste.txt
+	slave
+		ls /home/slave/openmpi/pasta_compartilhada
+
+Etapa 21) Instale o GCC em todas as máquinas:
+	sudo apt-get update
+	sudo apt-get install gcc
+	sudo apt-get install openmpi-bin openmpi-common libopenmpi-dev libgtk2.0-dev
+
+Etapa 22) Download e descompacte o Openmpi em Todas as máquinas:
+	
+	wget https://download.open-mpi.org/release/open-mpi/v4.1/openmpi-4.1.1.tar.gz
+	tar -xvf openmpi-4.1.1.tar.gz
+
+Etapa 23) Vá ao diretório do openmpi e adicione configure o prefixo na master:
+	./configure --prefix="/home/master/.openmpi"
+	make
+	sudo make install
+
+Etapa 24) Vá ao diretório do openmpi e adicione configure o prefixo nos slaves:
+	./configure --prefix="/home/slave/.openmpi"
+	make
+	sudo make install
+
+Etapa 25) Exporte os PATH na master:
+	export PATH="$PATH:/home/master/.openmpi/bin"
+	export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/master/.openmpi/lib"
+
+Etapa 26) Exporte os PATH nos slaves:
+	export PATH="$PATH:/home/slave/.openmpi/bin"
+	export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/slave/.openmpi/lib"
+
+Etapa 27) Valide a instalação com os comandos em todas as máquinas:
+	mpirun
+	mpicc
+
+Etapa 28) Edite o arquivo hosts da master:
+	sudo nano /etc/hosts
+		127.0.0.1 localhost
+		192.168.0.26 slave
+
+		Desabilite as outras linhas.
+
+Etapa 29) Edite o arquivo hosts dos slaves:
+	sudo nano /etc/hosts
+		127.0.0.1 localhost
+		192.168.0.27 slave
+
+		Desabilite as outras linhas.
+
+Etapa 30) Teste o arquivo mpirun.c
+		mpicc mpi-prime.c -o ./outputfile
+		mpirun --hostfile /etc/hosts -np 4 ./outputfile
+
+
+
+
+
+
+		
+
+	
+	
+
+
+
+
+
 
 
 	
