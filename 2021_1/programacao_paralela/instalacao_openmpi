@@ -39,7 +39,9 @@ Etapa 6) Copiar o conteúdo da chave RSA da master para o arquivo authorized_key
 	cat /home/slave/.ssh/id_rsa_master.pub >> /home/slave/.ssh/authorized_keys
 ******************************************************************
 
-ssh-copy-id -i ~/.ssh/id_rsa_master.pub slave@192.168.0.26
+ssh-keygen
+ssh-copy-id mpiuser@192.168.0.23
+
 ssh-copy-id -i ~/.ssh/id_rsa_slave.pub master@192.168.0.27
 
 
@@ -65,13 +67,13 @@ Etapa 11) Instalar NFS Server na master:
 	sudo apt-get install nfs-kernel-server
 
 Etapa 12) Crie um diretório para ser um diretório compartilhado na master:
-	sudo mkdir -p /home/master/openmpi/pasta_compartilhada
-	sudo chown nobody:nogroup /home/master/openmpi/pasta_compartilhada
-	sudo chmod 777 /home/master/openmpi/pasta_compartilhada
+	sudo mkdir -p /home/mpiuser/openmpi/pasta_compartilhada
+	sudo chown nobody:nogroup /home/mpiuser/openmpi/pasta_compartilhada
+	sudo chmod 777 /home/mpiuser/openmpi/pasta_compartilhada
 
 Etapa 13) Adicione ao arquivo /etc/exports na master:
 	sudo nano /etc/exports
-		 /home/master/openmpi/pasta_compartilhada 192.168.0.26(rw,sync,no_subtree_check)
+		 /home/mpiuser/openmpi/pasta_compartilhada 192.168.0.26(rw,sync,no_subtree_check)
 
 Etapa 14) Exportar o diretório compartilhado:
 	sudo exportfs -a
@@ -87,16 +89,16 @@ Etapa 17) Instale o client de NFS nos slaves:
 	sudo apt-get install nfs-common
 
 Etapa 18) Crie um diretorio na slaves que irá sincronizar com o compartilhado da master:
-	sudo mkdir -p /home/slave/openmpi/pasta_compartilhada
+	sudo mkdir -p /home/mpiuser/openmpi/pasta_compartilhada
 
 Etapa 19) Monte o volume compartilhado utilizando o diretorio criado:
-	sudo mount 192.168.0.27:/home/master/openmpi/pasta_compartilhada /home/slave/openmpi/pasta_compartilhada
+	sudo mount 192.168.0.22:/home/mpiuser/openmpi/pasta_compartilhada /home/mpiuser/openmpi/pasta_compartilhada
 
 Etapa 20) Valide o NFS
 	master
-		nano /home/master/openmpi/pasta_compartilhada/teste.txt
+		nano /home/mpiuser/openmpi/pasta_compartilhada/teste.txt
 	slave
-		ls /home/slave/openmpi/pasta_compartilhada
+		ls /home/mpiuser/openmpi/pasta_compartilhada
 
 Etapa 21) Instale o GCC em todas as máquinas:
 	sudo apt-get update
@@ -109,22 +111,22 @@ Etapa 22) Download e descompacte o Openmpi em Todas as máquinas:
 	tar -xvf openmpi-4.1.1.tar.gz
 
 Etapa 23) Vá ao diretório do openmpi e adicione configure o prefixo na master:
-	./configure --prefix="/home/master/.openmpi"
+	./configure --prefix="/home/mpiuser/.openmpi"
 	make
 	sudo make install
 
 Etapa 24) Vá ao diretório do openmpi e adicione configure o prefixo nos slaves:
-	./configure --prefix="/home/slave/.openmpi"
+	./configure --prefix="/home/mpiuser/.openmpi"
 	make
 	sudo make install
 
 Etapa 25) Exporte os PATH na master:
-	export PATH="$PATH:/home/master/.openmpi/bin"
-	export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/master/.openmpi/lib"
+	export PATH="$PATH:/home/mpiuser/.openmpi/bin"
+	export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/mpiuser/.openmpi/lib"
 
 Etapa 26) Exporte os PATH nos slaves:
-	export PATH="$PATH:/home/slave/.openmpi/bin"
-	export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/slave/.openmpi/lib"
+	export PATH="$PATH:/home/mpiuser/.openmpi/bin"
+	export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/mpiuser/.openmpi/lib"
 
 Etapa 27) Valide a instalação com os comandos em todas as máquinas:
 	mpirun
@@ -146,7 +148,7 @@ Etapa 29) Edite o arquivo hosts dos slaves:
 
 Etapa 30) Teste o arquivo mpirun.c
 		mpicc mpi-prime.c -o ./outputfile
-		mpirun --hostfile /etc/hosts -np 4 ./outputfile
+		mpirun --hostfile /etc/hosts -np 4 ./outputfile""
 
 
 
