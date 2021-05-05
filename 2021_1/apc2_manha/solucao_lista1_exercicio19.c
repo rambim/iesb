@@ -18,7 +18,7 @@ int main()
     pessoa pessoas[10];
     int n;
 
-    int vetor[N];
+    int vetor[n];
 
     if (preenche_pessoas(pessoas, 10))
     {
