@@ -9,16 +9,16 @@ As informações desse arquivo serão dadas da seguinte forma:
 
 Exemplo de labirinto.
 
-1   1   1   1   1   1   
-1   2   2   2   2   1   
-1   1   1   1   2   1
-1   2   2   2   2   1   
-1   2   1   1   1   1   
-1   2   2   2   3   1   
-1   1   1   1   1   1
+111111   
+122221   
+111121
+122221   
+121111   
+122231   
+111111
 
 Seu programa deverá receber um número N que corresponde a quantidade de threads, N pontos inicias(X,Y) que correspondem 
-as posições iniciais de cada thread e deverá gravar em um arquivo quantos e em quais direções cada thread se movimentou para 
+as posições iniciais de cada thread. Caada thread deverá gravar em um arquivo quantos e em quais direções cada thread se movimentou para 
 tentar encontrar a posição da recompensa. Cada thread deverá executar no máximo 50 movimentações. 
 
 Exemplo de arquivo de saida:
