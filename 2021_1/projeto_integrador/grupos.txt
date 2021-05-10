@@ -13,20 +13,25 @@ Bruno de Amorim Campos - Matriculado	1712130009
 Jean Carlos Gomes Aguiar - Matriculado	1922130009
 Lucas Melo Borges - Matriculado	2012130002
 
-GRUPO B
+GRUPO B (Mapa de ocupação de leitos)
 Alan da Mota Nascimento - Matriculado	2012130037
 Eduardo Cézar Pereira Fernandes - Matriculado	2012130068
 Daniel Lucas Oliveira Lucena - Matriculado	2012130058
 
-GRUPO C
+GRUPO C (Getninjas )
 Victor Almeida Cintra - Matriculado	2012130023
 Gabriel May Prochnow - Matriculado	2012130063
 Gabriel Alberto Moura de Sá - Matriculado	2012130033
 
-GRUPO D
+
+GRUPO D ( Dog Walker )
 Arthur Rocha Caldeira - Matriculado	2012130045
 Luíz Henrique de Carvalho Teles - Matriculado	2012130027
 Marcos Sergio Jordão de Sousa - Matriculado	2112130013
+
+
+
+
 
 GRUPO E
 Arthur Borges da Silveira - Matriculado	2012130004
@@ -38,6 +43,15 @@ Pietro Nazar Neiva - Matriculado	1812130062
 Gabriel Henrique Alberto de Jesus - Matriculado	1812130083
 Matheus Nogueira Dos Santos - Matriculado	1812130017
 
+30/04/2021 Diagrama do projeto
+07/05/2021 Entrega do Material Teórico
+14/05/2021 Docker
+21/05/2021 Tela da leitura(Apresentar as palavras na velocidade)
+28/05/2021 Retorno estatísticas
+04/06/2021 Front pronto
+11/06/2021 Aplicação subindo na web
+18/06/2021 Entrega e Apresentação
+
 GRUPO G
 Aenã Eloi Martinelli - Matriculado	2012130016
 Davi Pereira Speck Alves - Matriculado	2012130053
@@ -47,6 +61,15 @@ GRUPO H
 Gabriel Salmai Camargo Farias - Matriculado	1922130017
 Luis Eduardo dos Anjos de Almeida - Matriculado	1912130019
 Luiz Felipe Carvalho Gomes - Matriculado	1922130018
+
+30/04/2021 - Término do UML
+07/05/2021 - Criação da base do código 
+14/05/2021 - Implementação do UML no código
+21/05/2021 - Revisão da aplicação do sistema e suas funcionalidades
+28/05/2021 - Término do trabalho escrito com todas as bibliotecas e frameworks usados no código
+04/06/2021 - Criação do slide para a apresentação
+11/06/2021 - Revisão e término
+18/06/2021 Entrega e Apresentação
 
 
 
