@@ -1,8 +1,8 @@
 ip master
-192.168.0.27
+192.168.0.23
 
 Ip Slave
-192.168.0.26
+192.168.0.24
 
 
 3 etapas:
@@ -11,6 +11,11 @@ Ip Slave
 	2) Install NFS ( nfs server master, nfs client nos slaves ).
 	3) Open OpenMPI.
 	4) Rodar um teste.
+
+	Link de imagems ubuntu: https://ubuntu.com/download
+
+	
+
 
 Etapa 1) Instalar SSH e dar permissões. Em todas as máquinas executar:
 
@@ -21,28 +26,32 @@ Etapa 1) Instalar SSH e dar permissões. Em todas as máquinas executar:
 	sudo apt-get install openssh-client
 	mkdir ~/.ssh 
 	chmod 700 ~/.ssh
-***********************************************
-Etapa 2) Criar chave RSA em todas as máquinas
-	
-	ssh-keygen -t rsa (path: /home/<user>/.ssh/id_rsa_XXXX)
 
-Etapa 3) Copiar o arquivo id_rsa_master.pub para todos slaves.
-	scp id_rsa_master.pub slave@192.168.0.26:/home/slave/.ssh/
+Etapa 2) Edite o arquivo hosts da master:
+	sudo nano /etc/hosts
+		127.0.0.1 localhost
+		192.168.0.XX slave
 
-Etapa 4) Copiar o arquivo id_rsa_slave.pub de todos os slaves para o master.
-	scp id_rsa_slave.pub master@192.168.0.27:/home/master/.ssh/
+		Desabilite as outras linhas.
 
-Etapa 5) Copiar o conteúdo da chave RSA dos slaves para o arquivo authorized_keys na master:
-	cat /home/master/.ssh/id_rsa_slave.pub >> /home/master/.ssh/authorized_keys
+Etapa 3) Edite o arquivo hosts dos slaves:
+	sudo nano /etc/hosts
+		127.0.0.1 localhost
+		192.168.0.XX slave
 
-Etapa 6) Copiar o conteúdo da chave RSA da master para o arquivo authorized_keys nos slaves:
-	cat /home/slave/.ssh/id_rsa_master.pub >> /home/slave/.ssh/authorized_keys
-******************************************************************
+		Desabilite as outras linhas.
+
+Etapa 4) Criar chave RSA da master e exportar para slave:
 
 ssh-keygen
-ssh-copy-id mpiuser@192.168.0.23
+ssh-copy-id mpiuser@slave
 
-ssh-copy-id -i ~/.ssh/id_rsa_slave.pub master@192.168.0.27
+Etapa 5) Criara chave RSA da slave e exportar para master
+
+ssh-keygen
+ssh-copy-id mpiuser@master
+
+Etapa 6) Valide os acessos nas máquinas sem impostar senha.
 
 
 Etapa 7) Em todas as máquinas editar o arquivo /etc/ssh/sshd_config e adicionar 2 linhas e descomentar 1:
@@ -92,7 +101,7 @@ Etapa 18) Crie um diretorio na slaves que irá sincronizar com o compartilhado d
 	sudo mkdir -p /home/mpiuser/openmpi/pasta_compartilhada
 
 Etapa 19) Monte o volume compartilhado utilizando o diretorio criado:
-	sudo mount 192.168.0.22:/home/mpiuser/openmpi/pasta_compartilhada /home/mpiuser/openmpi/pasta_compartilhada
+	sudo mount master:/home/mpiuser/openmpi/pasta_compartilhada /home/mpiuser/openmpi/pasta_compartilhada
 
 Etapa 20) Valide o NFS
 	master
@@ -132,41 +141,16 @@ Etapa 27) Valide a instalação com os comandos em todas as máquinas:
 	mpirun
 	mpicc
 
-Etapa 28) Edite o arquivo hosts da master:
-	sudo nano /etc/hosts
-		127.0.0.1 localhost
-		192.168.0.26 slave
-
-		Desabilite as outras linhas.
-
-Etapa 29) Edite o arquivo hosts dos slaves:
-	sudo nano /etc/hosts
-		127.0.0.1 localhost
-		192.168.0.27 slave
-
-		Desabilite as outras linhas.
+Etapa 28) Criar um arquivo mpi-hosts dentro da pasta pasta_compartilhada
+	sudo nano mpi-hosts
+		localhost slots=2
+		master
+		slave
+	
 
 Etapa 30) Teste o arquivo mpirun.c
 		mpicc mpi-prime.c -o ./outputfile
-		mpirun --hostfile /etc/hosts -np 4 ./outputfile""
+		mpirun --hostfile mpi-hosts -np 4 ./outputfile""
 
-
-
-
-
-
-		
-
-	
-	
-
-
-
-
-
-
-
-	
-id_rsa_slave.pub
 
 
