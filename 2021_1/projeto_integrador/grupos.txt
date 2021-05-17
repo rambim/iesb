@@ -13,30 +13,58 @@ Bruno de Amorim Campos - Matriculado	1712130009
 Jean Carlos Gomes Aguiar - Matriculado	1922130009
 Lucas Melo Borges - Matriculado	2012130002
 
+
 GRUPO B (Mapa de ocupação de leitos)
 Alan da Mota Nascimento - Matriculado	2012130037
 Eduardo Cézar Pereira Fernandes - Matriculado	2012130068
 Daniel Lucas Oliveira Lucena - Matriculado	2012130058
+30/04/2021 - Início da criação da API
+07/05/2021 - organização do cronograma e resolução de problema na API
+14/05/2021 - União api/forntend
+21/05/2021 - Parte escrita
+28/05/2021 - Inserção elementos no mapa do projeto 
+04/06/2021 - Melhorias ao projeto
+11/06/2021 - Ajustes finais e finalização do projeto 
+18/06/2021 - Entrega e Apresentação
+
 
 GRUPO C (Getninjas )
 Victor Almeida Cintra - Matriculado	2012130023
 Gabriel May Prochnow - Matriculado	2012130063
 Gabriel Alberto Moura de Sá - Matriculado	2012130033
+14/05/2021 - Telas feitas no Unity e prévia do backend
+21/05/2021 - Trabalho escrito
+28/05/2021 - Estar com a aplicação quase toda pronta
+04/06/2021 -  Aplicação pronta para testes e possíveis ajustes
+11/06/2021 - Prévia da apresentação
+18/06/2021 - Entrega e Apresentação
 
 
 GRUPO D ( Dog Walker )
 Arthur Rocha Caldeira - Matriculado	2012130045
 Luíz Henrique de Carvalho Teles - Matriculado	2012130027
 Marcos Sergio Jordão de Sousa - Matriculado	2112130013
-
-
-
+30/04/2021 - Início da criação da API
+07/05/2021 - organização do cronograma e resolução de problema na API
+14/05/2021 - União api/forntend
+21/05/2021 - Parte escrita
+28/05/2021 - Inserção elementos no mapa do projeto 
+04/06/2021 - Melhorias ao projeto
+11/06/2021 - Ajustes finais e finalização do projeto 
+18/06/2021 - Entrega e Apresentação
 
 
 GRUPO E
 Arthur Borges da Silveira - Matriculado	2012130004
 Marco Paulo Gouveia Nocello - Matriculado	2012130001
 Pedro Costa Resende Faleiros - Matriculado	2012130067
+
+14/05/2021 - protótipo de telas
+21/05/2021 - pegar dados do professor
+28/05/2021 - iniciar parte de banco de dados
+04/06/2021 - finalização do banco de dados ( trabalho escrito)
+11/06/2021 - revisão final do trabalho
+18/06/2021 Entrega e Apresentação
 
 GRUPO F
 Pietro Nazar Neiva - Matriculado	1812130062
