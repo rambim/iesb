@@ -54,7 +54,7 @@ Marcos Sergio Jordão de Sousa - Matriculado	2112130013
 18/06/2021 - Entrega e Apresentação
 
 
-GRUPO E
+GRUPO E(Dos  professores)
 Arthur Borges da Silveira - Matriculado	2012130004
 Marco Paulo Gouveia Nocello - Matriculado	2012130001
 Pedro Costa Resende Faleiros - Matriculado	2012130067
@@ -80,10 +80,19 @@ Matheus Nogueira Dos Santos - Matriculado	1812130017
 11/06/2021 Aplicação subindo na web
 18/06/2021 Entrega e Apresentação
 
-GRUPO G
+GRUPO G ( pesquisa de texto)
 Aenã Eloi Martinelli - Matriculado	2012130016
 Davi Pereira Speck Alves - Matriculado	2012130053
 Eduardo de Oliveira Alvim - Matriculado	2012130076
+• 21/05/2021 – Função trata_texto (retira acentuações gráficas) e adesão do algoritmo KMP ao
+código.
+• 28/05/2021 – Ser possível input de arquivos que não sejam .TXT (.PDF, .DOCX) e fazer a
+contagem de aparição por página (mostrando qual é mais relevante de acordo com a busca).
+• 04/06/2021 – Terminar documento overleaf e construir o programa em si (de acordo com o
+modelo no figma).
+• 11/06/2021 – Tentar incluir a apresentação de todo período em que foi encontrado a palavra
+como saída e concluir apresentação com definição dos detalhes da mesma.
+• 18/06/2021 - Entrega e apresentação.
 
 GRUPO H
 Gabriel Salmai Camargo Farias - Matriculado	1922130017

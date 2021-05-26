@@ -153,16 +153,14 @@ Etapa 30) Teste o arquivo mpirun.c
 		mpirun --hostfile mpi-hosts -np 4 ./outputfile""
 
 
+mpirun --mca btl_base_warn_component_unused 0 --hostfile mpi-hosts -np 2 ./mpi1
+MPI_ANY_TAG
+MPI_ANY_SOURCE
 
-Registros que tiveram alteração/cancelamento/desautorização:
 
-CNES 2525933 portaria 737 alterado/cancelado/desautorizado pela portaria 598
-
-Portarias de cancelamento:
-598
-599
-686.
-
+status.MPI_ERROR
+status.MPI_SOURCE
+status.MPI_TAG
 
 
 
