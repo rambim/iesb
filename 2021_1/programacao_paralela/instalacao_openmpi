@@ -163,5 +163,7 @@ status.MPI_SOURCE
 status.MPI_TAG
 
 
+MPI_Bcast(&x, 1, MPI_INT, 0, MPI_COMM_WORLD); // como se fosse buscar valor em um root especifico
+
 
 
