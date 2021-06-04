@@ -17,13 +17,13 @@ Exemplo para 2 alunos:
     "nome": "Felippe",
     "matricula": 123,
     "notas": [ 9.5 , 8.5, 9.0],
-    "media" : 9,0
+    "media" : 9.0
 },
 {
     "nome": "Felippe2",
     "matricula": 456,
     "notas": [ 9.5 , 8.5, 9.0],
-    "media" : 9,0
+    "media" : 9.0
 }
 
 */
