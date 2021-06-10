@@ -1,0 +1,15 @@
+
+[
+	{
+		"nome": "felippe1",
+		"matricula": 123,
+		"notas": [1.00, 2.00, 3.00],
+		"media": 2.000000
+	},
+	{
+		"nome": "felippe2",
+		"matricula": 456,
+		"notas": [4.00, 5.00, 6.00],
+		"media": 5.000000
+	}
+]
