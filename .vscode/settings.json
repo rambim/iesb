@@ -4,6 +4,7 @@
         "string": "c",
         "stdlib.h": "c",
         "stdio.h": "c",
-        "stdio_ext.h": "c"
+        "stdio_ext.h": "c",
+        "cstdio": "c"
     }
 }
