@@ -1,0 +1,29 @@
+.casesNumber{
+    border: 1px dashed #ccc;
+    width: 360px;
+    height: 200px;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180.21deg, #F2F3F5 0.19%, #E3E3E3 184.5%);
+
+    h2{
+        margin: 10px 0 5px 15px;
+        font-weight: 500;
+        font-size: 20px;
+    }
+    span{
+        margin: 5px 0 5px 15px;
+        display: flex;
+        align-items: center;
+        img{
+            margin: 0 10px 0 0;
+        }
+        span{
+            margin-left: 5px;
+            color: #6F1ED7;
+            font-weight: 600;
+        }
+    }
+}

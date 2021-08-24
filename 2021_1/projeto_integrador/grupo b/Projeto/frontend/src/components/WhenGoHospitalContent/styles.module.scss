@@ -1,0 +1,58 @@
+.modalStyle{
+    width: 1200px;
+    height: 660px;
+    display: flex;
+
+    button{
+        position: absolute;
+        top: 10px;
+        right: 12px;
+        background:none;
+        border: none;
+        cursor: pointer;
+        outline: none;
+    }
+
+    div{
+        width: 49%;
+        
+        
+        h1{
+            font-size: 36px;
+            font-weight: 500;
+            margin: 0;
+        }
+        .subTittle{
+            font-weight: 500;
+        }
+        p{
+            text-align: justify;
+            text-justify: inter-word;
+            font-weight: 200;
+        }
+    }
+    div:nth-child(2){
+        margin-left: 20px;
+        margin-top: 40px;
+        p:nth-child(1){
+            font-weight: 500;
+        }
+        ol{
+            margin: 5px 0 0 30px;
+            li{
+                color: #6F1ED7;
+                font-weight: bold;
+                margin: 15px 0 0 0;
+                span{
+                    text-align: justify;
+                    text-justify: inter-word;
+                    font-weight: 200;
+                    color: #000;
+                }
+                ul{
+                    margin-left: 35px;
+                }
+            }
+        }
+    }
+}

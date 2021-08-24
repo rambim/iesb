@@ -15,8 +15,9 @@ typedef struct registro
 
 lista_ligada * aloca_lista();
 registro * aloca_registro();
-void incluir_na_lista(lista_ligada * l, int x);
+void incluir_no_fim_da_lista(lista_ligada * l, int x);
 void mostrar_lista(lista_ligada * l);
+int remover_registro_da_lista(int valor_para_apagar, lista_ligada * l );
 
 int main()
 {
@@ -26,20 +27,20 @@ int main()
     l1=aloca_lista();
     l2=aloca_lista();
 
-    incluir_na_lista(l1,1);
-    incluir_na_lista(l1,2);
-    incluir_na_lista(l1,3);
-    incluir_na_lista(l1,4);
-    incluir_na_lista(l1,5);
+    incluir_no_fim_da_lista(l1,1);
+    incluir_no_fim_da_lista(l1,2);
+    incluir_no_fim_da_lista(l1,3);
+    incluir_no_fim_da_lista(l1,4);
+    incluir_no_fim_da_lista(l1,5);
 
     printf("\n Mostrando conteudo de L1: ");
     mostrar_lista(l1);
 
-    incluir_na_lista(l2,10);
-    incluir_na_lista(l2,20);
-    incluir_na_lista(l2,30);
-    incluir_na_lista(l2,40);
-    incluir_na_lista(l2,50);
+    incluir_no_fim_da_lista(l2,10);
+    incluir_no_fim_da_lista(l2,20);
+    incluir_no_fim_da_lista(l2,30);
+    incluir_no_fim_da_lista(l2,40);
+    incluir_no_fim_da_lista(l2,50);
     printf("\n Mostrando conteudo de L2: ");
     mostrar_lista(l2);
 
@@ -51,6 +52,8 @@ lista_ligada * aloca_lista()
 {
     lista_ligada * novo;
     novo = (lista_ligada*)calloc(1,sizeof(lista_ligada));
+    novo->inicio=NULL;
+
     return novo;
 }
 
@@ -61,7 +64,7 @@ registro * aloca_registro()
     return novo;
 }
 
-void incluir_na_lista(lista_ligada * l, int x)
+void incluir_no_fim_da_lista(lista_ligada * l, int x)
 {
     registro * novo, *aux;
     novo = aloca_registro();
@@ -107,5 +110,47 @@ void mostrar_lista(lista_ligada * l)
         printf("\n -> %d",aux->valor);
         aux=aux->prox;   
     }
+}
+
+
+//0 - não conseguir apagar um elemento.
+//1 - conseguir apagar um elemento.
+
+int remover_registro_da_lista(int valor_para_apagar, lista_ligada * l )
+{
+    if (l==NULL)
+    {
+        printf("\nLista inexistente");
+        return 0;
+    }   
+
+    if (l->inicio==NULL)
+    {
+        printf("\nLista vazia");
+        return 0;
+    }
+
+    registro * aux=l->inicio,*ant=NULL;
+    int encontrou=0;
+    while(aux!=NULL && encontrou==0)
+    {
+        if (aux->valor == valor_para_apagar){
+            ant->prox = aux->prox;
+            free(aux);
+            l->qtd--;
+            encontrou=1;
+        }
+        else
+        {
+            ant = aux;
+            aux = aux->prox;
+        }
+    }
+
+    if (encontrou)
+        return 1;
+    else
+        return 0;
+
 }
 

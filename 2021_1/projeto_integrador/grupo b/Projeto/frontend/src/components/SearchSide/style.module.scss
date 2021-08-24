@@ -1,0 +1,79 @@
+.seachSide{
+    width: 500px;
+}
+.barInput{
+    width: 270px;
+    height: 45px;
+    padding-left:8px;
+    border: 1px solid lightgrey;
+    border-bottom-width: 2px;
+    border-radius:3px;
+    outline: none;  
+    padding-left: 5px;
+    margin-right: 5px;
+    font-size: 14px;
+
+    &:focus{
+        border-color: #6C63FF;
+    }
+}
+.button{
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    font-weight: 600;
+    background: #6F1ED7;
+    border: none;
+    color: #fff;
+    border-radius: 3px;
+    border: 0px solid #440178;
+    border-bottom-width: 3px;
+    transition: 0.2s;
+    outline: none;
+    padding-top: 6px;
+    position: relative;
+    left: 275px;
+
+    &:hover{
+        background:#8E3DF4;
+        padding-left: 5px;
+    }
+}
+.wrapper{
+    background: #fff;
+    width: 270px;
+    border-radius: 4px;
+    box-shadow: 0px 1px 5px 3px rgba(108,99,255,0.12);
+    position: absolute;
+}
+.autocomBox{
+    /*padding: 10px 8px;*/
+    max-height: 280px;
+    overflow-y: auto;
+    opacity: 0;
+    pointer-events: none;
+    li{
+        list-style: none;
+        width: 100%;
+        padding: 5px 12px;
+        cursor: default;
+        border-radius: 3px;
+        display: none;
+    }
+}
+.autocomBoxActive{
+    padding: 10px 8px;
+    max-height: 280px;
+    overflow-y: auto;
+    opacity: 1;
+    li{
+        list-style: none;
+        width: 100%;
+        padding: 5px 12px;
+        cursor: default;
+        border-radius: 3px;
+    }
+    li:hover{
+        background: #F0E9F6;
+    }
+}

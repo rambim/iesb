@@ -1,0 +1,51 @@
+.infos{
+    border: 1px dashed #ccc;
+    width: 360px;
+    height: 170px;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(180.21deg, #F2F3F5 0.19%, #E3E3E3 184.5%);
+
+    div{
+        width: 330px;
+        word-break: break-word;
+        padding-top: 10px;
+
+        .textoInfo{
+            font-size: 20px;
+            font-weight: 500;
+        }
+        .textoInfoDescript{
+            width: 320px;
+            font-size: 12px;
+            text-align: justify;
+            text-justify: inter-word;
+            display: inline-block;
+            margin-top: 20px;
+            line-height: 20px;
+        }
+    }
+
+    button{
+        width: 100px;
+        height: 35px;
+        background: #6F1ED7;
+        border: none;
+        color: #fff;
+        border-radius: 3px;
+        border: 0px solid #440178;
+        border-bottom-width: 3px;
+        transition: 0.2s;
+        outline: none;
+        cursor: pointer;
+        margin-left: 220px;
+
+        &:hover{
+            background:#8E3DF4;
+        }
+    }
+}
+
