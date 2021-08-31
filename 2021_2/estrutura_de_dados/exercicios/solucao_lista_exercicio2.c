@@ -76,7 +76,7 @@ void incluir_ordenado(lista_ligada *l, int x)
 {
 
     if (l == NULL)
-        return NULL;
+        return;
 
     registro *aux, *ant = NULL, *novo;
     aux = l->inicio;
@@ -124,13 +124,18 @@ void incluir_ordenado(lista_ligada *l, int x)
 int main()
 {
     int numero;
+    lista_ligada * l;
+    l = aloca_lista();
 
     do
     {
         printf("\n Digite um numero: ");
         scanf("%d",&numero);
+        incluir_ordenado(l,numero);
 
     } while (numero != 0);
+
+    mostrar(l);
     printf("\n");
     return 0;
 }
