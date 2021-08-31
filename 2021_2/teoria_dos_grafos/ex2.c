@@ -209,6 +209,9 @@ void dfs(vertice * vertices , int x)
     vertices[x].visitado=1;
     printf(" %d",x);
 
+    if (vertices[x].lista_adj==NULL)
+        return;
+        
     aux = vertices[x].lista_adj->inicio;
 
     while(aux!=NULL)
