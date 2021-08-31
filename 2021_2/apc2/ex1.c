@@ -18,4 +18,8 @@ int main()
     printf("O IMC calculado e igual a %f ",imc);
     printf("\n");
     return 0;
+
+    
+
+
 }
