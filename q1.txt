@@ -1,0 +1,6 @@
+
+Felips caiu em uma gruta e percebeu que estava rodeado de pedras preciosas. Ao gritar socorro recebeu ajuda do proprietário
+do terreno onde caiu que prontamente se desculpou por não ter colocado nenhum aviso sobre o perigo do local. Como forma de 
+recompensar Felips, o proprietário falou que Felips poderia levar pra casa quantas pedras preciosas conseguisse carregar. 
+Construa uma algoritmo que a partir de uma capacidade máxima e uma lista contendo o nome da pedra, o peso e seu valor diga
+qual é a melhor combinação de pedras para que Felips saia da gruta com o maior valor possível em pedras preciosas.
