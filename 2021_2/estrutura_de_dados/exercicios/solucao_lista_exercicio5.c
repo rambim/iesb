@@ -3,6 +3,7 @@
 
 typedef struct fila
 {
+    int qtd;
     struct registro *inicio;
     struct registro *fim;
 } fila;
@@ -13,11 +14,6 @@ typedef struct registro
     struct registro *ant;
     struct registro *prox;
 } registro;
-
-fila *concatena_listas(fila *a, fila *b);
-void incluir(fila *l, int x, int tipo_inclusao);
-void mostrar(fila *l, int tipo_mostrar);
-int remover(fila *l, int x);
 
 fila *aloca_lista_dupla()
 {
@@ -33,8 +29,8 @@ registro *aloca_registro()
     return novo;
 }
 
-// tipo_inclusao 1 : incluir no inicio da lista
-// tipo_inclusao 2 : incluir no fim da lista
+// tipo_inclusao 1 : do inicio pro fim
+// tipo_inclusao 2 : do fim para o inicio
 void incluir(fila *l, int x, int tipo_inclusao)
 {
     if (l == NULL)
@@ -74,6 +70,12 @@ void incluir(fila *l, int x, int tipo_inclusao)
             break;
         }
     }
+    l->qtd++;
+}
+
+void push(fila *f, int x)
+{
+    incluir(f, x, 2);
 }
 
 void mostrar(fila *l, int tipo_mostrar)
@@ -122,107 +124,79 @@ void mostrar(fila *l, int tipo_mostrar)
     }
 }
 
-// 1 - removeu
-// 0 - não removeu
-int remover(fila *l, int x)
+int pop(fila *f)
 {
-    if (l == NULL)
+    if (f == NULL)
         return 0;
-    if (l->inicio == NULL)
+    if (f->inicio == NULL)
         return 0;
 
     registro *aux;
+    int retorno;
 
-    aux = l->inicio;
+    aux = f->inicio;
 
-    while (aux != NULL)
-    {
-        if (aux->valor == x)
-        {
-            if (aux->ant == NULL)
-                l->inicio = aux->prox;
-            else
-                aux->ant->prox = aux->prox;
+    if (aux->ant == NULL)
+        f->inicio = aux->prox;
+    else
+        aux->ant->prox = aux->prox;
 
-            if (aux->prox == NULL)
-                l->fim = aux->ant;
-            else
-                aux->prox->ant = aux->ant;
-            return 1;
-        }
-        else
-        {
-            aux = aux->prox;
-        }
-    }
-    return 0;
+    if (aux->prox == NULL)
+        f->fim = aux->ant;
+    else
+        aux->prox->ant = aux->ant;
+
+    f->qtd--;
+    retorno = aux->valor;
+    free(aux);
+    return retorno;
+}
+
+int stackpop(fila *f)
+{
+    if (f == NULL)
+        return 0;
+    if (f->inicio == NULL)
+        return 0;
+    return f->inicio->valor;
 }
 
 int main()
 {
 
-    fila *l1=NULL, *l2=NULL, *l3=NULL;
+    fila *f1;
 
-    int i = 5, numero;
+    f1 = aloca_lista_dupla();
 
-    l1 = aloca_lista_dupla();
+    int valor, i, aux;
 
-    printf("\n Digite 5 numeros: ");
-    while (i--)
+    do
     {
-        scanf("%d", &numero);
-        incluir(l1, numero, 2);
-    }
+        scanf("%d", &valor);
 
-    l2 = aloca_lista_dupla();
+        if (valor != 0)
+        {
+            for (i = 1; i <= valor; i++)
+            {
+                push(f1, i);
+            }
 
-    i = 5;
-    printf("\n Digite 5 numeros: ");
-    while (i--)
-    {
-        scanf("%d", &numero);
-        incluir(l2, numero, 2);
-    }
+            printf("Discarded cards:");
+            while (f1->qtd >= 2)
+            {
+                if (f1->qtd == valor)
+                    printf(" %d", pop(f1));
+                else
+                    printf(", %d", pop(f1));
 
-    printf("\n Mostrando primeira lista: ");
-    mostrar(l1, 1);
-    printf("\n Mostrando segunda lista: ");
-    mostrar(l2, 1);
 
-    l3 = concatena_listas(l1,l2);
+                aux = pop(f1);
+                push(f1, aux);
+            }
 
-    printf("\n Mostrando terceira lista:");
-    mostrar(l3,1);
-    printf("\n");
+            printf("\nRemaining card: %d\n", pop(f1));
+        }
+
+    } while (valor != 0);
     return 0;
-}
-
-fila *concatena_listas(fila *a, fila *b)
-{
-    fila *c;
-
-    registro *aux;
-    c = aloca_lista_dupla();
-
-    if (a != NULL)
-    {
-        aux = a->inicio;
-        while (aux != NULL)
-        {
-            incluir(c, aux->valor, 2);
-            aux=aux->prox;
-        }
-    }
-
-    if (b != NULL)
-    {
-        aux = b->inicio;
-        while (aux != NULL)
-        {
-            incluir(c, aux->valor, 2);
-            aux=aux->prox;
-        }
-    }
-
-    return c;
 }

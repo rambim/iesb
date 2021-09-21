@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct lista_duplamente_ligada
+typedef struct fila
 {
     struct registro *inicio;
     struct registro *fim;
-} lista_duplamente_ligada;
+} fila;
 
 typedef struct registro
 {
@@ -14,10 +14,10 @@ typedef struct registro
     struct registro *prox;
 } registro;
 
-lista_duplamente_ligada *aloca_lista_dupla()
+fila *aloca_lista_dupla()
 {
-    lista_duplamente_ligada *novo;
-    novo = (lista_duplamente_ligada *)calloc(1, sizeof(lista_duplamente_ligada));
+    fila *novo;
+    novo = (fila *)calloc(1, sizeof(fila));
     return novo;
 }
 
@@ -30,7 +30,7 @@ registro *aloca_registro()
 
 // tipo_inclusao 1 : do inicio pro fim
 // tipo_inclusao 2 : do fim para o inicio
-void incluir(lista_duplamente_ligada *l, int x, int tipo_inclusao)
+void incluir(fila *l, int x, int tipo_inclusao)
 {
     if (l == NULL)
         return;
@@ -71,7 +71,7 @@ void incluir(lista_duplamente_ligada *l, int x, int tipo_inclusao)
     }
 }
 
-void mostrar(lista_duplamente_ligada *l, int tipo_mostrar)
+void mostrar(fila *l, int tipo_mostrar)
 {
     if (l == NULL)
     {
@@ -119,7 +119,7 @@ void mostrar(lista_duplamente_ligada *l, int tipo_mostrar)
 
 // 1 - removeu
 // 0 - não removeu
-int remover(lista_duplamente_ligada *l, int x)
+int remover(fila *l, int x)
 {
     if (l == NULL)
         return 0;
@@ -156,7 +156,7 @@ int remover(lista_duplamente_ligada *l, int x)
 int main()
 {
 
-    lista_duplamente_ligada *l1, *l2;
+    fila *l1, *l2;
 
     l1 = aloca_lista_dupla();
 
