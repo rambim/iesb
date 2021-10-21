@@ -13,7 +13,7 @@ int main()
     printf("\nDigite o tamanho do vetor: ");
     scanf("%d",&tamanho_do_vetor);
 
-    vet = (int*)malloc(sizeof(int)*10);
+    vet = (int*)malloc(sizeof(int)*tamanho_do_vetor);
 
     preenche_vetor(vet,tamanho_do_vetor);
     mostrar_vetor(vet,tamanho_do_vetor);
