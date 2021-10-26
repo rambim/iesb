@@ -42,7 +42,7 @@ int main()
     return 0;
 }
 
-agenda *cria_agenda(int capacidade_inicial)
+agenda * cria_agenda(int capacidade_inicial)
 {
     agenda *nova_agenda;
 

@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 int pilha[5];
 int topo1=0;
 int topo2=4;
