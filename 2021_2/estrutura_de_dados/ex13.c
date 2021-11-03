@@ -9,6 +9,8 @@ void embaralha_vetor(long int * vet, long int tam);
 void bubblesort(long int * vet, long int tam);
 void mergesort(long int * vet, long int ini, long int fim);
 void intercala(long int * vet, long int inicio, long int meio, long int fim);
+void quicksort( long int * vet, long int inicio, long int fim);
+void selection_sort(long int * vet, long int tam);
 
 int main()
 {
@@ -17,7 +19,7 @@ int main()
 
     srand(time(NULL));
     long int * vet;
-    long int tam=10000000;
+    long int tam=100000;
     vet = aloca_vetor(tam);
 
     // printf("\n Antes de embaralhar: ");
@@ -27,11 +29,13 @@ int main()
     // printf("\n Depois de embaralhar: ");
     // mostrar_vetor(vet,tam);
 
-    // printf("\n Ordenando o vetor");
+    // printf("\n Ordenando o vet:or");
 
     t1 = omp_get_wtime();
     // bubblesort(vet,tam);
-    mergesort(vet,0,tam-1);
+    // mergesort(vet,0,tam-1);
+    // quicksort(vet,0,tam-1);
+    selection_sort(vet,tam);
     t2 = omp_get_wtime();
 
     // printf("\n Mostrar o vetor apos a ordenacao: ");
@@ -164,5 +168,84 @@ void intercala(long int * vet, long int inicio, long int meio, long int fim)
     free(aux);
 
     return;
+}
+
+
+void quicksort( long int * vet, long int inicio, long int fim)
+{
+    if (inicio>fim)
+        return ;
+
+
+    long int pivo,aux;
+    long int troca;
+    pivo = inicio;
+    aux  = fim;
+    while(pivo!=aux)
+    {
+        if (pivo<aux)
+        {
+            if (vet[pivo] > vet[aux])
+            {
+                troca = vet[pivo];
+                vet[pivo] = vet[aux];
+                vet[aux] = troca;
+                troca = pivo;
+                pivo = aux;
+                aux = troca;
+            }
+        }
+        else
+        {
+            if (vet[pivo]< vet[aux])
+            {
+                troca = vet[pivo];
+                vet[pivo] = vet[aux];
+                vet[aux] = troca;
+
+                troca = pivo;
+                pivo = aux;
+                aux = troca;
+            }
+        }
+
+        if (pivo<aux)
+        {
+            aux--;
+        }
+        else
+        {
+            aux++;
+        }
+
+    }
+
+    quicksort(vet,inicio,pivo-1);
+    quicksort(vet,pivo+1,fim);
+}
+
+
+
+void selection_sort(long int * vet, long int tam)
+{
+    long int i, j,ind_menor;
+    long int troca;
+
+    for(i=0;i<tam-1;i++)
+    {
+        ind_menor = i;
+        for(j=i;j<tam;j++)
+        {
+            if (vet[j]<vet[ind_menor])
+            {
+                ind_menor = j;
+            }
+        }
+
+        troca = vet[i];
+        vet[i] = vet[ind_menor];
+        vet[ind_menor] = troca;
+
+    }
 }
 
