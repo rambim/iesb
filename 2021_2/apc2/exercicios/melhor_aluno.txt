@@ -1,0 +1,10 @@
+
+ Nome: felippe3
+ Matricula: 3
+ Qtd notas: 5
+ Nota 1 = 5.000000
+ Nota 2 = 6.000000
+ Nota 3 = 7.000000
+ Nota 4 = 8.000000
+ Nota 5 = 9.000000
+ Media: 7.000000

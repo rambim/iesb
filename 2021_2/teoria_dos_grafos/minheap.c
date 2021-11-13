@@ -1,9 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+typedef struct elemento
+{
+    int vertice;
+    int distancia;
+} elemento;
 
-int heap[100];
-int count =0 ;
+elemento heap[1000];
+
+int count_min_heap = 0;
 
 int define_filho_esquerda(int indice)
 {
@@ -15,22 +21,22 @@ int define_filho_direita(int indice)
     return (indice * 2) + 1;
 }
 
-int define_pai ( int indice)
+int define_pai(int indice)
 {
-    return indice/2;
+    return indice / 2;
 }
 
 void subir_minimo(int indice)
 {
 
-    int aux;
+    elemento aux;
 
-    if (indice<=1) 
+    if (indice <= 1)
         return;
 
     int pai = define_pai(indice);
 
-    if (heap[indice] < heap[pai])
+    if (heap[indice].distancia < heap[pai].distancia)
     {
         aux = heap[indice];
         heap[indice] = heap[pai];
@@ -41,7 +47,7 @@ void subir_minimo(int indice)
 
 void desce_minimo(int indice)
 {
-    if (indice * 2 > count)
+    if (indice * 2 > count_min_heap)
         return;
 
     int esquerda = define_filho_esquerda(indice);
@@ -49,19 +55,20 @@ void desce_minimo(int indice)
 
     int menor = indice;
 
-    if (esquerda <= count && heap[esquerda] < heap[menor])
+    if (esquerda <= count_min_heap && heap[esquerda].distancia < heap[menor].distancia)
     {
         menor = esquerda;
     }
 
-    if (direita <= count && heap[direita] < heap[menor])
+    if (direita <= count_min_heap && heap[direita].distancia < heap[menor].distancia)
     {
         menor = direita;
     }
 
-    if (menor == indice) return;
+    if (menor == indice)
+        return;
 
-    int aux;
+    elemento aux;
 
     aux = heap[indice];
     heap[indice] = heap[menor];
@@ -69,46 +76,58 @@ void desce_minimo(int indice)
     desce_minimo(menor);
 }
 
-
-int push(int x)
+int push(elemento x)
 {
-    count++;
-    heap[count] = x;
-    subir_minimo(count);
+    count_min_heap++;
+    heap[count_min_heap] = x;
+    subir_minimo(count_min_heap);
 }
 
-void pop()
+elemento pop()
 {
-    if (count ==0) return;
+    elemento retorno;
+    if (count_min_heap == 0)
+    {
+        retorno.distancia = -1;
+        retorno.vertice = -1;
+        return retorno;
+    }
 
-    printf("\n %d",heap[1]);
-    heap[1] = heap[count];
-    count--;
+    retorno = heap[1];
+    // printf("\n %d",heap[1]);
+    heap[1] = heap[count_min_heap];
+    count_min_heap--;
     desce_minimo(1);
+    return retorno;
 }
-
-
-
-
 
 int main()
 {
-
-    push(1);
-    push(10);
-    push(2);
-    push(8);
-    push(3);
-    push(7);
-    push(4);
-    push(6);
-    push(5);
+    elemento aux;
+    aux.distancia = 1;
+    aux.vertice = 1;
+    push(aux);
+    aux.distancia = 10;
+    aux.vertice = 10;
+    push(aux);
+    aux.distancia = 2;
+    aux.vertice = 2;
+    push(aux);
+    aux.distancia = 9;
+    aux.vertice = 9;
+    push(aux);
 
     int i;
 
-    for(i=0;i<9;i++)
+    elemento retorno;
+
+    while (retorno.distancia != -1)
     {
-        pop();
+        retorno = pop();
+        if (retorno.distancia != -1)
+        {
+            printf("\n Vertice: %d Distancia %d", retorno.vertice, retorno.distancia);
+        }
     }
 
     printf("\n");
