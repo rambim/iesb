@@ -7,6 +7,9 @@ int qtd_global[10001];
 typedef struct vertice
 {
     int visitado;
+    int distancia;
+    int in;
+    int out;
     struct lista *lista_adj;
 } vertice;
 
@@ -22,7 +25,6 @@ typedef struct registro
     struct registro *prox;
 } registro;
 
-int qtd=0;
 void mostrar_lista(lista *l);
 int incluir_ordenado_lista(lista *l, int x);
 registro *aloca_registro();
@@ -30,16 +32,18 @@ lista *aloca_lista();
 int carrega_grafo(vertice *vertices, char *nome_do_arquivo);
 void push(vertice *v, int x);
 void mostrar_lista_dos_vertices(vertice *v, int tam);
-void dfs(vertice * vertices , int x);
+void dfs(vertice * vertices , int x, int distancia);
+void dfs_in_out(vertice * vertices , int x, int distancia, int * count);
+int existe_sub_arvore(int pai, int filho, vertice * vertices);
 
 int main(int *argc, char *argv[])
 {
-    int qtd_vertices, qtd_arestas,i,a,b,cont=0;
-    int aux=1;
+     int qtd_vertices, qtd_arestas,i,a,b,cont=0;
 
     vertice * vertices;
 
-    scanf("%d %d",&qtd_vertices,&qtd_arestas);
+    scanf("%d",&qtd_vertices);
+    scanf("%d",&qtd_arestas);
 
     vertices = (vertice*)calloc(qtd_vertices+1,sizeof(vertice));
 
@@ -52,22 +56,21 @@ int main(int *argc, char *argv[])
         push(&vertices[b],a);
         i++;
     }
-    
-    for(i=1;i<=qtd_vertices;i++)
-    {
-        if (vertices[i].visitado==0)
-        {
-            dfs(vertices,i);
-            printf("\n Quantidade de elementos dentro do %d componente: %d",cont,qtd); 
-            aux = aux * qtd;
-            cont++;
-            qtd=0;
-        } 
-    }
 
-    printf("\nQuantidade de componentes conectados: %d\n",cont);
-    printf("\nPossibilidades de escolha de lideres: %d",aux);
-    printf("\n");
+    
+    int count = 1;
+    int pai, filho;
+    dfs_in_out(vertices,1,0,&count);
+
+    scanf("%d %d",&filho,&pai);
+
+    if (existe_sub_arvore(pai,filho,vertices)){
+        printf("Verdadeiro\n");
+    }
+    else
+    {
+        printf("Falso\n");
+    }
     return 0;
 }
 
@@ -221,12 +224,12 @@ void mostrar_lista(lista *l)
 }
 
 
-void dfs(vertice * vertices , int x)
+void dfs(vertice * vertices , int x, int distancia)
 {
     registro * aux;
     vertices[x].visitado=1;
-    qtd++;
-    // printf(" %d",x);
+    vertices[x].distancia = distancia;
+    printf(" %d",x);
 
     if (vertices[x].lista_adj==NULL)
         return;
@@ -237,9 +240,40 @@ void dfs(vertice * vertices , int x)
     {
         if (vertices[aux->valor].visitado==0)
         {
-            dfs(vertices,aux->valor); 
+            dfs(vertices,aux->valor,distancia+1); 
         }
         aux = aux->prox;
     }
 
+}
+
+void dfs_in_out(vertice * vertices , int x, int distancia, int * count)
+{
+    registro * aux;
+    vertices[x].visitado=1;
+    vertices[x].distancia = distancia;
+    vertices[x].in = *count;
+    (*count)++;
+
+    if (vertices[x].lista_adj==NULL)
+        return;
+        
+    aux = vertices[x].lista_adj->inicio;
+
+    while(aux!=NULL)
+    {
+        if (vertices[aux->valor].visitado==0)
+        {
+            dfs_in_out(vertices,aux->valor,distancia+1,count); 
+        }
+        aux = aux->prox;
+    }
+    vertices[x].out = *count;
+    (*count)++;
+}
+
+
+int existe_sub_arvore(int pai, int filho, vertice * vertices)
+{
+    return vertices[pai].in < vertices[filho].in && vertices[pai].out > vertices[filho].out;
 }

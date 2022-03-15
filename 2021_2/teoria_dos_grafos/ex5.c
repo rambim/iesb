@@ -3,12 +3,18 @@
 
 int qtd_global[10001];
 
-
 typedef struct vertice
 {
     int visitado;
+    int distancia;
     struct lista *lista_adj;
 } vertice;
+
+typedef struct lista_duplamente_ligada
+{
+    struct registro * inicio;
+    struct registro * fim;
+}lista_duplamente_ligada;
 
 typedef struct lista
 {
@@ -22,7 +28,6 @@ typedef struct registro
     struct registro *prox;
 } registro;
 
-int qtd=0;
 void mostrar_lista(lista *l);
 int incluir_ordenado_lista(lista *l, int x);
 registro *aloca_registro();
@@ -30,46 +35,75 @@ lista *aloca_lista();
 int carrega_grafo(vertice *vertices, char *nome_do_arquivo);
 void push(vertice *v, int x);
 void mostrar_lista_dos_vertices(vertice *v, int tam);
-void dfs(vertice * vertices , int x);
+void dfs(vertice * vertices , int x, int distancia);
+int pop_fila(lista_duplamente_ligada * fila);
+void push_fila(lista_duplamente_ligada * fila, int x);
+lista_duplamente_ligada * aloca_lista_duplamente_ligada();
+void bfs(vertice * vertices, int root);
+int empty(lista_duplamente_ligada * fila);
 
 int main(int *argc, char *argv[])
 {
-    int qtd_vertices, qtd_arestas,i,a,b,cont=0;
-    int aux=1;
-
-    vertice * vertices;
-
-    scanf("%d %d",&qtd_vertices,&qtd_arestas);
-
-    vertices = (vertice*)calloc(qtd_vertices+1,sizeof(vertice));
-
-    i = 0;
-
-    while(i<qtd_arestas)
+    vertice *vertices;
+    int qtd_vertices,i;
+    printf(" Parametro recebido: %s", argv[1]);
+    vertices = (vertice *)calloc(10000, sizeof(vertice));
+    qtd_vertices = carrega_grafo(vertices, argv[1]);
+    if (qtd_vertices)
     {
-        scanf("%d %d",&a,&b);
-        push(&vertices[a],b);
-        push(&vertices[b],a);
-        i++;
+        printf("\n Grafo carregado com sucesso qtd vertices: %d",qtd_vertices);
+        // mostrar_lista_dos_vertices(vertices, 10001);
     }
+    else
+        printf("\n Problema no carregamento do grafo");
+
     
-    for(i=1;i<=qtd_vertices;i++)
-    {
-        if (vertices[i].visitado==0)
-        {
-            dfs(vertices,i);
-            printf("\n Quantidade de elementos dentro do %d componente: %d",cont,qtd); 
-            aux = aux * qtd;
-            cont++;
-            qtd=0;
-        } 
-    }
+    bfs(vertices,5);
 
-    printf("\nQuantidade de componentes conectados: %d\n",cont);
-    printf("\nPossibilidades de escolha de lideres: %d",aux);
+
     printf("\n");
     return 0;
 }
+
+void bfs(vertice * vertices, int root)
+{
+    lista_duplamente_ligada * fila;
+    registro * aux;
+    fila = aloca_lista_duplamente_ligada();
+    int retorno;
+
+    push_fila(fila,root);
+
+    while(!empty(fila))
+    {
+        retorno = pop_fila(fila);
+
+        if (vertices[retorno].visitado==0)
+        {
+            printf("\n -> %d",retorno);
+            vertices[retorno].visitado=1;
+
+            aux = vertices[retorno].lista_adj->inicio;
+            while(aux!=NULL)
+            {
+                push_fila(fila,aux->valor);
+                aux = aux->prox;
+            }
+
+        }
+    }
+
+}
+
+int empty(lista_duplamente_ligada * fila)
+{
+    if (fila==NULL)
+        return 1;
+    if (fila->inicio==NULL)
+        return 1;
+    return 0;
+}
+
 
 int carrega_grafo(vertice *vertices, char *nome_do_arquivo)
 {
@@ -124,11 +158,60 @@ lista *aloca_lista()
     return novo;
 }
 
+lista_duplamente_ligada * aloca_lista_duplamente_ligada()
+{
+    lista_duplamente_ligada * novo;
+    novo = (lista_duplamente_ligada*)calloc(1,sizeof(lista_duplamente_ligada));
+    return novo;
+}
+
 registro *aloca_registro()
 {
     registro *novo;
     novo = (registro *)calloc(1, sizeof(registro));
     return novo;
+}
+
+void push_fila(lista_duplamente_ligada * fila, int x)
+{   
+    if (fila==NULL)
+        return;
+    
+    registro * novo;
+    novo = aloca_registro();
+    novo->valor = x;
+
+    if (fila->inicio==NULL)
+    {
+        fila->inicio = novo;
+        fila->fim=novo;
+    }
+    else
+    {
+        fila->fim->prox = novo;
+        fila->fim = novo;
+    }
+}
+
+int pop_fila(lista_duplamente_ligada * fila)
+{
+    int retorno;
+    registro * aux;
+    if (fila==NULL)
+        return 0;
+    
+    if (fila->inicio==NULL)
+        return 0;
+
+    aux = fila->inicio;
+    retorno = aux->valor;
+    fila->inicio = aux->prox;
+
+    if (fila->inicio == NULL)
+        fila->fim = NULL;
+
+    free(aux);
+    return retorno;
 }
 
 int incluir_ordenado_lista(lista *l, int x)
@@ -221,12 +304,13 @@ void mostrar_lista(lista *l)
 }
 
 
-void dfs(vertice * vertices , int x)
+void dfs(vertice * vertices , int x, int distancia)
 {
+    
     registro * aux;
     vertices[x].visitado=1;
-    qtd++;
-    // printf(" %d",x);
+    vertices[x].distancia = distancia;
+    printf(" %d",x);
 
     if (vertices[x].lista_adj==NULL)
         return;
@@ -237,7 +321,7 @@ void dfs(vertice * vertices , int x)
     {
         if (vertices[aux->valor].visitado==0)
         {
-            dfs(vertices,aux->valor); 
+            dfs(vertices,aux->valor,distancia+1); 
         }
         aux = aux->prox;
     }

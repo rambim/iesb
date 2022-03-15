@@ -4,10 +4,16 @@
 int qtd_global[10001];
 
 
+int count=1;
+int min(int x, int y);
+
 typedef struct vertice
 {
     int visitado;
+    int distancia;
     struct lista *lista_adj;
+    int in;
+    int lower;
 } vertice;
 
 typedef struct lista
@@ -22,7 +28,6 @@ typedef struct registro
     struct registro *prox;
 } registro;
 
-int qtd=0;
 void mostrar_lista(lista *l);
 int incluir_ordenado_lista(lista *l, int x);
 registro *aloca_registro();
@@ -30,43 +35,26 @@ lista *aloca_lista();
 int carrega_grafo(vertice *vertices, char *nome_do_arquivo);
 void push(vertice *v, int x);
 void mostrar_lista_dos_vertices(vertice *v, int tam);
-void dfs(vertice * vertices , int x);
+void dfs(vertice * vertices , int x, int pai);
 
 int main(int *argc, char *argv[])
 {
-    int qtd_vertices, qtd_arestas,i,a,b,cont=0;
-    int aux=1;
-
-    vertice * vertices;
-
-    scanf("%d %d",&qtd_vertices,&qtd_arestas);
-
-    vertices = (vertice*)calloc(qtd_vertices+1,sizeof(vertice));
-
-    i = 0;
-
-    while(i<qtd_arestas)
+    vertice *vertices;
+    int qtd_vertices,i;
+    printf(" Parametro recebido: %s", argv[1]);
+    vertices = (vertice *)calloc(10000, sizeof(vertice));
+    qtd_vertices = carrega_grafo(vertices, argv[1]);
+    if (qtd_vertices)
     {
-        scanf("%d %d",&a,&b);
-        push(&vertices[a],b);
-        push(&vertices[b],a);
-        i++;
+        printf("\n Grafo carregado com sucesso qtd vertices: %d",qtd_vertices);
+        mostrar_lista_dos_vertices(vertices, 10001);
     }
-    
-    for(i=1;i<=qtd_vertices;i++)
-    {
-        if (vertices[i].visitado==0)
-        {
-            dfs(vertices,i);
-            printf("\n Quantidade de elementos dentro do %d componente: %d",cont,qtd); 
-            aux = aux * qtd;
-            cont++;
-            qtd=0;
-        } 
-    }
+    else
+        printf("\n Problema no carregamento do grafo");
 
-    printf("\nQuantidade de componentes conectados: %d\n",cont);
-    printf("\nPossibilidades de escolha de lideres: %d",aux);
+    printf("\n Chamando DFS: ");
+    dfs(vertices,1,-1);
+
     printf("\n");
     return 0;
 }
@@ -221,11 +209,13 @@ void mostrar_lista(lista *l)
 }
 
 
-void dfs(vertice * vertices , int x)
+void dfs(vertice * vertices , int x, int pai)
 {
     registro * aux;
     vertices[x].visitado=1;
-    qtd++;
+    vertices[x].in = count;
+    vertices[x].lower = count;
+    count++;
     // printf(" %d",x);
 
     if (vertices[x].lista_adj==NULL)
@@ -235,11 +225,33 @@ void dfs(vertice * vertices , int x)
 
     while(aux!=NULL)
     {
-        if (vertices[aux->valor].visitado==0)
+        if (aux->valor != pai)
         {
-            dfs(vertices,aux->valor); 
+            if (vertices[aux->valor].visitado==1)
+            {
+                // printf("\n Back Edge");
+                vertices[x].lower = min(vertices[x].lower, vertices[aux->valor].in);
+            }
+            else
+            {
+                // printf("\n Forward edge");
+                dfs(vertices,aux->valor,x);
+
+                if (vertices[aux->valor].lower > vertices[x].in)
+                {
+                    printf("\n PONTE entre %d e %d",x,aux->valor);
+                }
+
+                vertices[x].lower = min(vertices[x].lower,vertices[aux->valor].lower);
+
+            }
         }
         aux = aux->prox;
     }
 
+}
+
+int min(int x, int y)
+{
+    return x < y ? x : y;
 }
