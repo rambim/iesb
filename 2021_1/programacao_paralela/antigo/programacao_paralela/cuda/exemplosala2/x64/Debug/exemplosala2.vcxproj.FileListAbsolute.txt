@@ -1,0 +1,2 @@
+C:\Users\Rambim\Documents\Pessoal\iesb\2020_1\programacao_paralela\cuda\exemplosala2\x64\Debug\exemplosala2.exe
+C:\Users\Rambim\Documents\Pessoal\iesb\2020_1\programacao_paralela\cuda\exemplosala2\x64\Debug\exemplosala2.pdb

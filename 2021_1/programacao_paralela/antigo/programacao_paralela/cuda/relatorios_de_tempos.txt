@@ -1,0 +1,86 @@
+10
+Tempo de alocacao de vetores na CPU: 0.000006
+Tempo de alocacao de vetores na GPU: 0.545641
+Tempo de copia da CPU para GPU: 0.000226
+Tempo da Soma na CPU: 0.000001
+Tempo da Soma na GPU: 0.000107
+
+100
+Tamanho = 100
+Tempo de alocacao de vetores na CPU: 0.000004
+Tempo de alocacao de vetores na GPU: 0.362930
+Tempo de copia da CPU para GPU: 0.000133
+Tempo da Soma na CPU: 0.000001
+Tempo da Soma na GPU: 0.000063
+
+1000
+Tamanho = 1000
+Tempo de alocacao de vetores na CPU: 0.000049
+Tempo de alocacao de vetores na GPU: 0.361843
+Tempo de copia da CPU para GPU: 0.000171
+Tempo da Soma na CPU: 0.000005
+Tempo da Soma na GPU: 0.000056
+
+10000
+Tamanho = 10000
+Tempo de alocacao de vetores na CPU: 0.000210
+Tempo de alocacao de vetores na GPU: 0.398735
+Tempo de copia da CPU para GPU: 0.000249
+Tempo da Soma na CPU: 0.000046
+Tempo da Soma na GPU: 0.000064
+
+100000
+Tamanho = 100000
+Tempo de alocacao de vetores na CPU: 0.002542
+Tempo de alocacao de vetores na GPU: 0.394263
+Tempo de copia da CPU para GPU: 0.000690
+Tempo da Soma na CPU: 0.000490
+Tempo da Soma na GPU: 0.000076
+
+1000000
+Tamanho = 1000000
+Tempo de alocacao de vetores na CPU: 0.029899
+Tempo de alocacao de vetores na GPU: 0.325226
+Tempo de copia da CPU para GPU: 0.009793
+Tempo da Soma na CPU: 0.004956
+Tempo da Soma na GPU: 0.000065
+
+10000000
+Tamanho = 10000000
+Tempo de alocacao de vetores na CPU: 0.442295
+Tempo de alocacao de vetores na GPU: 0.324258
+Tempo de copia da CPU para GPU: 0.115247
+Tempo da Soma na CPU: 0.092062
+Tempo da Soma na GPU: 0.000139
+
+Tamanho = 100.000.000
+Tempo de alocacao de vetores na CPU: 3.049256
+Tempo de alocacao de vetores na GPU: 0.406002
+Tempo de copia da CPU para GPU: 1.167932
+Tempo da Soma na CPU: 1.100899
+Tempo da Soma na GPU: 0.000102
+
+
+*************************************************
+
+Tamanho = 10
+Tempo de alocacao de vetores na CPU: 0.000008
+Tempo de alocacao de vetores na GPU: 0.363779
+Tempo de copia da CPU para GPU: 0.000552
+Tempo da Soma na CPU: 3.051915
+Tempo da Soma na GPU: 0.000137
+
+Tamanho = 100
+Tempo de alocacao de vetores na CPU: 0.000010
+Tempo de alocacao de vetores na GPU: 0.395965
+Tempo de copia da CPU para GPU: 0.000174
+Tempo da Soma na CPU: 31.944065
+Tempo da Soma na GPU: 0.000077
+
+
+Tamanho = 1000
+Tempo de alocacao de vetores na CPU: 0.000030
+Tempo de alocacao de vetores na GPU: 0.516622
+Tempo de copia da CPU para GPU: 0.000259
+Tempo da Soma na CPU: 303.923334
+Tempo da Soma na GPU: 0.000112
