@@ -5,9 +5,12 @@
 int main()
 {
 
-    int nthreads;
-    omp_set_num_threads(10);
+    double t1,t2;
+    omp_set_num_threads(10000);
 
+    int nthreads;
+
+    t1 = omp_get_wtime();
     #pragma omp parallel
     {
         nthreads = omp_get_num_threads();
@@ -16,6 +19,11 @@ int main()
         printf("\n Eu sou a thread: %d",i);
         
     }
+    t2 = omp_get_wtime();
+
+    printf("\n Numero total de threads: %d",nthreads);
+
+    printf("\n Tempo total :%lf",t2-t1);
 
     printf("\n");
     return 0;
