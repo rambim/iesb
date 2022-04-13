@@ -6,3 +6,19 @@
  
 
 */
+
+#include<stdio.h>
+
+int main(){
+    int idade;
+
+    scanf("%d", &idade);
+
+    if (idade%2 == 0){
+        printf("A sua idade é par\n");
+    }else{
+        printf("A sua idade é impar\n");
+    }
+
+    return 0;
+}
