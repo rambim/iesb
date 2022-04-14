@@ -9,3 +9,44 @@ qual dos 2 números lidos é o maior
 
 */
 
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n1, n2;
+    int retorno;
+
+    printf("\n Digite n1: ");
+    scanf("%d",&n1);
+    printf("\n Digite N2: ");
+    scanf("%d",&n2);
+
+    retorno = maior(n1,n2);
+
+    if (retorno == 1)
+    {
+        printf("\n %d eh maior que %d",n1,n2);
+    }
+    if (retorno == 2)
+    {
+        printf("\n %d eh maior que %d",n2,n1);
+    }
+        
+
+
+    printf("\n");
+    return 0;
+}
+
+int maior(int a, int b)
+{
+    if (a > b)
+    {
+        return 1;
+    }
+    if (b > a)
+    {
+        return 2;
+    }
+}

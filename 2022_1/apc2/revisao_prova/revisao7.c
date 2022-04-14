@@ -9,3 +9,6 @@ valores par do vetor e ao final, mostre o vetor resultade
 
 */
 
+
+
+
