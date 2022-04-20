@@ -3,14 +3,13 @@
 #include "omp.h"
 
 
-static long num_steps = 10000000000;
+static long num_steps = 100;
 double step;
 
 int main(int argc, char * argv[])
 {
     int i,qtd_threads_global,threads_desejadas;
-    double pi, * sum;
-    double sum_total;
+    double pi;
     double t1,t2;
     
     step = 1.0 / (double)num_steps;
@@ -20,13 +19,14 @@ int main(int argc, char * argv[])
 
     t1 = omp_get_wtime();
 
-    sum = (double*)malloc(sizeof(double)*threads_desejadas);
+    double sum=0;
 
     omp_set_num_threads(threads_desejadas);
 
     #pragma omp parallel
     {
         double x,i;
+        double sum_thread=0;
         int qtd_threads = omp_get_num_threads();
         
         int id = omp_get_thread_num();
@@ -36,19 +36,18 @@ int main(int argc, char * argv[])
             qtd_threads_global = qtd_threads;
         }
         
-        for (i = id,sum[id]=0.0; i < num_steps; i = i + qtd_threads)
+        for (i = id; i < num_steps; i = i + qtd_threads)
         {
             x = (i + 0.5) * step;
-            sum[id] = sum[id] + 4.0 / (1.0 + x * x);
+            
+            sum_thread = sum_thread + 4.0 / (1.0 + x * x);
         }
+
+        #pragma omp critical
+        sum = sum + sum_thread;
     }
 
-    
-    for(i=0;i<qtd_threads_global;i++)
-    {
-        sum_total = sum_total + sum[i];
-    }
-    pi = pi + step * sum_total;
+    pi = pi + step * sum;
 
     t2 = omp_get_wtime();
     

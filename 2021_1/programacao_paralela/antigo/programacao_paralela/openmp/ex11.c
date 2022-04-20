@@ -4,7 +4,7 @@
 #define PAD 8
 
 
-static long num_steps = 100000000;
+static long num_steps = 10000000000;
 double step;
 
 int main(int argc, char * argv[])
