@@ -8,7 +8,6 @@ int main()
 
     while (opcao != 3)
     {
-
         printf("\n 1 - somar");
         printf("\n 2 - subtrair");
         printf("\n 3 - sair: ");
