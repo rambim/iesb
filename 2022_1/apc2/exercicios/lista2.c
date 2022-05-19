@@ -7,10 +7,9 @@ a) int
 b) float
 c) char
 d) long int
-e) long float
-f) long long int
-g) double
-h) arquivo onde:
+e) long long int
+f) double
+g) arquivo onde:
 
 typedef struct arquivo
 {
