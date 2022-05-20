@@ -4,7 +4,7 @@
 int main()
 {
     int i = 0;
-    int j = N;
+    int j = 10;
     for (i = 0; i < j; i++) 
     {
         if (i % 2 == 0)
