@@ -9,3 +9,10 @@ ls -Fltr ( lista os arquivos em ordem de modificação)
 mv {origem} {destino} ( serve para mover/renomear o arquivo)
 code . ( abre o editor na pasta que está)
 code {nome da pasta} (abre o editr na pasta informada)
+
+gcc {nome do codigo fonte} (compila um código)
+gcc {nome do codigo fonte} -o {nome do executavel} (compila um codigo 
+e gera um executavel com nome especifico)
+
+./{nome do executavel} (executa)
+
