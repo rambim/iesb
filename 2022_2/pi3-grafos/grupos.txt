@@ -10,27 +10,52 @@ GRUPO A
     Frederico Paixão Soares Coqueiro - Matriculado	2122130027
     Vinícius Moreira de Carvalho - Matriculado	2122130022
 
+    26/08/2022: Criação de aplicação para o o governador de cada estado construir um metro
+                que inteligue os principais pontos de uma cidade apontados pelo gestor. MST.
+                Próxima aula: Implementar o MST PURO e 2 referências que utilizam desse algoritmo.
+
 GRUPO B
     Marco Paulo Gouveia Nocello - Matriculado	2012130001
     Pedro Costa Resende Faleiros - Matriculado	2012130067
+
+    26/08/2022: Caixa dágua. Sistema de recomendação de criação de conexão entre caixa d'agua
+                             durante o repardo de uma determinada ligação.
+
+                             Minimun spanning tree
     
 GRUPO C
     Eduardo de Oliveira Alvim - Matriculado	2012130076
     Roger dos Santos de Alencar - Matriculado	2022130015
 
+    26/08/2022: Idéia do campo de futebol. Qual melhor sequencia de passes para que a bola
+    chegue no camisa 10. Algoritmo de Dijkstra.
+
+
 GRUPO D
     Samuel Linhares Nogueira - Matriculado	2012130041
     Demétrio Jaber Cademartori - Matriculado	2112130026
+    26/08/2022: aplicativo sugestão de melhor rota em game.
 
 GRUPO E
     Alan da Mota Nascimento - Matriculado	2012130037
     Gabriel Alberto Moura de Sá - Matriculado	2012130033
 
+    26/08/2022: Definir entre o projeto do lixo e da viagem do sonhos.
+                Estudar algoritmo de dikstra.
+
 GRUPO F
     Daniel Lucas Oliveira Lucena - Matriculado	2012130058
     Eduardo Cézar Pereira Fernandes - Matriculado	2012130068
 
+    26/08/2022: Viagem dos planeta lokissimo
+    algoritmos MST e DJIKSTRA
+
+
 
 GRUPO G
+    Vinicius Santana Leão da Silva - Matriculado	2012130043
+
+
+
 
 
