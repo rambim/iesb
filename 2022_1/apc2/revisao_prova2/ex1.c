@@ -10,11 +10,10 @@ int main()
     {
         if (i % a == 0)
         {
-            printf("\n -> %d e par",i);
+            printf("\n -> %d",i);
             t++;
         }
     }
     printf("\n : %d",t);
     return 0;
-    
 }

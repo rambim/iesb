@@ -1,47 +1,34 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "omp.h"
 
-void mostrar_vetor(int * vet ,int tam);
+int main(){
 
-int main()
-{
+    int n = 0;
+    int * vet;
+    int iteracao = 0;
 
-    FILE * arq;
-    int * vet, * vet2;
-    int tamanho=10;
+    do{
+    printf("Digite a quantidade de threads: ");
+    scanf("%d", &n);
+    }while(n<=0);
 
-    vet = (int*)calloc(10,sizeof(int));
-    vet2 = (int*)calloc(10,sizeof(int));
+    vet = (int *)malloc(sizeof(int) * n);
 
-    vet[0] = 1;
-    vet[3] = 5;
-    vet[9] = 7;
+    omp_set_num_threads(n);
 
-    mostrar_vetor(vet,tamanho);
+#pragma omp parallel for
 
-    arq = fopen("base.txt","w");
-    if ( arq== NULL)
-        return 0;
+    for(int i = 0; i < omp_get_num_threads(); i++){
+        printf("\nEu sou a Thread [ %d ]", omp_get_thread_num());
+        vet[iteracao] = omp_get_thread_num();
+        if(vet[0] == omp_get_thread_num()){
+            printf(" Iniciando o mundo paralelo");
+        }
+        iteracao++;
+    }
 
-    fwrite(vet,tamanho,sizeof(int),arq);
-    fclose(arq);
+#pragma omp master
+        printf("\nFIM\n");
 
-    arq = fopen("base.txt","r");
-
-    if ( arq== NULL)
-        return 0;
-    fread(vet2,tamanho,sizeof(int),arq);
-    fclose(arq);
-
-    mostrar_vetor(vet2,tamanho);
-    printf("\n");
-    return 0;
-}
-
-void mostrar_vetor(int * vet ,int tam)
-{
-    int i;
-    printf("\n");
-    for(i=0;i<tam;i++)
-        printf("%d ",vet[i]);
 }
