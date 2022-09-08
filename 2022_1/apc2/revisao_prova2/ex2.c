@@ -3,17 +3,15 @@
 
 int main()
 {
-
     int i,j;
     int a = 0;
-    for(i=0;i<5;i++)    
+    for(i=0;i<10;i++)    
     {
-        for(j=i;j<5;j++)        
+        for(j=i;j<10;j++)        
         {
             a = a + 1;
         }
     }
-    printf("\n %d",i);
+    printf("\n %d",a);
     return 0;
-    
 }
