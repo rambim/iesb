@@ -14,6 +14,10 @@ GRUPO A
                 que inteligue os principais pontos de uma cidade apontados pelo gestor. MST.
                 Próxima aula: Implementar o MST PURO e 2 referências que utilizam desse algoritmo.
 
+    09/09/2022: indo bacana.
+
+    
+
 GRUPO B
     Marco Paulo Gouveia Nocello - Matriculado	2012130001
     Pedro Costa Resende Faleiros - Matriculado	2012130067

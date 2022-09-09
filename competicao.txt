@@ -1,0 +1,23 @@
+Dada uma determinada entrada composta pela quantidade de funcionários Q
+e quantas relações de amizades F há entre eles, leia F pares de funcionários
+correspondente a relação de amizade  e diga
+
+Quantas rotas de fuga serão necessárias ?
+
+Quantas combinações de chefes de equipe exxitem
+
+
+Existe 1 rota pra cada grupo de amigos
+Chefe de equipe é 1 pessoa escolhida dentre um grupo de amigos para orientálos
+
+Ex:
+Entrada:
+
+6 3
+1 2
+2 3
+4 5
+
+Saída
+3 6
+
