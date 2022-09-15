@@ -3,6 +3,8 @@
 #include "omp.h"
 
 
+
+
 void pares();
 void impares();
 void primos();
