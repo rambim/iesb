@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// https://www.spoj.com/problems/BUGLIFE/
-// Exercício
 
 typedef struct vertice
 {
