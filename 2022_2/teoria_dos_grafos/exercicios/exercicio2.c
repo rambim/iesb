@@ -47,7 +47,7 @@ int main()
 
         printf("Scenario #%d:\n", qtd_casos - d);
 
-        for (int i = 1; i <= qtd_arestas; i++)
+        for (int i = 1; i <= qtd_vertices; i++)
         {
             if (vertices[i].visitado == 0)
             {
