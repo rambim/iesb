@@ -16,7 +16,7 @@ GRUPO A
 
     09/09/2022: indo bacana.
 
-    
+
 
 GRUPO B
     Marco Paulo Gouveia Nocello - Matriculado	2012130001
@@ -33,6 +33,8 @@ GRUPO C
 
     26/08/2022: Idéia do campo de futebol. Qual melhor sequencia de passes para que a bola
     chegue no camisa 10. Algoritmo de Dijkstra.
+
+
 
 
 GRUPO D
@@ -58,6 +60,7 @@ GRUPO F
 
 GRUPO G
     Vinicius Santana Leão da Silva - Matriculado	2012130043
+    
 
 
 
