@@ -17,7 +17,7 @@ int main()
 
     MPI_Status status;
 
-    int x = 0;
+    int x = 123;
 
     MPI_Init(NULL, NULL);
     MPI_Comm_size(MPI_COMM_WORLD, &qtd_processos);
@@ -30,52 +30,78 @@ int main()
         while (1)
         {
             start = MPI_Wtime();
-            while (MPI_Wtime() - start < 5)
+            while (MPI_Wtime() - start < 3)
             {
                 // We keep looping until <waiting_time> seconds have elapsed
             }
             cc0++;
             printf("\n Sou a thread %d %d", id_processo,cc0);
+            printf("\n Sou a thread %d %d Aguardando algum atoa", id_processo,cc0);
+            MPI_Recv(&x,1,MPI_INT,MPI_ANY_SOURCE,0,MPI_COMM_WORLD,&status);
+            printf("\n Sou a thread %d %d Recebido pedido de trabalho da thread %d", id_processo,cc0,status.MPI_SOURCE);
+            printf("\n Sou a thread %d %d Enviando trabalho para:  %d", id_processo,cc0,status.MPI_SOURCE);
+            MPI_Send(&x,1,MPI_INT,status.MPI_SOURCE,0,MPI_COMM_WORLD);
+            printf("\n Sou a thread %d %d Enviado. Aguardando trabalho do %d", id_processo,cc0,status.MPI_SOURCE);
+            MPI_Recv(&x,1,MPI_INT,MPI_ANY_SOURCE,0,MPI_COMM_WORLD,&status);
+            printf("\n Sou a thread %d %d Recebido. Resultado do %d", id_processo,cc0,status.MPI_SOURCE);
         }
         break;
     case 1:
         while (1)
         {
             start = MPI_Wtime();
-            while (MPI_Wtime() - start < 2)
+            while (MPI_Wtime() - start < 10)
             {
                 // We keep looping until <waiting_time> seconds have elapsed
             }
             cc1++;
             printf("\n Sou a thread %d %d", id_processo,cc1);
-            MPI_Probe(0,0,MPI_COMM_WORLD,&status);
-            printf("\n Sou a thread %d %d %d", id_processo,cc1,status.MPI_ERROR);
-            printf("\n Sou a thread %d %d %d", id_processo,cc1,status.MPI_SOURCE);
-            printf("\n Sou a thread %d %d %d", id_processo,cc1,status.MPI_TAG);
+            printf("\n Sou a thread %d %d Avisando que estou atoa", id_processo,cc1);
+            MPI_Send(&x,1,MPI_INT,0,0,MPI_COMM_WORLD);
+            printf("\n Sou a thread %d %d Enviado!", id_processo,cc1);
+            printf("\n Sou a thread %d %d Esperando servico chegar!", id_processo,cc1);
+            MPI_Recv(&x,1,MPI_INT,0,0,MPI_COMM_WORLD,&status);
+            printf("\n Sou a thread %d %d Trabalho chegou", id_processo,cc1);
+            printf("\n Sou a thread %d %d Trabalhando..", id_processo,cc1);
+            printf("\n Sou a thread %d %d Finalizado. Devolvendo resultado", id_processo,cc1);
+            MPI_Send(&x,1,MPI_INT,0,0,MPI_COMM_WORLD);
         }
         break;
     case 2:
         while (1)
         {
             start = MPI_Wtime();
-            while (MPI_Wtime() - start < 2)
+            while (MPI_Wtime() - start < 5)
             {
                 // We keep looping until <waiting_time> seconds have elapsed
             }
             cc2++;
             printf("\n Sou a thread %d %d", id_processo,cc2);
+            printf("\n Sou a thread %d %d Avisando que estou atoa", id_processo,cc2);
+            MPI_Send(&x,1,MPI_INT,0,0,MPI_COMM_WORLD);
+            printf("\n Sou a thread %d %d Enviado!", id_processo,cc2);
+            printf("\n Sou a thread %d %d Esperando servico chegar!", id_processo,cc2);
+            MPI_Recv(&x,1,MPI_INT,0,0,MPI_COMM_WORLD,&status);
+            printf("\n Sou a thread %d %d Trabalho chegou", id_processo,cc2);
+            printf("\n Sou a thread %d %d Trabalhando..", id_processo,cc2);
+            printf("\n Sou a thread %d %d Finalizado. Devolvendo resultado", id_processo,cc2);
+            MPI_Send(&x,1,MPI_INT,0,0,MPI_COMM_WORLD);
         }
         break;
     case 3:
         while (1)
         {
             start = MPI_Wtime();
-            while (MPI_Wtime() - start < 2)
+            while (MPI_Wtime() - start < 3)
             {
                 // We keep looping until <waiting_time> seconds have elapsed
             }
             cc3++;
             printf("\n Sou a thread %d %d", id_processo,cc3);
+            MPI_Probe(0,0,MPI_COMM_WORLD,&status);
+            printf("\n Sou a thread %d %d %d", id_processo,cc1,status.MPI_ERROR);
+            printf("\n Sou a thread %d %d %d", id_processo,cc1,status.MPI_SOURCE);
+            printf("\n Sou a thread %d %d %d", id_processo,cc1,status.MPI_TAG);
         }
         break;
     default:
