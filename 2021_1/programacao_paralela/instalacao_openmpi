@@ -31,7 +31,7 @@ Etapa 1) Instalar SSH e dar permissões. Em todas as máquinas executar:
 Etapa 2) Edite o arquivo hosts da master:
 	sudo nano /etc/hosts
 		127.0.0.1 localhost
-		192.168.0.XX slave
+		192.168.64.48 master
 
 		Desabilite as outras linhas.
 
@@ -77,9 +77,9 @@ Etapa 11) Instalar NFS Server na master:
 	sudo apt-get install nfs-kernel-server
 
 Etapa 12) Crie um diretório para ser um diretório compartilhado na master:
-	sudo mkdir -p /home/usuario_mpi/openmpi/pasta_compartilhada
-	sudo chown nobody:nogroup /home/usuario_mpi/openmpi/pasta_compartilhada
-	sudo chmod 777 /home/usuario_mpi/openmpi/pasta_compartilhada
+	sudo mkdir -p /home/iesb/openmpi/pasta_compartilhada
+	sudo chown nobody:nogroup /home/iesb/openmpi/pasta_compartilhada
+	sudo chmod 777 /home/iesb/openmpi/pasta_compartilhada
 
 Etapa 13) Adicione ao arquivo /etc/exports na master:
 	sudo nano /etc/exports
@@ -121,7 +121,7 @@ Etapa 22) Download e descompacte o Openmpi em Todas as máquinas:
 	tar -xvf openmpi-4.1.1.tar.gz
 
 Etapa 23) Vá ao diretório do openmpi e adicione configure o prefixo na master:
-	./configure --prefix="/home/usuario_mpi/.openmpi"
+	./configure --prefix="/home/iesb/.openmpi"
 	make
 	sudo make install
 
