@@ -1,0 +1,49 @@
+1)
+Faça um programa em MPI que gere a seguinte saída:
+"Hello World!" from MPI process 0. We are 4 MPI processes.
+"Hello World!" from MPI process 1. We are 4 MPI processes.
+"Hello World!" from MPI process 2. We are 4 MPI processes.
+"Hello World!" from MPI process 3. We are 4 MPI processes.
+
+A ordem não importa
+
+2)
+Este teste é para você praticar o recurso fundamental do MPI: 
+enviar uma mensagem. A aplicação que você deve desenvolver é composta por 
+2 processos MPI, o primeiro envia uma mensagem e o segundo a recebe. 
+A mensagem a enviar é apenas um inteiro com o valor 12345. 
+O destinatário deve imprimir o valor recebido. Você é livre para escolher 
+o valor da tag que deseja.Saída:
+I am process 0, I send value 12345
+I am process 1, I received value 12345
+
+3)
+Este teste é uma maneira fácil de usar uma operação coletiva. 
+Esta aplicação é composta por 4 processos MPI e consiste no 
+processo MPI 1 enviando o valor 12345 para todos os outros processos MPI. 
+Para conseguir isso, você não tem permissão para usar envios individuais, 
+em vez disso, você deve usar uma operação coletiva.
+Saída:
+I am process 1 and I broadcast value 12345
+(as proximas linhas poderão aparecer em qualquer ordem)
+I am process 0 and I received value 12345 via broadcast
+I am process 2 and I received value 12345 via broadcast
+I am process 3 and I received value 12345 via broadcast
+
+4)
+Um coletivo clássico: a redução. Este exercício consiste em escrever 
+uma aplicação onde cada processo declara uma variável contendo um 
+valor igual ao seu MPI rank vezes 100. Em seguida, todos os processos 
+participam de uma operação coletiva calculando a soma de todas essas 
+variáveis ​​e armazenando a soma em uma variável mantida no MPI processo 0, 
+que o imprime.
+Saída:
+Value held by MPI process 0: 0.
+Value held by MPI process 1: 100.
+Value held by MPI process 3: 300.
+Value held by MPI process 4: 400.
+Value held by MPI process 2: 200.
+Total sum reduced at MPI process 0: 1000.
+
+
+
