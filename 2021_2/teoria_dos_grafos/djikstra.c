@@ -73,7 +73,7 @@ int main(int *argc, char *argv[])
         printf("\n Problema no carregamento do grafo");
 
 
-    djikstra(vertices,6);
+    djikstra(vertices,5);
 
     for(i=1;i<=qtd_vertices;i++)
     {

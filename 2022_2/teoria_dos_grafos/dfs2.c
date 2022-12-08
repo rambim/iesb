@@ -12,12 +12,14 @@ typedef struct vertice
 void mostrar_tudo (vertice * vertices, int qtd_vertices);
 void dfs(vertice * vertices, int qtd_vertices, int raiz);
 
+void bubblesort(int *vet, int tam);
+
 int main()
 {
     int qtd_vertices, qtd_arestas;
     int i,a,b,qtd_cc=0;
     vertice * vertices;
-    scanf("%d %d",&qtd_vertices, &qtd_arestas);
+    scanf("%d;%d",&qtd_vertices, &qtd_arestas);
 
     // printf("\n Quantidade de vertices: %d ",qtd_vertices);
     // printf("\n Quantidade de arestas: %d\n",qtd_arestas);
@@ -26,25 +28,31 @@ int main()
 
     for(i=0;i<qtd_arestas;i++)
     {
-        scanf("%d %d",&a,&b);
+        scanf("%d;%d",&a,&b);
         vertices[a].lista_adj[vertices[a].tam_lista_adj] = b;
         vertices[a].tam_lista_adj++;
         vertices[b].lista_adj[vertices[b].tam_lista_adj] = a;
         vertices[b].tam_lista_adj++;
     }
+    // mostrar_tudo(vertices,qtd_vertices);
+
+    for(i=0;i<qtd_vertices;i++)
+    {
+        bubblesort(vertices[i].lista_adj,vertices[i].tam_lista_adj);
+    }
 
     // mostrar_tudo(vertices,qtd_vertices);
 
-    for(i=1;i<=qtd_vertices;i++)
-    {
-        if (vertices[i].visitado==0)
-        {
-            dfs(vertices,qtd_vertices,i);
-            qtd_cc++;
-        }
-    }
+    // for(i=1;i<=qtd_vertices;i++)
+    // {
+    //     if (vertices[i].visitado==0)
+    //     {
+    dfs(vertices,qtd_vertices,6);
+            // qtd_cc++;
+        // }
+    // }
 
-    printf("\n%d",qtd_cc);
+    // printf("\n%d",qtd_cc);
 
     // dfs(vertices,qtd_vertices,1);
 
@@ -76,7 +84,7 @@ void dfs(vertice * vertices, int qtd_vertices, int raiz)
         return;
     }
 
-    // printf("\n %d",raiz);
+    printf(" %d",raiz);
     vertices[raiz].visitado=1;
 
     for(i=0;i<vertices[raiz].tam_lista_adj;i++)
@@ -84,6 +92,27 @@ void dfs(vertice * vertices, int qtd_vertices, int raiz)
         if (vertices[vertices[raiz].lista_adj[i]].visitado==0)
         {
             dfs(vertices,qtd_vertices,vertices[raiz].lista_adj[i]);
+        }
+    }
+}
+
+void bubblesort(int *vet, int tam)
+{
+    long long int pass, i, aux;
+    int trocou = 1;
+
+    for (pass = 0; pass < tam - 1 && trocou == 1; pass++)
+    {
+        trocou = 0;
+        for (i = 0; i < tam - pass - 1; i++)
+        {
+            if (vet[i] > vet[i + 1])
+            {
+                aux = vet[i];
+                vet[i] = vet[i + 1];
+                vet[i + 1] = aux;
+                trocou = 1;
+            }
         }
     }
 }

@@ -36,6 +36,7 @@ int carrega_grafo(vertice *vertices, char *nome_do_arquivo);
 void push(vertice *v, int x);
 void mostrar_lista_dos_vertices(vertice *v, int tam);
 void dfs(vertice * vertices , int x, int pai);
+void mostrar_tabela_in_our(vertice * vertices, int qtd_vertices);
 
 int main(int *argc, char *argv[])
 {
@@ -53,10 +54,26 @@ int main(int *argc, char *argv[])
         printf("\n Problema no carregamento do grafo");
 
     printf("\n Chamando DFS: ");
-    dfs(vertices,1,-1);
+    dfs(vertices,0,-1);
+
+    mostrar_tabela_in_our(vertices,qtd_vertices);
+
+
+
 
     printf("\n");
     return 0;
+}
+
+void mostrar_tabela_in_our(vertice * vertices, int qtd_vertices)
+{
+    int i;
+
+    for ( i = 0; i <= qtd_vertices; i++)
+    {
+        printf("\n Vertice : %d In: %d Lower : %d",i,vertices[i].in,vertices[i].lower);
+    }
+    
 }
 
 int carrega_grafo(vertice *vertices, char *nome_do_arquivo)
