@@ -4,16 +4,13 @@
 int qtd_global[10001];
 
 
-int count=1;
-int min(int x, int y);
-
 typedef struct vertice
 {
     int visitado;
     int distancia;
-    struct lista *lista_adj;
     int in;
-    int lower;
+    int out;
+    struct lista *lista_adj;
 } vertice;
 
 typedef struct lista
@@ -35,8 +32,9 @@ lista *aloca_lista();
 int carrega_grafo(vertice *vertices, char *nome_do_arquivo);
 void push(vertice *v, int x);
 void mostrar_lista_dos_vertices(vertice *v, int tam);
-void dfs(vertice * vertices , int x, int pai);
-void mostrar_tabela_in_our(vertice * vertices, int qtd_vertices);
+void dfs(vertice * vertices , int x, int distancia);
+void dfs_in_out(vertice * vertices , int x, int distancia, int * count);
+int existe_sub_arvore(int pai, int filho, vertice * vertices);
 
 int main(int *argc, char *argv[])
 {
@@ -49,31 +47,42 @@ int main(int *argc, char *argv[])
     {
         printf("\n Grafo carregado com sucesso qtd vertices: %d",qtd_vertices);
         mostrar_lista_dos_vertices(vertices, 10001);
+
+        int count =1;
+        int pai, filho;
+
+        printf("\n Chamando DFS: ");
+        dfs_in_out(vertices,1,0,&count);
+
+        for(i=1;i<=qtd_vertices;i++)
+        {
+            printf("\n Vertice %d",i);
+            printf("\n In: %d Out: %d",vertices[i].in,vertices[i].out);
+        }
+
+        printf("\n -> ");
+        do
+        {
+            scanf("%d %d",&pai,&filho);
+
+            if (existe_sub_arvore(pai,filho,vertices)){
+                printf("\n Verdadeiro");
+            }
+            else
+            {
+                printf("\n Falso");
+            }
+        } while (pai!=0 && filho!=0);
+        
+
+
     }
     else
         printf("\n Problema no carregamento do grafo");
 
-    printf("\n Chamando DFS: ");
-    dfs(vertices,1,-1);
-
-    mostrar_tabela_in_our(vertices,qtd_vertices);
-
-
-
 
     printf("\n");
     return 0;
-}
-
-void mostrar_tabela_in_our(vertice * vertices, int qtd_vertices)
-{
-    int i;
-
-    for ( i = 0; i <= qtd_vertices; i++)
-    {
-        printf("\n Vertice : %d In: %d Lower : %d",i,vertices[i].in,vertices[i].lower);
-    }
-    
 }
 
 int carrega_grafo(vertice *vertices, char *nome_do_arquivo)
@@ -226,14 +235,12 @@ void mostrar_lista(lista *l)
 }
 
 
-void dfs(vertice * vertices , int x, int pai)
+void dfs(vertice * vertices , int x, int distancia)
 {
     registro * aux;
     vertices[x].visitado=1;
-    vertices[x].in = count;
-    vertices[x].lower = count;
-    count++;
-    // printf(" %d",x);
+    vertices[x].distancia = distancia;
+    printf(" %d",x);
 
     if (vertices[x].lista_adj==NULL)
         return;
@@ -242,33 +249,43 @@ void dfs(vertice * vertices , int x, int pai)
 
     while(aux!=NULL)
     {
-        if (aux->valor != pai)
+        if (vertices[aux->valor].visitado==0)
         {
-            if (vertices[aux->valor].visitado==1)
-            {
-                // printf("\n Back Edge");
-                vertices[x].lower = min(vertices[x].lower, vertices[aux->valor].in);
-            }
-            else
-            {
-                // printf("\n Forward edge");
-                dfs(vertices,aux->valor,x);
-
-                if (vertices[aux->valor].lower > vertices[x].in)
-                {
-                    printf("\n PONTE entre %d e %d",x,aux->valor);
-                }
-
-                vertices[x].lower = min(vertices[x].lower,vertices[aux->valor].lower);
-
-            }
+            dfs(vertices,aux->valor,distancia+1); 
         }
         aux = aux->prox;
     }
 
 }
 
-int min(int x, int y)
+void dfs_in_out(vertice * vertices , int x, int distancia, int * count)
 {
-    return x < y ? x : y;
+    registro * aux;
+    vertices[x].visitado=1;
+    vertices[x].distancia = distancia;
+    vertices[x].in = *count;
+    (*count)++;
+    printf(" %d",x);
+
+    if (vertices[x].lista_adj==NULL)
+        return;
+        
+    aux = vertices[x].lista_adj->inicio;
+
+    while(aux!=NULL)
+    {
+        if (vertices[aux->valor].visitado==0)
+        {
+            dfs_in_out(vertices,aux->valor,distancia+1,count); 
+        }
+        aux = aux->prox;
+    }
+    vertices[x].out = *count;
+    (*count)++;
+}
+
+
+int existe_sub_arvore(int pai, int filho, vertice * vertices)
+{
+    return vertices[pai].in < vertices[filho].in && vertices[pai].out > vertices[filho].out;
 }

@@ -1,0 +1,2 @@
+
+se o lower do 4 tem que ser greather do in do 3 pra ser uma ponte
