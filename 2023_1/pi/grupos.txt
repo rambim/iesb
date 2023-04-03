@@ -12,18 +12,44 @@ Humberto pereira - matricula 2122130012
                       LISTA DE FUNCIONALIDADES DA APLICAÇÃO.
 
 
-
-
-                 
-
-                 
-
-
 GRUPO B
 Vitor Vargas Suzarte - Matriculado	2222130027
 Carlos Eduardo Souza Almeida - Matriculado	2012130044
 Andreas Ramalho Spyridakis - Matriculado	2312130003
 Pietro Nazar Neiva - Matriculado	1812130062
+
+    TEMA: COMPARAÇÃO DE ALGORITMOS DE COMPRESSÃO
+            O PROJETO SE BASEIA EM COMPARAR ALGORITMOS DE COMPREESÃO USANDO OS SEGUITNES
+            CRITÉRIOS:
+                 Taxa de compressão
+                 Taxa de descompressão
+                 Tempo de compressão
+                 Tempo de descompressão
+                 Qualidade da compressão
+    03/04/2022: DEFINIR QUAL O TIPO DE CONTEÚDO QUE SERÁ COMPRIMIDO E DEFINIR TODOS OS ALGORITMOS
+                QUE SERÃO UTILIZADOS ( NO MÍNIMO 3.)
+                MONTAR O "DATASET" DOS ARQUIVOS QUE SERÃO COMPRIMIDOS. 
+                DEFINIR TECNOLOGIAS QUE SERÃO UTILIZADAS
+                EXEMPLOS:
+                    TEXTOS TRADICIONAIS LIVROS POR EXEMPLO
+                    TEXTOS COM DICIONARIOS CURTOS POR EXEMPLO GENES HUMANOS.
+                    TEXTOS BINÁRIOS ( IMAGENS CONVERTIDAS EM TEXTO.)
+                        COMPACTAÇÃO DE IMAGEM
+                TRABALHOS CORRELATOS ( TRAZER NA PRÓXIMA AULA)
+                INICIAR TEMPLATE NO OVERLEAF.
+                    INTRODUÇÃO
+                    OBJETIVO GERAL
+                    OBJETIVO ESPECIFICO
+                    REFERENCIA BIBLIOGRÁFICA
+                
+
+
+
+
+
+
+                
+    03/04/2022: 
 
 GRUPO C
 Pedro Henrique Freitas - Matriculado	2212130005
