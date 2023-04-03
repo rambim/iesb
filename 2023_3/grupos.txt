@@ -1,1 +1,38 @@
-teste
+
+GRUPO A
+Iago Alves Abadia dos Santos - Matriculado	2112130012
+Rafael Braz de Castro - Matriculado	2312130046
+Aaron Willian Araújo Rodrigues - Matriculado	2122130037
+Christian Soares Pereira dos Santos - Matriculado	2122130002
+
+GRUPO B
+Vitor Vargas Suzarte - Matriculado	2222130027
+Carlos Eduardo Souza Almeida - Matriculado	2012130044
+Andreas Ramalho Spyridakis - Matriculado	2312130003
+Pietro Nazar Neiva - Matriculado	1812130062
+
+GRUPO C
+Pedro Henrique Freitas - Matriculado	2212130005
+João Vítor Campos Madeiro - Matriculado	2212130086
+Pedro Gomes Leite - Matriculado	2212130089
+    TRELO - UTILIZANDO SKIPLIST PARA BUSCA
+    
+
+GRUPO D
+Caio Augusto de Sousa Alves - Matriculado	2212130009
+João Pedro Sousa Nogueira - Matriculado	2212130062
+Daniel Lima Duarte - Matriculado	2312130121
+Rafael Benicio de Carvalho - Matriculado	2312130118
+
+
+
+
+
+
+Daniel Anes da Silva Almeida - Matriculado	1612130012
+João Miguel Luiz da costa - Matriculado	2212130057
+Jonnes Bezerra Costa - Matriculado	2012130094
+Lucas da Silveira Macedo - Matriculado	2212130101
+Marcelo Ferreira Vasconcelos Filho - Matriculado	1812130008
+Matheus Rodrigues de Lyra - Cancelado	2312130084
+Vinicius Martins Delgado - Matriculado	2212130087
