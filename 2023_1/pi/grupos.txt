@@ -1,9 +1,23 @@
 
 GRUPO A
 Iago Alves Abadia dos Santos - Matriculado	2112130012
-Rafael Braz de Castro - Matriculado	2312130046
 Aaron Willian Araújo Rodrigues - Matriculado	2122130037
 Christian Soares Pereira dos Santos - Matriculado	2122130002
+Humberto pereira - matricula 2122130012
+
+    03/04/2022:
+        XADREZ - MONTAR GRAFO DE POSSIBLIDADES DE JOGADAS. JÁ EXISTE MODELO DE JOGADA DE XADREZ
+        PRÓXIMA AULA: INTRODUÇÃO, OBJETIVOS GERAIS, OBJETIVOS ESPECIFICOS E REFERÊNCIA BIBLIOGRÁFICA.
+                      VERIFICAR TECNOLOGIAS QUE SERÃO UTILIZADAS. FRONT END, BACK END, O XADREZ EM SI, SOMO SERÁ A ITERAÇÃO DO USUÁRIO COM O JOGO.
+                      LISTA DE FUNCIONALIDADES DA APLICAÇÃO.
+
+
+
+
+                 
+
+                 
+
 
 GRUPO B
 Vitor Vargas Suzarte - Matriculado	2222130027
@@ -24,15 +38,18 @@ João Pedro Sousa Nogueira - Matriculado	2212130062
 Daniel Lima Duarte - Matriculado	2312130121
 Rafael Benicio de Carvalho - Matriculado	2312130118
 
-
-
-
-
-
-Daniel Anes da Silva Almeida - Matriculado	1612130012
+GRUPO E
 João Miguel Luiz da costa - Matriculado	2212130057
+Vinicius Martins Delgado - Matriculado	2212130087
+
+
+
+
+
+
+Rafael Braz de Castro - Matriculado	2312130046
+Daniel Anes da Silva Almeida - Matriculado	1612130012
 Jonnes Bezerra Costa - Matriculado	2012130094
 Lucas da Silveira Macedo - Matriculado	2212130101
 Marcelo Ferreira Vasconcelos Filho - Matriculado	1812130008
 Matheus Rodrigues de Lyra - Cancelado	2312130084
-Vinicius Martins Delgado - Matriculado	2212130087
