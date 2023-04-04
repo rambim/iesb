@@ -17,26 +17,27 @@ int main()
 
     long long int *vet;
 
-    for (i = 10000000; i <= 10000001; i = i + 10000)
-    {
+    i = 20000000;
+    // for (i = 10000000; i <= 10000001; i = i + 10000)
+    // {
 
-        vet = cria_vetor(i, 0);
+    vet = cria_vetor(i, 0);
 
-        // printf("\n Mostrando vetor desordenado: ");
-        // mostrar_vetor(vet,i);
+    // printf("\n Mostrando vetor desordenado: ");
+    // mostrar_vetor(vet,i);
 
-        start = clock(); // tempo inicial
-        bubblesort(vet, i);
-        // quicksort(vet,0,i-1);
-        end = clock(); // tempo final;
+    start = clock(); // tempo inicial
+    // bubblesort(vet, i);
+    quicksort(vet,0,i-1);
+    end = clock(); // tempo final;
 
-        // printf("\n Mostrando vetor ordenado: ");
-        // mostrar_vetor(vet,i);
-        printf("\n Tamanho do vetor: %lld", i);
-        printf("\ntempo gasto %f segundos\n", ((double)(end - start) /
-                                               ((double)CLOCKS_PER_SEC))); // impressão do tempo gasto
-        free(vet);
-    }
+    // printf("\n Mostrando vetor ordenado: ");
+    // mostrar_vetor(vet,i);
+    printf("\n Tamanho do vetor: %lld", i);
+    printf("\ntempo gasto %f segundos\n", ((double)(end - start) /
+                                            ((double)CLOCKS_PER_SEC))); // impressão do tempo gasto
+    free(vet);
+// }
 }
 
 long long int *cria_vetor(long long int tam, int ordenado)

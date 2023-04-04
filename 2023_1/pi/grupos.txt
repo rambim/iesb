@@ -55,10 +55,8 @@ Pedro Gomes Leite - Matriculado	2212130089
         IMPLEMENTAR SKIP COM DADOS MOCKADOS ( NÚMEROS ENTRE 1 E 1KKK).
         IDÉIA: COMPARAÇÃOA ENTRE UM CONSULTA NO BANCO DE DADOS E DIRETO NA SKIPLIST.
         CRIAR O TEMPLATE E ENCONTRAR APLICAÇÃO QUE UTILIZE A SKIPLIST COMO SOLUÇÃO.
-        
 
-
-    
+   
 
 GRUPO D
 Caio Augusto de Sousa Alves - Matriculado	2212130009
@@ -66,17 +64,22 @@ João Pedro Sousa Nogueira - Matriculado	2212130062
 Daniel Lima Duarte - Matriculado	2312130121
 Rafael Benicio de Carvalho - Matriculado	2312130118
 
+    TEMA: SEM TEMA.
+    03/04/2023
+
+
 GRUPO E
 João Miguel Luiz da costa - Matriculado	2212130057
 Vinicius Martins Delgado - Matriculado	2212130087
+Daniel Anes da Silva Almeida - Matriculado	1612130012
 
 
+    TEMA: 
 
 
 
 
 Rafael Braz de Castro - Matriculado	2312130046
-Daniel Anes da Silva Almeida - Matriculado	1612130012
 Jonnes Bezerra Costa - Matriculado	2012130094
 Lucas da Silveira Macedo - Matriculado	2212130101
 Marcelo Ferreira Vasconcelos Filho - Matriculado	1812130008
