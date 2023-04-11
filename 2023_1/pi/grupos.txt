@@ -10,6 +10,9 @@ Humberto pereira - matricula 2122130012
         PRÓXIMA AULA: INTRODUÇÃO, OBJETIVOS GERAIS, OBJETIVOS ESPECIFICOS E REFERÊNCIA BIBLIOGRÁFICA.
                       VERIFICAR TECNOLOGIAS QUE SERÃO UTILIZADAS. FRONT END, BACK END, O XADREZ EM SI, SOMO SERÁ A ITERAÇÃO DO USUÁRIO COM O JOGO.
                       LISTA DE FUNCIONALIDADES DA APLICAÇÃO.
+    10/04/2022:
+        REESCREVER INTRODUÇÃO, OBJETIVOS GERAIS E ESPECIFICOS. AJUSTAR METODOLOGIA. TRAZER LISTA DE FUNCIONALIDADES E 2 TRABALHOS QUE VÃO UTILILZAR 
+        DE BASE.
 
 
 GRUPO B
@@ -41,7 +44,11 @@ Pietro Nazar Neiva - Matriculado	1812130062
                     OBJETIVO GERAL
                     OBJETIVO ESPECIFICO
                     REFERENCIA BIBLIOGRÁFICA
-                
+    10/04/2022: SÓ HUFFMAN . 
+                LZ77
+                FALTA 1
+
+
 
 GRUPO C
 Pedro Henrique Freitas - Matriculado	2212130005
@@ -56,6 +63,9 @@ Pedro Gomes Leite - Matriculado	2212130089
         IDÉIA: COMPARAÇÃOA ENTRE UM CONSULTA NO BANCO DE DADOS E DIRETO NA SKIPLIST.
         CRIAR O TEMPLATE E ENCONTRAR APLICAÇÃO QUE UTILIZE A SKIPLIST COMO SOLUÇÃO.
 
+    10/04/2023
+
+
    
 
 GRUPO D
@@ -66,6 +76,23 @@ Rafael Benicio de Carvalho - Matriculado	2312130118
 
     TEMA: SEM TEMA.
     03/04/2023
+    10/04/2023 - COMPARAÇÃO DE ALGORITMOS DE ORDENAÇÃO.
+                    SHELL
+                    COMB
+                    BOGO
+                    STALIN
+
+                LISTA DOS DATASETS QUE SERÃO UTILIZADOS PROS TESTES.
+                OVERLEAF : INTRODUÇÃO
+                            OBJETIVO GERAL
+                            OBJETIVO ESPECIFICO
+                            REFERENCIA BIBLIOGRÁFICA
+                TRABALHOS CORRELATOS.
+
+    
+
+
+
 
 
 GRUPO E
@@ -75,6 +102,11 @@ Daniel Anes da Silva Almeida - Matriculado	1612130012
 
 
     TEMA: 
+    10/04/2023: Sugestão de medicamentos com base em sintomas.
+
+        ÁRVORE DE DECISÃO : TRABALHOS CORRELATOS DE ÁRVORE DE DECISÃO
+        implementação e variações de árvore de decisão e sua complexidade em operações básicas.
+        template no overleaf com introdução, objetivo geral, objetivo especifico e referência bibliográfica.
 
 
 
