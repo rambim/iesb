@@ -1,0 +1,23 @@
+Implementação de Estruturas de Dados e Algoritmos de Ordenação
+
+Descrição do exercício:
+
+Divida os estudantes em grupos de 2 a 4 pessoas, dependendo do tamanho da turma.
+
+Cada grupo deve implementar, em uma linguagem de programação de sua escolha:
+    1 fila utilizando lista ligada ou duplamente ligada
+    1 pilha utilizando uma lista ligada ou duplamente ligada
+
+Os grupos devem implementar as seguintes operações para cada estrutura de dados escolhida:
+
+Inserção: adicionar um novo elemento à estrutura de dados.
+Remoção: remover um elemento da estrutura de dados.
+Busca: buscar a presença de um elemento na estrutura de dados.
+Impressão: imprimir todos os elementos da estrutura de dados.
+
+Após a implementação das estruturas de dados, os grupos devem implementar pelo menos 
+dois algoritmos de ordenação, como o Bubble Sort, Selection Sort, Insertion Sort, Quick Sort ou Merge Sort.
+
+Os grupos devem testar suas implementações com diferentes casos de teste, incluindo casos de teste que envolvam a manipulação das estruturas de dados e a aplicação dos algoritmos de ordenação.
+
+Ao final, os grupos devem apresentar suas implementações em sala de aula, demonstrando o funcionamento das estruturas de dados e dos algoritmos de ordenação, e discutindo as vantagens e desvantagens de cada estrutura de dados e algoritmo de ordenação escolhidos.
