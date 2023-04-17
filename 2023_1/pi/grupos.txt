@@ -14,6 +14,10 @@ Humberto pereira - matricula 2122130012
         REESCREVER INTRODUÇÃO, OBJETIVOS GERAIS E ESPECIFICOS. AJUSTAR METODOLOGIA. TRAZER LISTA DE FUNCIONALIDADES E 2 TRABALHOS QUE VÃO UTILILZAR 
         DE BASE.
 
+    17/04/2022:
+
+
+
 
 GRUPO B
 Vitor Vargas Suzarte - Matriculado	2222130027
@@ -36,7 +40,7 @@ Pietro Nazar Neiva - Matriculado	1812130062
                 EXEMPLOS:
                     TEXTOS TRADICIONAIS LIVROS POR EXEMPLO
                     TEXTOS COM DICIONARIOS CURTOS POR EXEMPLO GENES HUMANOS.
-                    TEXTOS BINÁRIOS ( IMAGENS CONVERTIDAS EM TEXTO.)
+                    TEXTOS BINÁRIOS (IMAGENS CONVERTIDAS EM TEXTO.)
                         COMPACTAÇÃO DE IMAGEM
                 TRABALHOS CORRELATOS ( TRAZER NA PRÓXIMA AULA)
                 INICIAR TEMPLATE NO OVERLEAF.
@@ -88,6 +92,8 @@ Rafael Benicio de Carvalho - Matriculado	2312130118
                             OBJETIVO ESPECIFICO
                             REFERENCIA BIBLIOGRÁFICA
                 TRABALHOS CORRELATOS.
+
+                
 
     
 
