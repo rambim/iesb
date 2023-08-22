@@ -1,0 +1,12 @@
+Notação assintótica:
+    É uma abstração que nos permite focar no que ocorre com f(n) quando n cresce indefinidamente
+
+    * TGermosd e menor ordem não importam
+    * constantes não importam
+
+    f(n) = 2n^3 + 4000n^2 + 10000n + 47
+
+
+
+
+++
