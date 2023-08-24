@@ -1,0 +1,16 @@
+Utilizaremos LINUX ( qualquer distribuição)
+Utilizaremos a linguagem C ( Compilador GCC)
+IDE = VSCODE
+
+Instalação VSCODE
+1) Primeiro link do google pesquisa por vscode.
+2) Baixar arquivo .deb
+3) Clicar 2x  Ou sudo dpkg -i "nome_do_arquivo".
+
+
+Para atualizar/instalar o GCC:
+1) No terminal: 
+    a. sudo apt-get update
+    b. sudo apt-get install gcc
+
+TIP: abrir terminal: Cntr + alt + t
