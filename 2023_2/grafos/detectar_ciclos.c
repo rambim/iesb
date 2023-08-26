@@ -28,38 +28,49 @@ lista *aloca_lista();
 int carrega_grafo(vertice *vertices, char *nome_do_arquivo);
 void push(vertice *v, int x);
 void mostrar_lista_dos_vertices(vertice *v, int tam);
-void dfs(vertice * vertices , int x);
+int dfs(vertice *vertices, int x, int pai);
+int recupera_qtd_arestas(char *nome_do_arquivo);
 
 int main(int *argc, char *argv[])
 {
-    int cc=0;
+    int cc = 0;
     vertice *vertices;
     int qtd_vertices;
     printf(" Parametro recebido: %s", argv[1]);
     vertices = (vertice *)calloc(10000, sizeof(vertice));
     qtd_vertices = carrega_grafo(vertices, argv[1]);
-    // if (qtd_vertices)
-    // {
-    //     printf("\n Grafo carregado com sucesso qtd vertices: %d",qtd_vertices);
-    //     mostrar_lista_dos_vertices(vertices, 10001);
-    // }
-    // else
-    //     printf("\n Problema no carregamento do grafo");
-
-    for(int i=1;i<=qtd_vertices;i++)
+    if (qtd_vertices)
     {
-        if (vertices[i].visitado ==0)
-        {
-            cc++;
-            
-            dfs(vertices,i);
-        }
+        printf("\n Grafo carregado com sucesso qtd vertices: %d", qtd_vertices);
+        mostrar_lista_dos_vertices(vertices, 10001);
     }
+    else
+        printf("\n Problema no carregamento do grafo");
 
-    printf("\n Quantidade de Componentes Conectados: %d",cc);
+    printf("\n Quantidade de Componentes Conectados: %d", cc);
 
-    // printf("\n Chamando DFS: ");
-    // dfs(vertices,1);
+    printf("\n Chamando DFS: ");
+    int retorno = dfs(vertices, 1, 0);
+
+    if (retorno == 1)
+    {
+        printf("\n Não é uma arvore");
+    }
+    else
+    {
+        printf("\n Quantidade de vertices: %d", qtd_vertices);
+        int qtd_arestas = recupera_qtd_arestas(argv[1]);
+        printf("\n Quantidade de arestas: %d",qtd_arestas);
+        if (qtd_arestas == qtd_vertices - 1)
+        {
+            printf("\n E uma arvore");
+        }
+        else
+        {
+            printf("\n Nao e uma arvore");
+        }
+
+    }
 
     printf("\n");
     return 0;
@@ -70,13 +81,13 @@ int carrega_grafo(vertice *vertices, char *nome_do_arquivo)
     FILE *arq;
     arq = fopen(nome_do_arquivo, "r");
     int a, b;
-    int qtd_vertices=0;
+    int qtd_vertices = 0;
 
     int i;
 
-    for(i=0;i<10001;i++)
+    for (i = 0; i < 10001; i++)
     {
-        qtd_global[i] =0;
+        qtd_global[i] = 0;
     }
 
     if (arq == NULL)
@@ -89,13 +100,13 @@ int carrega_grafo(vertice *vertices, char *nome_do_arquivo)
     {
         printf("\n A: %d B: %d", a, b);
 
-        if (qtd_global[a]==0)
+        if (qtd_global[a] == 0)
             qtd_vertices++;
-            qtd_global[a] = 1;
+        qtd_global[a] = 1;
 
-        if (qtd_global[b]==0)
+        if (qtd_global[b] == 0)
             qtd_vertices++;
-            qtd_global[b] = 1;
+        qtd_global[b] = 1;
 
         push(&vertices[a], b);
         push(&vertices[b], a);
@@ -214,25 +225,64 @@ void mostrar_lista(lista *l)
     }
 }
 
-
-void dfs(vertice * vertices , int x)
+int dfs(vertice *vertices, int x, int pai)
 {
-    registro * aux;
-    vertices[x].visitado=1;
-    printf(" %d",x);
+    registro *aux;
+    vertices[x].visitado = 1;
+    printf(" %d", x);
 
-    if (vertices[x].lista_adj==NULL)
-        return;
-        
+    if (vertices[x].lista_adj == NULL)
+        return 0;
+
     aux = vertices[x].lista_adj->inicio;
 
-    while(aux!=NULL)
+    while (aux != NULL)
     {
-        if (vertices[aux->valor].visitado==0)
+        if (vertices[aux->valor].visitado == 0)
         {
-            dfs(vertices,aux->valor); 
+            dfs(vertices, aux->valor, x);
         }
+        else
+        {
+            if (aux->valor != pai && pai != 0)
+            {
+                printf("\n Existe ciclo!");
+                printf("\n Back edge %d -> %d", x, aux->valor);
+                return 1;
+            }
+        }
+
         aux = aux->prox;
     }
 
+    return 0;
+}
+
+int recupera_qtd_arestas(char *nome_do_arquivo)
+{
+    FILE *arq;
+    char ch;
+    int qtd_ponto_virgula=0;
+
+    printf("\n estou aqui");
+    arq = fopen(nome_do_arquivo, "r");
+
+    if (arq == NULL)
+    {
+        printf("\n sai");
+        return 0;
+    }
+    else
+    {
+
+        while ((ch = getc(arq)) != EOF)
+        {
+            if (ch == ';')
+            {
+                qtd_ponto_virgula++;
+            }
+        }
+    }
+
+    return qtd_ponto_virgula;
 }
