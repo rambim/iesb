@@ -80,13 +80,13 @@ Etapa 11) Instalar NFS Server na master:
 	sudo apt-get install nfs-kernel-server
 
 Etapa 12) Crie um diretório para ser um diretório compartilhado na master:
-	sudo mkdir -p /home/usuario_mpi/openmpi/pasta_compartilhada
-	sudo chown nobody:nogroup /home/usuario_mpi/openmpi/pasta_compartilhada
-	sudo chmod 777 /home/usuario_mpi/openmpi/pasta_compartilhada
+	sudo mkdir -p /home/iesb/openmpi/pasta_compartilhada
+	sudo chown nobody:nogroup /home/iesb/openmpi/pasta_compartilhada
+	sudo chmod 777 /home/iesb/openmpi/pasta_compartilhada
 
 Etapa 13) Adicione ao arquivo /etc/exports na master:
 	sudo nano /etc/exports
-		 /home/usuario_mpi/openmpi/pasta_compartilhada slave(rw,sync,no_subtree_check)
+		 /home/iesb/openmpi/pasta_compartilhada slave1(rw,sync,no_subtree_check)
 
 Etapa 14) Exportar o diretório compartilhado:
 	sudo exportfs -a
@@ -102,10 +102,10 @@ Etapa 17) Instale o client de NFS nos slaves:
 	sudo apt-get install nfs-common
 
 Etapa 18) Crie um diretorio na slaves que irá sincronizar com o compartilhado da master:
-	sudo mkdir -p /home/usuario_mpi/openmpi/pasta_compartilhada
+	sudo mkdir -p /home/iesb/openmpi/pasta_compartilhada
 
 Etapa 19) Monte o volume compartilhado utilizando o diretorio criado:
-	sudo mount master:/home/usuario_mpi/openmpi/pasta_compartilhada /home/usuario_mpi/openmpi/pasta_compartilhada
+	sudo mount master:/home/iesb/openmpi/pasta_compartilhada /home/usuario_mpi/openmpi/pasta_compartilhada
 
 Etapa 20) Valide o NFS
 	master
@@ -124,7 +124,7 @@ Etapa 22) Download e descompacte o Openmpi em Todas as máquinas:
 	tar -xvf openmpi-4.1.1.tar.gz
 
 Etapa 23) Vá ao diretório do openmpi e adicione configure o prefixo na master:
-	./configure --prefix="/home/usuario_mpi/.openmpi"
+	./configure --prefix="/home/iesb/.openmpi"
 	make
 	sudo make install
 
@@ -154,7 +154,7 @@ Etapa 28) Criar um arquivo mpi-hosts dentro da pasta pasta_compartilhada
 
 Etapa 30) Teste o arquivo mpirun.c
 		mpicc mpi-prime.c -o ./outputfile
-		mpirun --hostfile mpi-hosts -np 4 ./outputfile""
+		mpirun --hostfile mpi-hosts -np 6 ./outputfile""
 
 
 mpirun --mca btl_base_warn_component_unused 0 --hostfile mpi-hosts -np 2 ./mpi1
