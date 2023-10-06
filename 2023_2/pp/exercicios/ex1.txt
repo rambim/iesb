@@ -1,0 +1,9 @@
+Faça um programa utilizando MPI onde
+
+a Thread 0 deve enviar o número 10 para a thread 1
+a thread 0 deve enviar o numero 20 para a thread 2
+a thread 0 deve receber o retorno da thread 1
+a thread 0 deve receber o retorno da thread 2
+
+a thread 1 deve dobrar o valor recebido e devolver para  a thread 0
+a thread 2 deve triplicar o valor recebido e devolver para a thread 0.
