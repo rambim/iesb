@@ -157,7 +157,7 @@ Etapa 30) Teste o arquivo mpirun.c
 		mpirun --hostfile mpi-hosts -np 6 ./outputfile""
 
 
-mpirun --mca btl_base_warn_component_unused 0 --hostfile mpi-hosts -np 2 ./mpi1
+mpirun --mca btl_base_warn_component_unused 0 --hostfile mpi-hosts -np 2 ./outputfile
 MPI_ANY_TAG
 MPI_ANY_SOURCE
 
