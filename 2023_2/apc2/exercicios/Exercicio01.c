@@ -9,8 +9,6 @@ finalizar o programa, deve-se liberar a área de memória alocada */
 void vetor(int *vetor, int n){
   int i = 0;
   printf("Quais valores o vetor terá?\n");
-
-  //  Laço solicitando valores para atribuir a variável
   for(i = 0; i < n; i++){
    scanf("%d", &vetor[i]); 
   }
@@ -20,9 +18,12 @@ int main(){
   int n, i;
 
   // Solicita o tamanho do vetor
-  printf("Tamanho do vetor desejado: ");
+  printf("Tamanho do vetor que deseja: ");
   scanf("%d", &n);
-
+  while(n <= 0){
+    printf("Digite um número inteiro positivo! ");
+    scanf("%d", &n);
+  }
   // Aloca memória dinamicamente
   int *v = (int *) malloc(n * sizeof(int));
   if(v == NULL){    // Caso tenha algum erro ao alocar a memória
@@ -30,7 +31,7 @@ int main(){
     return 1;
   }
 
-  vetor(v, n);    // Chama a função 
+  vetor(v, n);    // Chama a função passando como parâmetro "*v" e "n"
 
   // Laço para imprimir os elementos do vetor
   for(i = 0; i < n; i++){
@@ -41,4 +42,3 @@ int main(){
   free(v);
   return 0;
 }
-
