@@ -11,6 +11,8 @@ typedef struct registro{
     struct registro * prox;
 }registro;
 
+lista * cria_lista();
+
 int main(char argc, char * argv[])
 {
 
