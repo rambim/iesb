@@ -62,6 +62,7 @@ Pedro Henrique da Silva Ferreira - Matriculado	2112130034
 João Lucas Morato Bezerra Penido - Matriculado	2112130069
 Vitor Vargas Suzarte - Matriculado	2222130027
 
+
 grupo L
 Guilherme Queiroz Ribeiro - Matriculado	2112130025
 Arthur Rocha Caldeira - Matriculado	2012130045
@@ -75,3 +76,6 @@ Gabriel Silva de Castro - Matriculado	2012130093
 grupo N
 Jorge Augusto Rocha de Carvalho - Matriculado	2022130009
 Eduardo De lima - Matricula 2312130232
+
+
+
