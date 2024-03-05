@@ -16,9 +16,8 @@ typedef struct registro
 void mostrar_lista(lista *l);
 lista *cria_lista();
 registro *cria_registro();
-void inserir_registro(int novo_valor, lista *a);
 void menu(lista *l);
-void incluir_inicio(lista * l, int valor);
+void inserir_ordenado(lista * l , int valor);
 
 int main(char argc, char *argv[])
 {
@@ -43,39 +42,10 @@ registro *cria_registro()
     registro *novo;
     novo = (registro *)malloc(sizeof(registro));
     novo->valor = 0;
-    novo->prox = NULL;
+    novo->prox = 1;
     return novo;
 }
 
-void inserir_registro(int novo_valor, lista *a)
-{
-
-    registro *novo, *aux;
-
-    if (a == NULL)
-    {
-        return;
-    }
-
-    novo = cria_registro();
-    novo->valor = novo_valor;
-
-    if (a->inicio == NULL)
-    {
-        a->inicio = novo;
-    }
-    else
-    {
-        aux = a->inicio;
-
-        while (aux->prox != NULL)
-        {
-            aux = aux->prox;
-        }
-        aux->prox = novo;
-    }
-    a->qtd++;
-}
 
 void mostrar_lista(lista *l)
 {
@@ -97,23 +67,44 @@ void mostrar_lista(lista *l)
     }
 }
 
-void incluir_inicio(lista * l, int valor)
+void inserir_ordenado(lista * l , int valor)
 {
 
-    registro * novo;
+    printf("\n Qtd elementos na lista: %d ",l->qtd);
+    printf("\n Inicio: %d",l->inicio);
+    registro * novo=NULL;
+    registro * aux=NULL;
+    registro * ant=NULL;
     novo = cria_registro();
     novo->valor = valor;
+    printf(" novo -> valor : %d",novo->valor);
 
-    if (l->inicio == NULL)
+    if (l->inicio==NULL)
     {
+        
         l->inicio = novo;
     }
     else{
-        novo->prox = l->inicio;
-        l->inicio = novo;
+        
+        aux = l->inicio;
+
+        printf("\n Novo -> VALor : %d",novo->valor);
+        printf("\n aux -> valor : %d",aux->valor);
+
+        while(novo->valor > aux->valor)
+        {
+            printf("\n Novo -> VALor : %d",novo->valor);
+            printf("\n aux -> valor : %d",aux->valor);
+            ant = aux;
+            aux = aux->prox;
+        }
+        
+        novo->prox = aux;
+        ant->prox = novo;
     }
-    l->qtd++;
 }
+
+
 
 void menu(lista *l)
 {
@@ -122,10 +113,9 @@ void menu(lista *l)
 
     do
     {
-        printf("\n 1 - incluir no inicio lista");
-        printf("\n 2 - incluir no final lista");
-        printf("\n 3 - Mostrar lista");
-        printf("\n 5 - sair");
+        printf("\n 1 - Incluir Ordenado");
+        printf("\n 5 - Mostrar lista");
+        printf("\n 10 - sair");
         scanf("%d",&opcao);
 
         switch (opcao)
@@ -133,22 +123,20 @@ void menu(lista *l)
             case 1:
                 printf("\n Digite o numero que deseja inserir:");
                 scanf("%d",&numero);
-                incluir_inicio(l,numero);
+                inserir_ordenado(l,numero);
             break;
-        case 2:
-            printf("\n Digite o numero que deseja inserir:");
-            scanf("%d",&numero);
-            inserir_registro(numero,l);
-            break;
-        case 3:
+
+        case 5:
             mostrar_lista(l);
             break;
-        case 5:
+        case 10:
             printf("\n Saindo do programa");
             break;
         default:
             printf("\n opcao invalida");
             break;
         }
-    } while (opcao != 5);
+    } while (opcao != 10);
+
+    printf("\n");
 }
