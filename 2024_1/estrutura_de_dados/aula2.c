@@ -17,7 +17,7 @@ void mostrar_lista(lista *l);
 lista *cria_lista();
 registro *cria_registro();
 void menu(lista *l);
-void inserir_ordenado(lista * l , int valor);
+void inserir_ordenado(lista *l, int valor);
 
 int main(char argc, char *argv[])
 {
@@ -42,10 +42,9 @@ registro *cria_registro()
     registro *novo;
     novo = (registro *)malloc(sizeof(registro));
     novo->valor = 0;
-    novo->prox = 1;
+    novo->prox = NULL;
     return novo;
 }
-
 
 void mostrar_lista(lista *l)
 {
@@ -67,44 +66,37 @@ void mostrar_lista(lista *l)
     }
 }
 
-void inserir_ordenado(lista * l , int valor)
+void inserir_ordenado(lista *l, int valor)
 {
 
-    printf("\n Qtd elementos na lista: %d ",l->qtd);
-    printf("\n Inicio: %d",l->inicio);
-    registro * novo=NULL;
-    registro * aux=NULL;
-    registro * ant=NULL;
+    registro *novo = NULL;
+    registro *aux = NULL;
+    registro *ant = NULL;
     novo = cria_registro();
     novo->valor = valor;
-    printf(" novo -> valor : %d",novo->valor);
 
-    if (l->inicio==NULL)
+    if (l->inicio == NULL)
     {
-        
+
         l->inicio = novo;
     }
-    else{
-        
+    else
+    {
         aux = l->inicio;
 
-        printf("\n Novo -> VALor : %d",novo->valor);
-        printf("\n aux -> valor : %d",aux->valor);
+        // while (novo->valor > aux->valor && aux->prox != NULL)
+        // {
+        //     ant = aux;
+        //     aux = aux->prox;
+        // }
 
-        while(novo->valor > aux->valor)
-        {
-            printf("\n Novo -> VALor : %d",novo->valor);
-            printf("\n aux -> valor : %d",aux->valor);
-            ant = aux;
-            aux = aux->prox;
-        }
-        
-        novo->prox = aux;
-        ant->prox = novo;
+        // if (ant ==NULL)
+        // {
+            
+        // }
+
     }
 }
-
-
 
 void menu(lista *l)
 {
@@ -116,14 +108,14 @@ void menu(lista *l)
         printf("\n 1 - Incluir Ordenado");
         printf("\n 5 - Mostrar lista");
         printf("\n 10 - sair");
-        scanf("%d",&opcao);
+        scanf("%d", &opcao);
 
         switch (opcao)
         {
-            case 1:
-                printf("\n Digite o numero que deseja inserir:");
-                scanf("%d",&numero);
-                inserir_ordenado(l,numero);
+        case 1:
+            printf("\n Digite o numero que deseja inserir:");
+            scanf("%d", &numero);
+            inserir_ordenado(l, numero);
             break;
 
         case 5:
