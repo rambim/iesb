@@ -83,19 +83,26 @@ void inserir_ordenado(lista *l, int valor)
     else
     {
         aux = l->inicio;
+        
+        while (aux != NULL && novo->valor > aux->valor )
+        {
+            ant = aux;
+            aux = aux->prox;
+        }
 
-        // while (novo->valor > aux->valor && aux->prox != NULL)
-        // {
-        //     ant = aux;
-        //     aux = aux->prox;
-        // }
-
-        // if (ant ==NULL)
-        // {
-            
-        // }
-
+        // caso seja o primeiro elemento da lista
+        if (ant == NULL)
+        {
+            novo->prox = l->inicio;
+            l->inicio = novo;
+        }
+        else // caso esteja no meio ou final
+        {
+            ant->prox = novo;
+            novo->prox = aux;    
+        }        
     }
+    l->qtd++;
 }
 
 void menu(lista *l)
