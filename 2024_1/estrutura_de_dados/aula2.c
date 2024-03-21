@@ -74,6 +74,7 @@ void inserir_ordenado(lista *l, int valor)
     registro *ant = NULL;
     novo = cria_registro();
     novo->valor = valor;
+    int inseriu = 0;
 
     if (l->inicio == NULL)
     {
@@ -84,17 +85,38 @@ void inserir_ordenado(lista *l, int valor)
     {
         aux = l->inicio;
 
-        // while (novo->valor > aux->valor && aux->prox != NULL)
-        // {
-        //     ant = aux;
-        //     aux = aux->prox;
-        // }
+        while (!inseriu)
+        {
 
-        // if (ant ==NULL)
-        // {
-            
-        // }
+            if (aux == NULL)
+            {
+                ant->prox = novo;
+                inseriu = 1;
+            }
+            else
+            {
+                if (novo->valor < aux->valor && ant == NULL)
+                {
+                    novo->prox = aux;
+                    l->inicio = novo;
+                    inseriu = 1;
+                }
+                else{
+                    if (novo->valor < aux->valor && ant !=NULL)
+                    {
+                        novo->prox = aux;
+                        ant->prox = novo;
+                        inseriu=1;
+                    }
+                }
+            }
 
+            if (!inseriu)
+            {
+                ant = aux;
+                aux = aux->prox;
+            }
+        }
     }
 }
 
