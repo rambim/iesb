@@ -24,57 +24,55 @@ registro *aloca_registro();
 void mostrar_lista(lista *l);
 void incluir_final(lista *l, int x);
 void incluir_vertice_lista_adjacencia(vertice *v, int valor);
-void dfs(int raiz , vertice * vertices);
+void dfs(int raiz, vertice *vertices);
 int main()
 {
 
-    int qtd_vertices, qtd_arestas,i,a,b;
-    
-
+    int qtd_vertices, qtd_arestas, i, a, b;
     vertice *vertices;
 
     scanf("%d %d", &qtd_vertices, &qtd_arestas);
 
     vertices = (vertice *)calloc(sizeof(vertice), qtd_vertices + 1);
 
-    for(i=0;i<qtd_arestas;i++)
-    {   
-        scanf("%d %d",&a,&b);
-        incluir_vertice_lista_adjacencia(&vertices[a],b);
-        // incluir_vertice_lista_adjacencia(&vertices[b],a);
+    for (i = 0; i < qtd_arestas; i++)
+    {
+        scanf("%d %d", &a, &b);
+        incluir_vertice_lista_adjacencia(&vertices[a], b);
+        incluir_vertice_lista_adjacencia(&vertices[b], a);
     }
 
     printf("Lista da Adjacencia: \n");
-    for(i=1;i<=qtd_vertices;i++)
+    for (i = 1; i <= qtd_vertices; i++)
     {
-        printf("Vertice: %d -> ",i);
+        printf("Vertice: %d -> ", i);
         mostrar_lista(vertices[i].adj);
         printf("\n");
     }
 
-    printf("DFS: ");
     dfs(1,vertices);
 
     return 0;
 }
 
-void dfs(int raiz , vertice * vertices)
+void dfs(int raiz, vertice *vertices)
 {
-    printf("%d ",raiz);
     vertices[raiz].visitado = 1;
 
-    registro * aux;
-    aux = vertices[raiz].adj->inicio;
-
-    while(aux!=NULL)
+    registro *aux;
+    if (vertices[raiz].adj != NULL)
     {
-        if (vertices[aux->valor].visitado == 0)
-        {
-            dfs(aux->valor,vertices);
-        }
-        aux = aux->prox;
-    }
+        aux = vertices[raiz].adj->inicio;
 
+        while (aux != NULL)
+        {
+            if (vertices[aux->valor].visitado == 0)
+            {
+                dfs(aux->valor, vertices);
+            }
+            aux = aux->prox;
+        }
+    }
 }
 
 void incluir_vertice_lista_adjacencia(vertice *v, int valor)
@@ -143,12 +141,12 @@ void mostrar_lista(lista *l)
     registro *aux;
     if (l == NULL)
     {
-        return ;
+        return;
     }
 
     if (l->inicio == NULL)
     {
-        return ;
+        return;
     }
 
     aux = l->inicio;
