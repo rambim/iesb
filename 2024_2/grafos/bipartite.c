@@ -5,6 +5,7 @@ typedef struct vertice
 {
     struct lista *adj;
     int visitado;
+    int cor;
 } vertice;
 
 typedef struct lista
@@ -22,41 +23,61 @@ typedef struct registro
 lista *aloca_lista();
 registro *aloca_registro();
 void mostrar_lista(lista *l);
+
 void incluir_vertice_lista_adjacencia(vertice *v, int valor);
-void dfs(int raiz, vertice *vertices);
+int dfs(int raiz, vertice *vertices, int cor);
 int main()
 {
 
     int qtd_vertices, qtd_arestas, i, a, b;
+    int qtd_casos, qtd_cenarios = 0, deu_certo = 0;
     vertice *vertices;
 
-    scanf("%d %d", &qtd_vertices, &qtd_arestas);
+    scanf("%d", &qtd_casos);
 
-    vertices = (vertice *)calloc(sizeof(vertice), qtd_vertices + 1);
-
-    for (i = 0; i < qtd_arestas; i++)
+    while (qtd_casos--)
     {
-        scanf("%d %d", &a, &b);
-        incluir_vertice_lista_adjacencia(&vertices[a], b);
-        incluir_vertice_lista_adjacencia(&vertices[b], a);
-    }
+        qtd_cenarios++;
+        scanf("%d %d", &qtd_vertices, &qtd_arestas);
 
-    printf("Lista da Adjacencia: \n");
-    for (i = 1; i <= qtd_vertices; i++)
-    {
-        printf("Vertice: %d -> ", i);
-        mostrar_lista(vertices[i].adj);
-        printf("\n");
-    }
+        vertices = (vertice *)calloc(sizeof(vertice), qtd_vertices + 1);
 
-    dfs(1,vertices);
+        for (i = 0; i < qtd_arestas; i++)
+        {
+            scanf("%d %d", &a, &b);
+            incluir_vertice_lista_adjacencia(&vertices[a], b);
+            incluir_vertice_lista_adjacencia(&vertices[b], a);
+        }
+
+        printf("Scenario #%d:\n", qtd_cenarios);
+
+        deu_certo = 1;
+        for (i = 1; i <= qtd_vertices && deu_certo; i++)
+        {
+            if (vertices[i].visitado == 0)
+            {
+                if (!dfs(i, vertices, 1))
+                    deu_certo =0;
+            }
+        }
+
+        if (deu_certo)
+        {
+            printf("No suspicious bugs found!\n");
+        }
+        else
+        {
+            printf("Suspicious bugs found!\n");
+        }
+    }
 
     return 0;
 }
 
-void dfs(int raiz, vertice *vertices)
+int dfs(int raiz, vertice *vertices, int cor)
 {
     vertices[raiz].visitado = 1;
+    vertices[raiz].cor = cor;
 
     registro *aux;
     if (vertices[raiz].adj != NULL)
@@ -67,11 +88,22 @@ void dfs(int raiz, vertice *vertices)
         {
             if (vertices[aux->valor].visitado == 0)
             {
-                dfs(aux->valor, vertices);
+                if (!dfs(aux->valor, vertices, cor * -1))
+                {
+                    return 0;
+                }
+            }
+            else
+            {
+                if (vertices[aux->valor].cor == vertices[raiz].cor)
+                {
+                    return 0;
+                }
             }
             aux = aux->prox;
         }
     }
+    return 1;
 }
 
 void incluir_vertice_lista_adjacencia(vertice *v, int valor)
@@ -107,6 +139,8 @@ registro *aloca_registro()
     registro *novo = (registro *)calloc(sizeof(registro), 1);
     return novo;
 }
+
+
 
 void mostrar_lista(lista *l)
 {

@@ -29,6 +29,7 @@ int main()
 
     int qtd_vertices, qtd_arestas, i, a, b;
     vertice *vertices;
+    int cc = 0;
 
     scanf("%d %d", &qtd_vertices, &qtd_arestas);
 
@@ -41,15 +42,16 @@ int main()
         incluir_vertice_lista_adjacencia(&vertices[b], a);
     }
 
-    printf("Lista da Adjacencia: \n");
     for (i = 1; i <= qtd_vertices; i++)
     {
-        printf("Vertice: %d -> ", i);
-        mostrar_lista(vertices[i].adj);
-        printf("\n");
+        if (vertices[i].visitado == 0)
+        {
+            cc++;
+            dfs(i, vertices);
+        }
     }
 
-    dfs(1,vertices);
+    printf("%d\n", cc);
 
     return 0;
 }
