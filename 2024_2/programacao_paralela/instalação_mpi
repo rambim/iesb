@@ -48,12 +48,13 @@ Etapa 3) Edite o arquivo hosts dos slaves:
 Etapa 4) Criar chave RSA da master e exportar para slave:
 
 ssh-keygen
-ssh-copy-id mpiuser@slave
+ssh-copy-id iesb@slave1
+ssh-copy-id iesb@slave2
 
 Etapa 5) Criara chave RSA da slave e exportar para master
 
 ssh-keygen
-ssh-copy-id mpiuser@master
+ssh-copy-id iesb@master
 
 Etapa 6) Valide os acessos nas máquinas sem impostar senha.
 
