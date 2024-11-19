@@ -2,7 +2,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "knex": "^0.95.5",
+    "knex": "^2.4.0",
     "nodemon": "^2.0.7",
     "sqlite3": "^5.0.2"
   },
